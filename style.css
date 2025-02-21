@@ -82,6 +82,8 @@ td {
     padding: 12px;
     text-align: center;
     border: 1px solid #ddd;
+    position: relative;
+    /* Allows event tags to align properly */
 }
 
 th {
@@ -93,9 +95,39 @@ td {
     background-color: #f9f9f9;
 }
 
+
+/* ✅ Hover Effect (But NOT on Event Days) */
+
 td:hover {
     background-color: #ffcc00;
     cursor: pointer;
+}
+
+
+/* 🔽 Event Styles */
+
+
+/* 🌟 Past & Default Event */
+
+.event {
+    background-color: #ffcc00;
+    /* Yellow for past events */
+    color: black;
+    font-weight: bold;
+    border-radius: 5px;
+    padding: 5px;
+    display: block;
+    text-align: center;
+    margin-top: 5px;
+}
+
+
+/* 🔥 Upcoming Event Highlight */
+
+.upcoming-event {
+    background-color: #00cc66 !important;
+    /* Green for future events */
+    color: white !important;
 }
 
 

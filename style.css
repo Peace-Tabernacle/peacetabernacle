@@ -126,13 +126,11 @@ td:hover {
 }
 
 
-/* 🔥 Upcoming Event Highlight */
-
-.
-/* 🌟 Upcoming Event */
+/* 🌟 Upcoming Event Styles */
 
 .upcoming-event {
     background-color: #00cc66 !important;
+    /* Green for upcoming events */
     color: white !important;
     font-size: 12px !important;
     padding: 2px !important;
@@ -147,10 +145,13 @@ td:hover {
         padding: 6px;
         /* Reduce padding for better spacing */
     }
-    .event,
+    /* Ensure Upcoming Event remains Green */
     .upcoming-event {
+        background-color: #00cc66 !important;
+        /* Keep green background */
+        color: white !important;
         font-size: 10px !important;
-        /* Further reduce font size */
+        /* Smaller font size */
         padding: 1px !important;
         /* Smaller padding */
         margin-top: 1px !important;
@@ -158,7 +159,19 @@ td:hover {
         max-width: 100% !important;
         /* Ensure the events don't overflow */
         white-space: nowrap;
-        /* Prevent wrapping and keep events in one line */
+        /* Prevent wrapping */
+    }
+    .event {
+        font-size: 10px !important;
+        /* Reduce font size for past events */
+        padding: 1px !important;
+        /* Smaller padding */
+        margin-top: 1px !important;
+        /* Reduce space between events */
+        max-width: 100% !important;
+        /* Ensure events fit within the cells */
+        white-space: nowrap;
+        /* Prevent wrapping */
     }
 }
 
@@ -171,6 +184,12 @@ td:hover {
     caption {
         font-size: 12px;
         /* Smaller caption size */
+    }
+    /* Optional: Reduce width further for very small screens */
+    #calendar {
+        width: 100%;
+        padding: 5px;
+        /* Reduce padding */
     }
 }
 

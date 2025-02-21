@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendar</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Link your CSS -->
+</head>
+
+<body>
+    <nav class="navbar">
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="index.html" class="navbar__links">Home</a>
+            </li>
+            <li class="navbar__item">
+                <a href="calendar.html" class="navbar__links">Calendar</a>
+                <!-- Link to Calendar -->
+            </li>
+            <li class="navbar__item">
+                <a href="News.html" class="navbar__links">News</a>
+            </li>
+        </ul>
+    </nav>
+
+    <div id="calendar"></div>
+
+    <script>
+        function createCalendar(year) {
+            let calendarHTML = "";
+            const months = ["January", "February", "March", "April", "May", "June",
+                "July", "August", "September", "October", "November", "December"
+            ];
+
+            for (let m = 0; m < 12; m++) {
+                let firstDay = new Date(year, m, 1).getDay();
+                let daysInMonth = new Date(year, m + 1, 0).getDate();
+
+                calendarHTML += `<table border="1">
+                    <caption>${months[m]} ${year}</caption>
+                    <thead>
+                        <tr>
+                            <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody><tr>`;
+
+                for (let i = 0; i < firstDay; i++) {
+                    calendarHTML += `<td></td>`;
+                }
+
+                for (let day = 1; day <= daysInMonth; day++) {
+                    if ((firstDay + day - 1) % 7 === 0) {
+                        calendarHTML += `</tr><tr>`;
+                    }
+                    calendarHTML += `<td>${day}</td>`;
+                }
+
+                calendarHTML += `</tr></tbody></table><br>`;
+            }
+
+            document.getElementById("calendar").innerHTML = calendarHTML;
+        }
+
+        createCalendar(2025);
+    </script>
+</body>
+
+</html>

@@ -51,6 +51,66 @@ body {
     margin-right: 0.5rem;
 }
 
+
+/* 🌟 CALENDAR STYLING */
+
+#calendar {
+    width: 90%;
+    max-width: 800px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+caption {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0044cc;
+    padding: 10px;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #0044cc;
+    color: white;
+}
+
+td {
+    background-color: #f9f9f9;
+}
+
+td:hover {
+    background-color: #ffcc00;
+    cursor: pointer;
+}
+
+
+/* 🌟 Responsive Design */
+
+@media (max-width: 600px) {
+    th,
+    td {
+        padding: 8px;
+    }
+    caption {
+        font-size: 20px;
+    }
+}
+
 .navbar__menu {
     display: flex;
     align-items: center;
@@ -92,12 +152,12 @@ body {
     border: none;
     outline: none;
     border-radius: 4px;
-    background: #f77062;
+    background: #0d56c5;
     color: #fff;
 }
 
 .button:hover {
-    background: #4837ff;
+    background: #ff3737;
     transition: all 0.3s ease;
 }
 

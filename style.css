@@ -110,15 +110,19 @@ td:hover {
 /* 🌟 Past & Default Event */
 
 .event {
-    background-color: #ffcc00;
-    /* Yellow for past events */
+    background-color: #ff0000;
+    /* Keep red for past events */
     color: black;
     font-weight: bold;
-    border-radius: 5px;
-    padding: 5px;
+    border-radius: 2px;
+    padding: 2px;
+    /* Reduce padding to make the event smaller */
+    font-size: 12px;
+    /* Reduce text size */
     display: block;
     text-align: center;
-    margin-top: 5px;
+    margin-top: 2px;
+    /* Reduce space between events */
 }
 
 
@@ -128,12 +132,14 @@ td:hover {
     background-color: #00cc66 !important;
     /* Green for future events */
     color: white !important;
+    font-size: 12px !important;
+    padding: 2px !important;
 }
 
 
 /* 🌟 Responsive Design */
 
-@media (max-width: 600px) {
+@media (max-width: 300px) {
     th,
     td {
         padding: 8px;

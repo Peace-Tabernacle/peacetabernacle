@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: red;
+    background-color: rgb(24, 23, 23);
 }
 
 .navbar {
@@ -102,9 +102,6 @@ td:hover {
     background-color: #ffcc00;
     cursor: pointer;
 }
-
-
-/* 🔽 Event Styles */
 
 
 /* 🌟 Past & Default Event */

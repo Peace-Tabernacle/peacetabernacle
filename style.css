@@ -128,24 +128,49 @@ td:hover {
 
 /* 🔥 Upcoming Event Highlight */
 
+.
+/* 🌟 Upcoming Event */
+
 .upcoming-event {
     background-color: #00cc66 !important;
-    /* Green for future events */
     color: white !important;
     font-size: 12px !important;
     padding: 2px !important;
 }
 
 
-/* 🌟 Responsive Design */
+/* 🌟 Responsive Design for Smaller Screens (Mobile) */
+
+@media (max-width: 600px) {
+    th,
+    td {
+        padding: 6px;
+        /* Reduce padding for better spacing */
+    }
+    .event,
+    .upcoming-event {
+        font-size: 10px !important;
+        /* Further reduce font size */
+        padding: 1px !important;
+        /* Smaller padding */
+        margin-top: 1px !important;
+        /* Reduce space between events */
+        max-width: 100% !important;
+        /* Ensure the events don't overflow */
+        white-space: nowrap;
+        /* Prevent wrapping and keep events in one line */
+    }
+}
 
 @media (max-width: 300px) {
     th,
     td {
-        padding: 8px;
+        padding: 6px;
+        /* Adjust padding for tiny screens */
     }
     caption {
-        font-size: 20px;
+        font-size: 16px;
+        /* Smaller caption size */
     }
 }
 

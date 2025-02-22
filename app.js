@@ -16,7 +16,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const events = {
         "2025-02-26": "Communion",
         "2025-02-16": "Youth Sunday",
-        "2025-02-25": "Holiday"
+        "2025-02-15": "Fasting"
     };
 
     function generateCalendar(year, month) {
@@ -68,4 +68,20 @@ document.addEventListener("DOMContentLoaded", function() {
     }
 
     generateCalendar(2025, 1); // March 2025 (Months start from 0 in JS)
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Get all the buttons and image containers
+    const buttons = document.querySelectorAll(".outreach__card button");
+
+    buttons.forEach(function(button) {
+        // Get the closest image container for each button
+        const imagesContainer = button.closest(".outreach__card").querySelector(".outreach__images");
+
+        // Add event listener to the button
+        button.addEventListener("click", function() {
+            // Toggle the "show" class on the image container
+            imagesContainer.classList.toggle("show");
+        });
+    });
 });

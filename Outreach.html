@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peace Tabernacle - Outreach</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        /* Slideshow styles */
+        
+        .slideshow-container {
+            max-width: 100%;
+            position: relative;
+            margin: auto;
+        }
+        
+        .mySlides {
+            display: none;
+        }
+        
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        /* Styling for the text above the slideshow */
+        
+        .outreach-text {
+            text-align: center;
+            font-size: 1.2rem;
+            margin: 2rem;
+            font-style: italic;
+            color: #333;
+        }
+        
+        .navbar {
+            background-color: #333;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        
+        .navbar__menu {
+            display: flex;
+            justify-content: center;
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .navbar__item {
+            margin: 0 20px;
+        }
+        
+        .navbar__links {
+            text-decoration: none;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        
+        .navbar__links:hover {
+            color: #f1f1f1;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="index.html" class="navbar__links">Home</a>
+            </li>
+            <li class="navbar__item">
+                <a href="Outreach.html" class="navbar__links">Outreach</a>
+            </li>
+            <li class="navbar__item">
+                <a href="News.html" class="navbar__links">News</a>
+            </li>
+            <li class="navbar__item">
+                <a href="Calendar.html" class="navbar__links">Calendar</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Outreach Text Section -->
+    <div class="outreach-text">
+        <h1>Latest Outreach</h1>
+        <p>
+            You build all those great big places like that and strain your people until they’re just about poor paupers and everything else with all your stuff to put in the church, and thousands of heathens dying on the mission field without knowing Christ one time.
+            Right, it’s a disgrace to Christianity. Yes. 85 Oh, if you only could see one time, you’d know what I was speaking of. Building a million-dollar church, and two-thirds of the world never heard of Jesus Christ; what a pity. 56-1002A — Father,
+            The Hour Has Come Rev. William Marrion Branham God Bless you. Stay tuned!
+        </p>
+    </div>
+
+    <!-- Slideshow Section -->
+    <div class="slideshow-container">
+        <div class="mySlides fade">
+            <img src="image/lufunsa1.jpg" alt="Lufunsa1">
+        </div>
+        <div class="mySlides fade">
+            <img src="image/lufunsa2.jpg" alt="Lufunsa2">
+        </div>
+        <div class="mySlides fade">
+            <img src="image/lufunsa3.jpg" alt="Lufunsa3">
+        </div>
+        <div class="mySlides fade">
+            <img src="image/local1.jpg" alt="Local1">
+        </div>
+        <div class="mySlides fade">
+            <img src="image/local2.jpg" alt="Local2">
+        </div>
+        <div class="mySlides fade">
+            <img src="image/local3.jpg" alt="Local3">
+        </div>
+    </div>
+
+    <script>
+        // JavaScript for the Slideshow
+        let slideIndex = 0;
+        showSlides();
+
+        function showSlides() {
+            let slides = document.getElementsByClassName("mySlides");
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1
+            }
+            slides[slideIndex - 1].style.display = "block";
+            setTimeout(showSlides, 3000); // Change image every 3 seconds
+        }
+    </script>
+
+</body>
+
+</html>

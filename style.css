@@ -5,10 +5,12 @@
     font-family: "Kumbh Sans", sans-serif;
 }
 
-
-/* body {
-    background-color: rgba(237, 241, 245, 0.788);
-} */
+body {
+    background: url('image/christ.jpg') no-repeat center center fixed;
+    background-size: 50%;
+    /* Adjusts the image size to 50% of the screen */
+    background-blend-mode: overlay;
+}
 
 .navbar {
     background: #888484;

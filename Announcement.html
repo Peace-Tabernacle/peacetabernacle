@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .announcement {
+            background: #ffffff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 5px solid #007bff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .announcement.unread {
+            background: #e3f2fd;
+            font-weight: bold;
+        }
+        
+        .announcement p {
+            margin: 5px 0;
+        }
+        
+        .mark-read {
+            display: block;
+            margin: 10px auto;
+            background: #007bff;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .mark-read:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <ul class="navbar__menu">
+            <li class="navbar__item">
+                <a href="index.html" class="navbar__links">Home</a>
+            </li>
+            <li class="navbar__item">
+                <a href="Outreach.html" class="navbar__links">Outreach</a>
+            </li>
+            <li class="navbar__item">
+                <a href="News.html" class="navbar__links">News</a>
+            </li>
+            <li class="navbar__item">
+                <a href="Calendar.html" class="navbar__links">Calendar</a>
+            </li>
+            <li class="navbar__item">
+                <a href="Announcement.html" class="navbar__links">Announcements</a>
+        </ul>
+    </nav>
+
+
+    <div class="container">
+        <h2>Latest Announcements</h2>
+
+        <div class="announcement unread" id="announcement1">
+            <p><strong>Church website</strong></p>
+            <p>Welcome to our church website feel free to contact us on +260976128168/ +260972110921.</p>
+        </div>
+
+        <div class="announcement unread" id="announcement2">
+            <p><strong>Key Objectives:</strong></p>
+            <p>✅ Announcements & Notifications – Quickly inform members about upcoming church meetings, special events, and important notices. ✅ Event Updates – Provide real-time details on outreach programs, youth gatherings, and worship services. ✅ Community
+                Engagement – Strengthen fellowship by keeping members connected, whether they attend in person or online. ✅ Photo & Video Gallery – Showcase church activities through images and videos, allowing members to relive special moments. ✅ Spiritual
+                Growth – Share messages, sermons, and devotional content to encourage faith and spiritual development. By using this platform, church members can stay updated, participate actively, and remain connected to the mission and vision of the
+                church. 📌 Stay informed. Stay connected. Stay blessed!</p>
+        </div>
+
+        <button class="mark-read" onclick="markAnnouncementsRead()">Mark All as Read</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let unreadAnnouncements = localStorage.getItem("unreadAnnouncements");
+
+            if (!unreadAnnouncements) {
+                localStorage.setItem("unreadAnnouncements", "1");
+            }
+
+            if (unreadAnnouncements === "0") {
+                let elements = document.querySelectorAll(".announcement");
+                elements.forEach(el => el.classList.remove("unread"));
+            }
+        });
+
+        function markAnnouncementsRead() {
+            let elements = document.querySelectorAll(".announcement");
+            elements.forEach(el => el.classList.remove("unread"));
+            localStorage.setItem("unreadAnnouncements", "0");
+        }
+    </script>
+
+</body>
+
+</html>

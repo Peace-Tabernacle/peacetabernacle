@@ -72,6 +72,47 @@
         .read-more:hover {
             text-decoration: underline;
         }
+        
+        @media (max-width: 768px) {
+            .news-container {
+                width: 95%;
+                /* Use more of the screen width */
+                padding: 15px;
+                /* Reduce padding for smaller screens */
+            }
+            .news-item {
+                flex-direction: column;
+                /* Stack items vertically */
+                text-align: center;
+                /* Center text for better alignment */
+            }
+            .news-item img {
+                width: 100%;
+                /* Make the image responsive */
+                height: auto;
+                /* Keep aspect ratio */
+            }
+            .news-content {
+                padding: 10px;
+                /* Reduce padding to fit mobile layout */
+            }
+            .news-title {
+                font-size: 16px;
+                /* Reduce font size slightly */
+            }
+            .news-meta {
+                font-size: 11px;
+                /* Adjust for readability */
+            }
+            .news-description {
+                font-size: 13px;
+                /* Slightly smaller text */
+            }
+            .read-more {
+                font-size: 14px;
+                /* Keep readability */
+            }
+        }
     </style>
 </head>
 

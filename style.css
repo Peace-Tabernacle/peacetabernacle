@@ -341,20 +341,20 @@ td:hover {
         margin: 0;
         width: 100%;
         position: absolute;
-        top: -1000px;
+        top: -5000px;
         opacity: 0;
         transition: all 0.5s ease;
-        height: 50vh;
+        height: 40vh;
         z-index: -1;
         background: #131313;
     }
     .navbar__menu.active {
         background: #131313;
-        top: 100%;
+        top: 80px;
         opacity: 1;
         transition: all 0.5s ease;
         z-index: 99;
-        height: 50vh;
+        height: 40vh;
         font-size: 1.6rem;
     }
     #navbar__logo {
@@ -372,7 +372,7 @@ td:hover {
     }
     .navbar__links {
         text-align: center;
-        padding: 2rem;
+        padding: 1.5rem;
         width: 100%;
         display: table;
     }
@@ -537,53 +537,32 @@ td:hover {
 
 /* MObile Responsive */
 
-@media screen and (max-width: 700px) {
-    .main__container {
-        display: grid;
-        grid-template-columns: auto;
-        align-items: center;
-        justify-content: center;
-        width: 100%;
-        margin: 0 auto;
-        height: 90vh;
-    }
-    .margin__content {
+@media (max-width: 768px) {
+    .overlay-content {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         text-align: center;
-        margin-bottom: 4rem;
     }
-    .main__content h1 {
-        font-size: 2.5rem;
-        margin-top: 2rem;
+    .overlay-content h1 {
+        font-size: 2rem;
     }
-    .margin__content h2 {
-        font-size: 3rem;
-    }
-    .margin__content p {
-        margin-top: 1rem;
+    .overlay-content h2 {
         font-size: 1.5rem;
+    }
+    .overlay-content p {
+        font-size: 1.8rem;
     }
     .main__btn {
-        padding: 12px 36px;
-        margin: 0;
+        bottom: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .main__btn a {
+        font-size: 1rem;
+        padding: 10px 20px;
     }
 }
-
-@media screen and (max-width: 480px) {
-    .main__content h1 {
-        font-size: 2rem;
-        margin-top: 3rem;
-    }
-    .margin__content h2 {
-        font-size: 2rem;
-    }
-    .margin__content p {
-        margin-top: 2rem;
-        font-size: 1.5rem;
-    }
-}
-
-
-/* Services Section */
 
 
 /* Services Section */
@@ -645,6 +624,43 @@ td:hover {
 
 .services button:hover {
     background: #cf556c;
+}
+
+
+/* mobile responsive for services */
+
+@media (max-width: 768px) {
+    .services {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 20px;
+    }
+    .services__container {
+        flex-direction: column;
+        max-width: 100%;
+        text-align: center;
+    }
+    .services__text {
+        text-align: center;
+        padding-right: 0;
+        margin-bottom: 20px;
+    }
+    .services h1,
+    .services h2,
+    .services p {
+        text-align: center;
+    }
+    .services__image {
+        justify-content: center;
+    }
+    .services__image img {
+        width: 90%;
+        max-width: 400px;
+    }
+    .services button {
+        width: 100%;
+        max-width: 200px;
+    }
 }
 
 
@@ -729,6 +745,54 @@ td:hover {
 
 .service button:hover {
     background: #cf556c;
+}
+
+
+/* mobile responsive for peace */
+
+@media (max-width: 768px) {
+    .peace {
+        flex-direction: column;
+        height: auto;
+        padding: 40px 20px;
+    }
+    .peace__container {
+        flex-direction: column;
+        max-width: 100%;
+        text-align: center;
+        gap: 30px;
+    }
+    .peace__text {
+        text-align: center;
+    }
+    .peace__image {
+        justify-content: center;
+    }
+    .peace__image img {
+        width: 90%;
+        max-width: 400px;
+    }
+    .peace__services {
+        flex-direction: column;
+        align-items: center;
+    }
+    .service {
+        width: 90%;
+        max-width: 400px;
+    }
+    .service h1 {
+        font-size: 1.8rem;
+    }
+    .service h2 {
+        font-size: 1.1rem;
+    }
+    .service p {
+        font-size: 0.95rem;
+    }
+    .service button {
+        width: 100%;
+        max-width: 200px;
+    }
 }
 
 

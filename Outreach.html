@@ -67,6 +67,40 @@
         .navbar__links:hover {
             color: #f1f1f1;
         }
+        
+        @media (max-width: 768px) {
+            .navbar__menu {
+                flex-direction: column;
+                /* Stack items vertically */
+                align-items: center;
+                padding: 10px 0;
+            }
+            .navbar__item {
+                margin: 5px 0;
+                /* Reduce space between menu items */
+            }
+            .navbar__links {
+                font-size: 1rem;
+                /* Reduce font size for better spacing */
+            }
+            .outreach-text {
+                font-size: 1rem;
+                /* Make text slightly smaller */
+                margin: 1rem;
+                /* Reduce margins */
+                padding: 10px;
+            }
+            .slideshow-container {
+                max-width: 95%;
+                /* Reduce width slightly for mobile */
+            }
+            .mySlides img {
+                width: 100%;
+                /* Ensure images are responsive */
+                height: auto;
+                /* Keep proper aspect ratio */
+            }
+        }
     </style>
 </head>
 

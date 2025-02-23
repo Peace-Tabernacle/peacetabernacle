@@ -4,132 +4,108 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Peace Tabernacle - News</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
+    <title>News</title>
     <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        
         .news-container {
-            max-width: 90%;
-            margin: auto;
+            width: 80%;
+            margin: 20px auto;
+            background: white;
             padding: 20px;
-            text-align: center;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
         
-        .news-section {
-            margin-bottom: 40px;
+        .news-item {
+            display: flex;
+            gap: 15px;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
         }
         
-        .news-heading {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
+        .news-item img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .news-content {
+            flex: 1;
+        }
+        
+        .news-title {
+            font-size: 18px;
+            font-weight: bold;
             color: #333;
+            text-decoration: none;
         }
         
-        .news-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-            justify-items: center;
+        .news-title:hover {
+            color: #007BFF;
         }
         
-        .news-gallery img {
-            width: 100%;
-            height: auto;
-            border-radius: 8px;
+        .news-meta {
+            font-size: 12px;
+            color: #777;
+            margin: 5px 0;
+        }
+        
+        .news-description {
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 
 <body>
-    <!-- Navbar Section -->
-    <nav class="navbar">
-        <ul class="navbar__menu">
-            <li class="navbar__item">
-                <a href="index.html" class="navbar__links">Home</a>
-            </li>
-            <li class="navbar__item">
-                <a href="Outreach.html" class="navbar__links">Outreach</a>
-            </li>
-            <li class="navbar__item">
-                <a href="News.html" class="navbar__links">News</a>
-            </li>
-            <li class="navbar__item">
-                <a href="Calendar.html" class="navbar__links">Calendar</a>
-            </li>
-            <li class="navbar__item">
-                <a href="Announcement.html" class="navbar__links">Announcements</a>
-        </ul>
-    </nav>
-
-    <!-- News Content -->
     <div class="news-container">
-
-        <div class="news-section">
-            <h2>Church Annual Convention</h2>
-            <div class="news-images">
-                <img src="news-images/anniversary1.jpg" alt="Anniversary 1">
-                <img src="news-images/anniversary2.jpg" alt="Anniversary 2">
-                <img src="news-images/anniversary3.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary4.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary5.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary6.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary7.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary8.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary9.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary10.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary11.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary12.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary13.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary14.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary15.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary16.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary17.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary18.jpg" alt="Anniversary 3">
-                <img src="news-images/anniversary19.jpg" alt="Anniversary 3">
+        <div class="news-item">
+            <img src="/image/wedding1.jpg" alt="Wedding 1">
+            <div class="news-content">
+                <a href="#" class="news-title">Wedding: Br Maurice Mwanza and Sr Annie</a>
+                <div class="news-meta">📅 2023-12-30 — BY Sachil 🕒 17</div>
+                <p class="news-description">Congratulations to Br Maurice and Sr Annie on their wedding on December 30, 2023. May the Lord bless their union with love, joy, and prosperity. May His grace guide them in every step of their journey together, and may their marriage be
+                    filled with peace, understanding, and abundant blessings.</p>
+                <a href="#" class="read-more">Read More</a>
             </div>
         </div>
-
-        <div class="news-section">
-            <h2>CHURCH ACTIVITIES</h2>
-            <div class="news-images">
-                <img src="news-images/church1.jpg" alt="Outreach 1">
-                <img src="news-images/church2.jpg" alt="Outreach 2">
-                <img src="news-images/church3.jpg" alt="Outreach 3">
-                <img src="news-images/church4.jpg" alt="Outreach 3">
-                <img src="news-images/church5.jpg" alt="Outreach 3">
-                <img src="news-images/church6.jpg" alt="Outreach 3">
-                <img src="news-images/church7.jpg" alt="Outreach 3">
-                <img src="news-images/church8.jpg" alt="Outreach 3">
-                <img src="news-images/church9.jpg" alt="Outreach 3">
-                <img src="news-images/church10.jpg" alt="Outreach 3">
-                <img src="news-images/church11.jpg" alt="Outreach 3">
-                <img src="news-images/church12.jpg" alt="Outreach 3">
-
+        <div class="news-item">
+            <img src="/news-images/youth10.jpg" alt="Wedding 2">
+            <div class="news-content">
+                <a href="#" class="news-title">YOUTH SUNDAY</a>
+                <div class="news-meta">📅 2023-10-07 — BY SACHIL 🕒 15</div>
+                <p class="news-description">Today marks the remembrance of the youth event held on October 7, 2023. We were blessed with powerful messages from our youth preachers: Bro Chanda, Bro Steve, Zewe, Bro David, Bro Samuel, and Bro William. It was truly a vibrant and uplifting
+                    gathering, filled with inspiration and spiritual growth.</p>
+                <a href="#" class="read-more">Read More</a>
             </div>
         </div>
-
-        <div class="news-section">
-            <h2>Youth Section</h2>
-            <div class="news-images">
-                <img src="news-images/youth1.jpg" alt="Youth Conference 1">
-                <img src="news-images/youth2.jpg" alt="Youth Conference 2">
-                <img src="news-images/youth3.jpg" alt="Youth Conference 3">
-                <img src="news-images/youth4.jpg" alt="Youth Conference 3">
-                <img src="news-images/youth5.jpg" alt="Youth Conference 3">
-                <img src="news-images/youth6.jpg" alt="Youth Conference 3">
-                <img src="news-images/youth7.jpg" alt="Youth Conference 3">
-                <img src="news-images/youth8.jpg" alt="Youth Conference 3">
-                <img src="news-images/youth9.jpg" alt="Youth Conference 3">
-                <img src="news-images/youth10.jpg" alt="Youth Conference 3">
-                <img src="news-images/youth11.jpg" alt="Youth Conference 3">
-                <img src="news-images/youth12.jpg" alt="Youth Conference 3">
-                <img src="news-images/youth13.jpg" alt="Youth Conference 3">
-                <img src="news-images/youth14.jpg" alt="Youth Conference 3">
-                <img src="news-images/youth15.jpg" alt="Youth Conference 3">
-                <img src="news-images/youth16.jpg" alt="Youth Conference 3">
-                <img src="news-images/youth17.jpg" alt="Youth Conference 3">
+        <div class="news-item">
+            <img src="news-images/convention.PNG" alt="Wedding 3">
+            <div class="news-content">
+                <a href="#" class="news-title">International Convention</a>
+                <div class="news-meta">📅 2025-02-23 — BY SACHIL 🕒 15</div>
+                <p class="news-description">The convention held from October 17th to 20th in Zambia was a mighty gathering that stirred the nation like a storm. Hosted by Rev. Wilson Mwanza at Peace Tabernacle, the event was graced by esteemed guests: Rev. J. Chikosi (Zimbabwe/UK),
+                    Rev. T. Mahere (South Africa/Benoni Tabernacle), Rev. E. Chali (Kalulushi, Zambia), and Pastor Masaiti (Mutare, Zimbabwe). With the theme **"Applying the Token"** from **Exodus 12:23**, the convention was a time of great spiritual
+                    awakening, powerful sermons, and divine encounters, leaving a lasting impact on all who attended.</p>
+                <a href="#" class="read-more">Read More</a>
             </div>
         </div>
     </div>

@@ -1,4 +1,8 @@
-[[redirects]]
-  from = "/sitemap.xml"
-  to = "/sitemap.xml"
-  status = 200
+[build]
+  publish = "."  # This assumes your static files are in the root folder of "Peace Tabernacle"
+
+[dev]
+  functions = "functions"  # If you're using functions, keep this; if not, you can remove it.
+  publish = "."  # Ensure this points to the folder containing your static files (root in your case)
+  port = 3000  # Avoid conflicts with other services
+

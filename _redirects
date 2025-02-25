@@ -4,3 +4,4 @@ http://peace-tabernacle.netlify.app/* https://peace-tabernacle.netlify.app/:spla
 # Redirect index.html to clean URL
 /index.html / 301!
 
+

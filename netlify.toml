@@ -6,3 +6,7 @@
   publish = "."  # Ensure this points to the folder containing your static files (root in your case)
   port = 3000  # Avoid conflicts with other services
 
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml"

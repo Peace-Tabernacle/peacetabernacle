@@ -6,29 +6,28 @@
         <priority>1.0</priority>
     </url>
     <url>
-        <loc>https://peace-tabernacle.netlify.app/News.html</loc> <!-- Updated to match navbar -->
+        <loc>https://peace-tabernacle.netlify.app/News.html</loc>
         <lastmod>2025-02-24</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://peace-tabernacle.netlify.app/Outreach.html</loc> <!-- Updated to match navbar -->
+        <loc>https://peace-tabernacle.netlify.app/Outreach.html</loc>
         <lastmod>2025-02-24</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://peace-tabernacle.netlify.app/calendar.html</loc> <!-- No change needed -->
+        <loc>https://peace-tabernacle.netlify.app/calendar.html</loc>
         <lastmod>2025-02-24</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://peace-tabernacle.netlify.app/Announcement.html</loc> <!-- No change needed -->
+        <loc>https://peace-tabernacle.netlify.app/Announcement.html</loc>
         <lastmod>2025-02-24</lastmod>
         <priority>0.8</priority>
     </url>
     <url>
-        <loc>https://peace-tabernacle.netlify.app/about-us.html</loc> <!-- Updated to match navbar -->
+        <loc>https://peace-tabernacle.netlify.app/about-us.html</loc>
         <lastmod>2025-02-24</lastmod>
         <priority>0.8</priority>
     </url>
 </urlset>
-

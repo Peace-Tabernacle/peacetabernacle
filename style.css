@@ -49,6 +49,14 @@ body {
     font-size: 2rem;
 }
 
+.navbar__logo-img {
+    width: 100px;
+    /* Small logo size */
+    height: auto;
+    margin-right: 8px;
+    /* Adds space between the logo and text */
+}
+
 .fa-gem {
     margin-right: 0.5rem;
 }
@@ -442,20 +450,53 @@ td:hover {
     z-index: 2;
 }
 
+
+/* 🔹 Apply a Beautiful Font */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;600&display=swap');
 .overlay-content h1 {
-    font-size: 3rem;
-    font-weight: bold;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
+    font-size: 3.5rem;
+    /* Bigger for impact */
+    font-weight: 700;
+    font-family: 'Playfair Display', serif;
+    /* Elegant Font */
+    color: #fff;
+    text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.8);
+    letter-spacing: 3px;
 }
 
 .overlay-content h2 {
-    font-size: 2rem;
-    text-shadow: 1px 1px 8px rgba(0, 0, 0, 0.6);
+    font-size: 2.5rem;
+    font-family: 'Poppins', sans-serif;
+    /* Modern Font */
+    font-weight: 600;
+    color: #ffdd57;
+    /* Gold highlight */
+    text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
+    text-transform: uppercase;
 }
 
 .overlay-content p {
-    font-size: 3rem;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    font-size: 2rem;
+    font-family: 'Poppins', sans-serif;
+    color: #f8f8f8;
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    font-style: italic;
+}
+
+
+/* 🔹 Mobile Responsiveness */
+
+@media (max-width: 768px) {
+    .overlay-content h1 {
+        font-size: 2.5rem;
+    }
+    .overlay-content h2 {
+        font-size: 2rem;
+    }
+    .overlay-content p {
+        font-size: 1.5rem;
+    }
 }
 
 
@@ -546,6 +587,14 @@ td:hover {
 /* MObile Responsive */
 
 @media (max-width: 768px) {
+    /* Make sure the images in the slideshow scale properly */
+    .mySlides img {
+        width: 100%;
+        height: auto;
+        /* Maintain aspect ratio on smaller screens */
+        object-fit: cover;
+        /* Ensure it still covers the full area */
+    }
     .overlay-content {
         top: 50%;
         left: 50%;
@@ -800,6 +849,411 @@ td:hover {
     .service button {
         width: 100%;
         max-width: 200px;
+    }
+}
+
+
+/* General Styles */
+
+.discover-more {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.news-events-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+
+/* News Section */
+
+.news-section {
+    flex: 2;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.news-header {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.news-header button {
+    background: #000;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+}
+
+.news-header button.active {
+    background: #FFD700;
+    /* Gold highlight */
+    color: black;
+}
+
+.news-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.news-item img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.news-item h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+.news-item p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.news-item a {
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.news-item a:hover {
+    text-decoration: underline;
+}
+
+.more-news {
+    display: block;
+    text-align: center;
+    margin-top: 10px;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+}
+
+
+/* Events Section */
+
+.events-section {
+    flex: 1;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.events-section h3 {
+    text-align: left;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.event {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 15px;
+    margin-bottom: 15px;
+}
+
+.event .date {
+    background: #FFD700;
+    color: black;
+    font-weight: bold;
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    width: 50px;
+}
+
+.event-info h4 {
+    margin: 0;
+    font-size: 16px;
+}
+
+.event-info p {
+    font-size: 14px;
+    color: #666;
+    margin: 3px 0;
+}
+
+.more-events {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    color: #000;
+    text-decoration: none;
+    margin-top: 10px;
+}
+
+.more-events:hover {
+    text-decoration: underline;
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+    .news-events-container {
+        flex-direction: column;
+    }
+    .news-section,
+    .events-section {
+        width: 100%;
+    }
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f8f8;
+    margin: 0;
+    padding: 0;
+}
+
+.breadcrumb {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+    color: #666;
+}
+
+.events-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 20px auto;
+    gap: 20px;
+}
+
+.events-list {
+    flex: 2;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.events-list h2 {
+    color: #333;
+    font-size: 24px;
+    border-bottom: 3px solid green;
+    padding-bottom: 10px;
+}
+
+
+/* 🔹 Event List */
+
+.event-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+
+/* 🔹 Event Card */
+
+.event {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+
+/* 🔹 Event Image */
+
+.event img {
+    width: 100px;
+    /* Adjusted for consistency */
+    height: 100px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+
+/* 🔹 Event Info */
+
+.event-info {
+    flex: 1;
+}
+
+.event-date {
+    background: green;
+    color: white;
+    font-weight: bold;
+    padding: 8px;
+    text-align: center;
+    border-radius: 5px;
+    font-size: 14px;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.event-info h3 {
+    margin: 5px 0;
+    font-size: 18px;
+}
+
+.event-info p {
+    font-size: 14px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.event-info a {
+    text-decoration: none;
+    color: green;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.event-info button {
+    background: black;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.event-info button a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* 🔹 Sidebar */
+
+.events-sidebar {
+    flex: 1;
+}
+
+.subscribe-box {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.subscribe-box input {
+    width: 100%;
+    padding: 8px;
+    margin: 10px 0;
+}
+
+.subscribe-box button {
+    width: 100%;
+    background: black;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.next-events {
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.next-events h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.next-events ul {
+    list-style: none;
+    padding: 0;
+}
+
+.next-events li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.next-events img {
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+
+/* 🔹 Responsive */
+
+@media (max-width: 768px) {
+    .events-container {
+        flex-direction: column;
+    }
+    .event {
+        flex-direction: column;
+        text-align: center;
+    }
+    .event img {
+        width: 120px;
+        height: 120px;
+    }
+    .next-events li {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+
+/* 🔹 Event Image */
+
+.event img {
+    width: 120px;
+    /* Default size for desktop */
+    height: 120px;
+    border-radius: 5px;
+    object-fit: cover;
+}
+
+
+/* 🔹 Mobile Responsiveness */
+
+@media (max-width: 768px) {
+    .event {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    .event img {
+        width: 80px;
+        /* Smaller size for mobile */
+        height: 80px;
     }
 }
 

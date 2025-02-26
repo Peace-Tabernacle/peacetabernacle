@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events - Peace Tabernacle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="breadcrumb">
+        <a href="index.html">Home</a> > <span>Events</span>
+    </div>
+    <section class="events-container">
+        <div class="events-list">
+            <h2>Upcoming Events</h2>
+            <p>The most awaited events by our church, indoor or outdoor.</p>
+
+            <div class="event-list">
+                <div class="event">
+                    <!-- <img src="images/Wednesday.jpg" alt="Wednesday Service"> -->
+                    <div class="event-info">
+                        <span class="event-date">5 March 2025</span>
+                        <h3>Wednesday Service</h3>
+                        <p>Time: 17:30 - | Weekly</p>
+                        <button><a href="https://www.facebook.com/profile.php?id=100064260602077" class="learn-more">BROWSE MORE</a></button>
+                    </div>
+                </div>
+                <div class="event">
+                    <!-- <img src="images/friday.jpg" alt="Sunday School Service"> -->
+                    <div class="event-info">
+                        <span class="event-date">07 Mar 2025</span>
+                        <h3>friday-service</h3>
+                        <p>Time: 17:30 | Weekly</p>
+                        <button><a href="https://www.facebook.com/profile.php?id=100064260602077" class="learn-more">BROWSE MORE</a></button>
+                    </div>
+                </div>
+                <div class="event">
+                    <!-- <img src="images/singing.jpg" alt="Sunday Worship Service"> -->
+                    <div class="event-info">
+                        <span class="event-date">09 Mar 2025</span>
+                        <h3>Saturday Singing Practice/Poems</h3>
+                        <p>Time: 14:00-| Weekly</p>
+                        <a href="#">View Details</a>
+                        <button><a href="https://fb.watch/x-i3ernlm7/" class="learn-more">VISIT</a></button>
+                    </div>
+                </div>
+                <div class="event">
+                    <!-- <img src="images/sundayworship.jpg" alt="Sunday School Plays"> -->
+                    <div class="event-info">
+                        <span class="event-date">10 Dec 2025</span>
+                        <h3>Sunday worship-service</h3>
+                        <p>Time: 08:30 - | Weekly</p>
+                        <button><a href="https://www.facebook.com/profile.php?id=100064260602077" class="learn-more">BROWSE MORE</a></button>
+                    </div>
+                </div>
+            </div>
+            <aside class="events-sidebar">
+                <div class="subscribe-box">
+                    <h3>📩 SUBSCRIBE TO PEACE TABERNACLE</h3>
+                    <p>Get updates from the latest posts straight to your mailbox!</p>
+                    <form id="subscription-form" action="https://script.google.com/macros/s/AKfycbxh7CVTzSPhtFjaNeGrEl_yRXspH986a9j7nqBsPwcl8VUStE8KuQvS0a7FNpvwyBtV/exec" method="POST">
+                        <input type="email" name="email" placeholder="Enter Email Address" required>
+                        <button type="submit">SUBSCRIBE</button>
+                    </form>
+                    <p id="response-message"></p>
+                </div>
+            </aside>
+    </section>
+    <script>
+        document.getElementById("subscription-form").addEventListener("submit", function(event) {
+            event.preventDefault();
+            const email = document.getElementById("email").value;
+            const scriptURL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
+
+            fetch(scriptURL, {
+                    method: "POST",
+                    body: new FormData(this)
+                })
+                .then(response => document.getElementById("response-message").innerText = "Subscription successful!")
+                .catch(error => document.getElementById("response-message").innerText = "Error! Try again.");
+        });
+    </script>
+</body>
+
+</html>

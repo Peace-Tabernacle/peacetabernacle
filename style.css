@@ -427,6 +427,9 @@ td:hover {
 
 /* Hero Section CSS */
 
+
+/* General Styling */
+
 .main {
     width: 100%;
     height: 100vh;
@@ -442,24 +445,25 @@ td:hover {
 
 .overlay-content {
     position: absolute;
-    top: 60%;
-    left: 40%;
+    top: 45%;
+    /* Adjusted for better positioning */
+    left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
     color: rgb(206, 236, 245);
     z-index: 2;
+    width: 90%;
+    /* Ensures text does not overflow */
 }
 
 
-/* 🔹 Apply a Beautiful Font */
+/* Apply a Beautiful Font */
 
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;600&display=swap');
 .overlay-content h1 {
     font-size: 3.5rem;
-    /* Bigger for impact */
     font-weight: 700;
     font-family: 'Playfair Display', serif;
-    /* Elegant Font */
     color: #fff;
     text-shadow: 3px 3px 15px rgba(0, 0, 0, 0.8);
     letter-spacing: 3px;
@@ -468,12 +472,12 @@ td:hover {
 .overlay-content h2 {
     font-size: 2.5rem;
     font-family: 'Poppins', sans-serif;
-    /* Modern Font */
     font-weight: 600;
     color: #ffdd57;
-    /* Gold highlight */
     text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
     text-transform: uppercase;
+    margin-bottom: 10px;
+    /* Space for text below */
 }
 
 .overlay-content p {
@@ -482,35 +486,20 @@ td:hover {
     color: #f8f8f8;
     text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
     font-style: italic;
-}
-
-
-/* 🔹 Mobile Responsiveness */
-
-@media (max-width: 768px) {
-    .overlay-content h1 {
-        font-size: 2.5rem;
-    }
-    .overlay-content h2 {
-        font-size: 2rem;
-    }
-    .overlay-content p {
-        font-size: 1.5rem;
-    }
+    margin-bottom: 20px;
+    /* Extra spacing */
 }
 
 
 /* Positioning the button independently */
 
 .main__btn {
-    position: down;
-    bottom: 20px;
-    /* Adjust this value to position the button at the bottom or elsewhere */
-    left: 80%;
-    transform: translateX(-10%);
-    /* This centers the button horizontally */
+    position: relative;
+    bottom: -10px;
+    /* Adjusted to be below text */
+    left: 50%;
+    transform: translateX(-50%);
     z-index: 3;
-    /* Ensures it is above other content */
 }
 
 .main__btn a {
@@ -537,6 +526,7 @@ td:hover {
     top: 0;
     left: 0;
     overflow: hidden;
+    z-index: 1;
 }
 
 .mySlides {
@@ -546,60 +536,37 @@ td:hover {
     display: flex;
     justify-content: center;
     align-items: center;
+    opacity: 1;
+    transition: opacity 1s ease-in-out;
 }
 
 .mySlides img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    /* Ensures full fit */
-    /* Fade effect */
-    .mySlides.fade {
-        opacity: 0;
-        animation: fadeEffect 1s ease-in-out;
+}
+
+@keyframes fadeEffect {
+    0% {
+        opacity: 1;
     }
-    @keyframes fadeEffect {
-        0% {
-            opacity: 0;
-        }
-        100% {
-            opacity: 1;
-        }
-    }
-    /* Optionally, slide effect */
-    .mySlides.slide {
-        opacity: 0;
-        animation: tileEffect 1s ease-in-out;
-    }
-    @keyframes slideEffect {
-        0% {
-            transform: translateX(100%);
-            opacity: 0;
-        }
-        100% {
-            transform: translateX(0);
-            opacity: 1;
-        }
+    100% {
+        opacity: 1;
     }
 }
 
 
-/* MObile Responsive */
+/* Mobile Responsiveness */
 
 @media (max-width: 768px) {
-    /* Make sure the images in the slideshow scale properly */
-    .mySlides img {
-        width: 100%;
-        height: auto;
-        /* Maintain aspect ratio on smaller screens */
-        object-fit: cover;
-        /* Ensure it still covers the full area */
-    }
     .overlay-content {
-        top: 50%;
+        width: 100%;
+        top: 40%;
+        /* Adjusted to ensure text is visible */
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+        padding: 10px;
     }
     .overlay-content h1 {
         font-size: 2rem;
@@ -608,16 +575,23 @@ td:hover {
         font-size: 1.5rem;
     }
     .overlay-content p {
-        font-size: 1.8rem;
+        font-size: 1.2rem;
     }
     .main__btn {
-        bottom: 10px;
+        position: relative;
+        bottom: -20px;
+        /* Adjusted to be below text */
         left: 50%;
         transform: translateX(-50%);
     }
     .main__btn a {
         font-size: 1rem;
         padding: 10px 20px;
+    }
+    .mySlides img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
     }
 }
 

@@ -60,28 +60,36 @@
                 <div class="subscribe-box">
                     <h3>📩 SUBSCRIBE TO PEACE TABERNACLE</h3>
                     <p>Get updates from the latest posts straight to your mailbox!</p>
-                    <form id="subscription-form" action="https://script.google.com/macros/s/AKfycbxh7CVTzSPhtFjaNeGrEl_yRXspH986a9j7nqBsPwcl8VUStE8KuQvS0a7FNpvwyBtV/exec" method="POST">
-                        <input type="email" name="email" placeholder="Enter Email Address" required>
+                    <form id="subscription-form">
+                        <input type="email" id="email" name="email" placeholder="Enter Email Address" required>
                         <button type="submit">SUBSCRIBE</button>
                     </form>
                     <p id="response-message"></p>
                 </div>
             </aside>
-    </section>
-    <script>
-        document.getElementById("subscription-form").addEventListener("submit", function(event) {
-            event.preventDefault();
-            const email = document.getElementById("email").value;
-            const scriptURL = "https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec";
 
-            fetch(scriptURL, {
-                    method: "POST",
-                    body: new FormData(this)
-                })
-                .then(response => document.getElementById("response-message").innerText = "Subscription successful!")
-                .catch(error => document.getElementById("response-message").innerText = "Error! Try again.");
-        });
-    </script>
+            <script>
+                document.getElementById("subscription-form").addEventListener("submit", function(event) {
+                    event.preventDefault();
+
+                    const email = document.getElementById("email").value;
+                    const scriptURL = "https://script.google.com/macros/s/AKfycbxnelQAmTq0IgAANpsrOeCXriczJ5Y6zdw6IPEnWNPs-tk-2Gq1tkGj_76o5igolt87/exec";
+                    const formData = new FormData(this);
+
+                    fetch(scriptURL, {
+                            method: "POST",
+                            body: formData
+                        })
+                        .then(response => {
+                            document.getElementById("response-message").innerText = "✅ Subscription successful!";
+                            document.getElementById("email").value = ""; // Clear the input field
+                        })
+                        .catch(error => {
+                            document.getElementById("response-message").innerText = "❌ Error! Try again.";
+                        });
+                });
+            </script>
+
 </body>
 
 </html>

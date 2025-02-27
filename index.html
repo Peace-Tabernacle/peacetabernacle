@@ -14,6 +14,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap" rel="stylesheet">
     <link rel="canonical" href="https://peace-tabernacle.netlify.app/">
+    <link rel="stylesheet" href="/node_modules/@fortawesome/fontawesome-free/css/all.min.css">
+
 
 </head>
 
@@ -283,81 +285,174 @@
 </div>
 </div>
 </div>
-
-
-
-<!--Footer Section-->
+<!-- Footer Section -->
 <div class="footer__container">
     <div class="footer__links">
         <div class="footer__link--wrapper">
             <div class="footer__link--items">
-                <!-- <h2>About Us</h2>
-                    <a href="/">contact us on +260976128168</a>
-                    <a href="/"> Mutendere East</a>
-                    <a href="/"></a>
-                    <a href="/">Lusaka</a>
-                    <a href="/">Zambia</a>
-                </div>
-                <div class="footer__link--items">
-                    <h2>About Us</h2>
-                    <a href="/">follow us on facebook</a>
-                    <a href="/"> Mutendere East</a>
-                    <a href="/"></a>
-                    <a href="/"></a>
-                    <a href="/"></a>
-                </div>
-            </div> -->
-                <div class="footer__link--wrapper">
-                    <div class="footer__link--items">
-                        <h2>About Us</h2>
-                        <a href="/">contact us +260972110921</a>
-                        <a href="/">/+260976128168</a>
-                        <a href="/"></a>
-                        <a href="/">peacetabernacle2016@gmail.com</a>
-                        <a href="/">Lusaka-zambia</a>
-                    </div>
-                    <!-- <div class="footer__link--items">
-                    <h2>About Us</h2>
-                    <a href="/"></a>
-                    <a href="/"></a>
-                    <a href="/"></a>
-                    <a href="/"></a>
-                    <a href="/">Mutendere East/ Ibex</a>
-                </div>
-            </div> -->
-                    <div class="social__media">
-                        <div class="social__media--wrap">
-                            <div class="footer__logo">
-                                <a href="/" id="footer__logo"><i class="fas fa-gem"></i></a>
-                            </div>
-                            <p class="website__rights">Peace@2016.All rights reserved
-                            </p>
-                            <div class="social__icons">
-                                <a href="" class="social__icons--links" target="_blank">
-                                    <i class="fab fa-facebook"></i>
-                                </a>
-                                <a href="" class="social__icons--links" target="_blank">
-                                    <i class="fab fa-instagram"></i>
-                                </a>
-                                <a href="" class="social__icons--links" target="_blank">
-                                    <i class="fab fa-youtube"></i>
-                                </a>
-                                <a href="" class="social__icons--links" target="_blank">
-                                    <i class="fab fa-twitter"></i>
+                <h2>more Infor:</h2>
+                <a href="tel:+260972110921">+260972110921</a>
+                <a href="tel:+260976128168">+260976128168</a>
+                <a href="mailto:peacetabernacle2016@gmail.com">peacetabernacle2016@gmail.com</a>
+                <p>Lusaka-Zambia</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Embedded Google Map (Full Width) -->
+    <div class="footer__map">
+        <iframe src="https://www.google.com/maps?q=Peace+Tabernacle,Lusaka,Zambia&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    </div>
+
+    <!-- Social Media Links -->
+    <div class="social__media">
+        <div class="social__media--wrap">
+            <p class="website__rights">Peace@2016. All rights reserved</p>
+            <div class="social__icons">
+                <a href="https://www.facebook.com/profile.php?id=100064260602077" class="social__icons--links" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="http://youtube.com/channel/UCveQdGwVEnYRFFxz3C73KUg" class="social__icons--links" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Subscription Form -->
+    <aside class="events-sidebar">
+        <div class="subscribe-box">
+            <h3>📩 SUBSCRIBE TO PEACE TABERNACLE</h3>
+            <p>Get updates from the latest posts straight to your mailbox!</p>
+            <form id="subscription-form">
+                <input type="email" id="email" name="email" placeholder="Enter Email Address" required>
+                <button type="submit">SUBSCRIBE</button>
+            </form>
+            <p id="response-message"></p>
+        </div>
+    </aside>
+</div>
+
+<style>
+    .footer__container {
+        background-color: #222;
+        color: #fff;
+        padding: 20px;
+        text-align: center;
+    }
+    
+    .footer__links {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .footer__link--items a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        margin: 5px 0;
+    }
+    
+    .footer__map {
+        width: 100%;
+        height: 400px;
+    }
+    
+    .footer__map iframe {
+        width: 100%;
+        height: 100%;
+        border-radius: 8px;
+    }
+    
+    .social__media {
+        margin-top: 20px;
+    }
+    
+    .social__icons {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .social__icons a {
+        color: #fff;
+        font-size: 24px;
+        text-decoration: none;
+    }
+    
+    .subscribe-box {
+        margin-top: 20px;
+        padding: 15px;
+        background: #333;
+        border-radius: 8px;
+    }
+    
+    .subscribe-box input {
+        width: 80%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 4px;
+    }
+    
+    .subscribe-box button {
+        background: #ffcc00;
+        color: #222;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    
+    @media screen and (max-width: 768px) {
+        .footer__links {
+            flex-direction: column;
+            align-items: center;
+        }
+        .subscribe-box input {
+            width: 100%;
+        }
+        .footer__map {
+            height: 250px;
+        }
+    }
+</style>
+
+<script>
+    document.getElementById("subscription-form").addEventListener("submit", function(event) {
+        event.preventDefault();
+
+        const email = document.getElementById("email").value;
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxnelQAmTq0IgAANpsrOeCXriczJ5Y6zdw6IPEnWNPs-tk-2Gq1tkGj_76o5igolt87/exec";
+        const formData = new FormData(this);
+
+        fetch(scriptURL, {
+                method: "POST",
+                body: formData
+            })
+            .then(response => {
+                document.getElementById("response-message").innerText = "✅ Subscription successful!";
+                document.getElementById("email").value = "";
+            })
+            .catch(error => {
+                document.getElementById("response-message").innerText = "❌ Error! Try again.";
+            });
+    });
+</script>
+
+</div>
+</div>
 
 
-                            </div>
-                        </div>
-
-
-                        <script src="app.js"></script>
-                        <!-- <script type="module">
+<script src="app.js"></script>
+<!-- <script type="module">
                                 // Import the functions you need from the SDKs you need import { initializeApp } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-app.js"; import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.3.1/firebase-analytics.js"; // TODO:
                                 Add SDKs for Firebase products that you want to use // https://firebase.google.com/docs/web/setup#available-libraries // Your web app's Firebase configuration // For Firebase JS SDK v7.20.0 and later, measurementId is optional
                                 const firebaseConfig = { apiKey: "AIzaSyCU4ApoqDwZHKsWnFXxv2q_S5cGR1Xxnhc", authDomain: "peacetabernacle-fa445.firebaseapp.com", projectId: "peacetabernacle-fa445", storageBucket: "peacetabernacle-fa445.firebasestorage.app",
                                 messagingSenderId: "319332297025", appId: "1:319332297025:web:6f392f8d5ff5e71cfd19c0", measurementId: "G-Y4X90RDSD4" }; // Initialize Firebase const app = initializeApp(firebaseConfig); const analytics = getAnalytics(app);
                             </script> -->
 
-                        </body>
+</body>
 
-                        </html>
+</html>

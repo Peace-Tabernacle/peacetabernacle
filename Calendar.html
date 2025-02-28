@@ -4,75 +4,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calendar</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="canonical" href="https://peace-tabernacle.netlify.app/">
-    <!-- Link your CSS -->
+    <title>Music - Peace Tabernacle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        
+        .music-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 10px;
+        }
+        
+        .quote {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .song {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        
+        .subscribe-box {
+            background-color: #eee;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        input[type="email"] {
+            width: 80%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        
+        button {
+            padding: 8px 15px;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .music-container {
+                width: 100%;
+                padding: 5px;
+            }
+            input[type="email"] {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <!-- Navbar Section -->
-    <nav class="navbar">
-        <ul class="navbar__menu">
-            <li class="navbar__item">
-                <a href="index.html" class="navbar__links">Home</a>
-            </li>
-            <li class="navbar__item">
-                <a href="Outreach.html" class="navbar__links">Outreach</a>
-            </li>
-            <li class="navbar__item">
-                <a href="News.html" class="navbar__links">News</a>
-            </li>
-            <li class="navbar__item">
-                <a href="Calendar.html" class="navbar__links">Calendar</a>
-            </li>
-            <li class="navbar__item">
-                <a href="Announcement.html" class="navbar__links">Announcements</a>
-        </ul>
-    </nav>
+    <div class="music-container">
+        <div class="quote">🎵 "6 You know, singing gives courage. You know that, don’t you? The soldiers, when they’re going to battle, you know what they do? They play music and sing, and things to give them courage. And when we’re going to battle, we sing, and—and it
+            gives us courage to go on. "-    65-1031A — Leadership     Rev. William Marrion Branham </div>
 
-    <div id="calendar"></div>
+        <h2>Songs</h2>
+        <div class="song">
+            <h3>Be Still and Know(congregational)</h3>
+            <audio controls>
+                <source src="audios/Be Still and Know.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="Be Still and Know.mp3" download>Download</a>
+        </div>
+
+        <div class="song">
+            <h3>You are Faithful</h3>
+            <audio controls>
+                <source src="audios/You are Faithful.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="You are Faithful.mp3" download>Download</a>
+        </div>
+        <div class="song">
+            <h3>Draw me nearer(congregational)</h3>
+            <audio controls>
+                <source src="audios/Draw me nearer.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="Draw me nearer.mp3" download>Download</a>
+        </div>
+        <div class="song">
+            <h3>At the Cross(congregational)</h3>
+            <audio controls>
+                <source src="audios/At the Cross.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="At the Cross.mp3" download>Download</a>
+        </div>
+        <div class="song">
+            <h3>In the Cross(congregational)</h3>
+            <audio controls>
+                <source src="audios/In the Cross.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="In the Cross.mp3" download>Download</a>
+        </div>
+        <div class="song">
+            <h3>when the Redeemed are gathering(congregational) </h3>
+            <audio controls>
+                <source src="audios/when the Redeemed are gathering .mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="when the Redeemed are gathering .mp3" download>Download</a>
+        </div>
+        <div class="song">
+            <h3>Take your burden to the Lord(congregational) </h3>
+            <audio controls>
+                <source src="audios/Take your burden to the Lord.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="Take your burden to the Lord.mp3" download>Download</a>
+        </div>
+        <div class="song">
+            <h3>You are the Most High God(congregational) </h3>
+            <audio controls>
+                <source src="audios/You are the Most High God.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="You are the Most High God.mp3" download>Download</a>
+        </div>
+        <div class="song">
+            <h3>Alina chikondi Ambuye(congregational) </h3>
+            <audio controls>
+                <source src="audios/Alina chikondi Ambuye.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="Alina chikondi Ambuye.mp3" download>Download</a>
+        </div>
+        <div class="song">
+            <h3>Lema Lema(congregational) </h3>
+            <audio controls>
+                <source src="audios/Lema Lema.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+            <a href="Lema Lema.mp3" download>Download</a>
+        </div>
+        <div class="song">
+            <h3>I am child of the King(congregational)</h3>
+            <audio controls>
+                <source src="audios/I am child of the King.mp3" type="audio/mpeg">          
+        </div>
+
+        <h3>More Songs:</h3>
+
+        <a href="http://youtube.com/channel/UCveQdGwVEnYRFFxz3C73KUg" target="_blank">YouTube</a>
+    </div>
+
+    <div class="subscribe-box">
+        <h3>📩 SUBSCRIBE TO PEACE TABERNACLE</h3>
+        <p>Get updates from the latest posts straight to your mailbox!</p>
+        <form id="subscription-form">
+            <input type="email" id="email" name="email" placeholder="Enter Email Address" required>
+            <button type="submit">SUBSCRIBE</button>
+        </form>
+        <p id="response-message"></p>
+    </div>
 
     <script>
-        function createCalendar(year) {
-            let calendarHTML = "";
-            const months = ["January", "February", "March", "April", "May", "June",
-                "July", "August", "September", "October", "November", "December"
-            ];
+        document.getElementById("subscription-form").addEventListener("submit", function(event) {
+            event.preventDefault();
 
-            for (let m = 0; m < 12; m++) {
-                let firstDay = new Date(year, m, 1).getDay();
-                let daysInMonth = new Date(year, m + 1, 0).getDate();
+            const email = document.getElementById("email").value;
+            const scriptURL = "https://script.google.com/macros/s/AKfycbxnelQAmTq0IgAANpsrOeCXriczJ5Y6zdw6IPEnWNPs-tk-2Gq1tkGj_76o5igolt87/exec";
+            const formData = new FormData(this);
 
-                calendarHTML += `<table border="1">
-                    <caption>${months[m]} ${year}</caption>
-                    <thead>
-                        <tr>
-                            <th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
-                        </tr>
-                    </thead>
-                    <tbody><tr>`;
-
-                for (let i = 0; i < firstDay; i++) {
-                    calendarHTML += `<td></td>`;
-                }
-
-                for (let day = 1; day <= daysInMonth; day++) {
-                    if ((firstDay + day - 1) % 7 === 0) {
-                        calendarHTML += `</tr><tr>`;
-                    }
-                    calendarHTML += `<td>${day}</td>`;
-                }
-
-                calendarHTML += `</tr></tbody></table><br>`;
-            }
-
-            document.getElementById("calendar").innerHTML = calendarHTML;
-        }
-
-        createCalendar(2025);
+            fetch(scriptURL, {
+                    method: "POST",
+                    body: formData
+                })
+                .then(response => {
+                    document.getElementById("response-message").innerText = "✅ Subscription successful!";
+                    document.getElementById("email").value = "";
+                })
+                .catch(error => {
+                    document.getElementById("response-message").innerText = "❌ Error! Try again.";
+                });
+        });
     </script>
-
 </body>
 
 </html>

@@ -563,7 +563,6 @@ td:hover {
     .overlay-content {
         width: 100%;
         top: 40%;
-        /* Adjusted to ensure text is visible */
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
@@ -581,7 +580,6 @@ td:hover {
     .main__btn {
         position: relative;
         bottom: -20px;
-        /* Adjusted to be below text */
         left: 50%;
         transform: translateX(-50%);
     }
@@ -589,10 +587,14 @@ td:hover {
         font-size: 1rem;
         padding: 10px 20px;
     }
+    /* Ensure images cover the entire viewport without distortion */
     .mySlides img {
-        width: 300%;
+        width: 100vw;
+        /* Make image width match viewport width */
         height: 100vh;
+        /* Make image height match viewport height */
         object-fit: cover;
+        /* Ensures image covers entire area without distortion */
     }
 }
 

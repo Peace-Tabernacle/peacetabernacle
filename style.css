@@ -589,7 +589,7 @@ td:hover {
         padding: 10px 20px;
     }
     .mySlides img {
-        width: 100%;
+        width: 60%;
         height: 100vh;
         object-fit: cover;
     }

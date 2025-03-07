@@ -525,6 +525,7 @@ td:hover {
     position: absolute;
     top: 0;
     left: 0;
+    right: 0;
     overflow: hidden;
     z-index: 1;
 }
@@ -589,7 +590,7 @@ td:hover {
         padding: 10px 20px;
     }
     .mySlides img {
-        width: 200%;
+        width: 300%;
         height: 100vh;
         object-fit: cover;
     }

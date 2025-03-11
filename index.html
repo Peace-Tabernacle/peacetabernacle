@@ -236,6 +236,117 @@
     </div>
     </div>
     </div>
+    <!-- Contact Section -->
+    <div class="contact">
+        <div class="contact__info">
+            <div class="contact__item">
+                <h3>Address</h3>
+                <p>Ibex Hill<br>Lusaka<br>00000</p>
+            </div>
+            <div class="contact__item">
+                <h3>Telephone</h3>
+                <p><a href="tel:+260976128168">+260976128168</a></p>
+            </div>
+            <div class="contact__item">
+                <h3>Website</h3>
+                <p><a href="https://youtube.com/channel/UCveQdGwVEnYRFFxz3C73KUg" target="_blank">YouTube Channel</a></p>
+            </div>
+        </div>
+
+        <!-- Embedded Google Map -->
+        <div class="footer__map">
+            <iframe src="https://www.google.com/maps?q=Peace+Tabernacle,Lusaka,Zambia&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy">
+        </iframe>
+        </div>
+    </div>
+
+    <!-- Social Media Links -->
+    <!-- <div class="social__media">
+        <div class="social__media--wrap">
+            <p class="website__rights">Peace@2016. All rights reserved</p>
+            <div class="social__icons">
+                <a href="https://www.facebook.com/profile.php?id=100064260602077" class="social__icons--links" target="_blank">
+                    <i class="fab fa-facebook"></i>
+                </a>
+                <a href="https://youtube.com/channel/UCveQdGwVEnYRFFxz3C73KUg" class="social__icons--links" target="_blank">
+                    <i class="fab fa-youtube"></i>
+                </a> -->
+    </div>
+    </div>
+    </div>
+
+    <!-- Styles -->
+    <style>
+        /* General Styling */
+        
+        .contact {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        /* Contact Info Layout */
+        
+        .contact__info {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 1000px;
+            margin-bottom: 20px;
+        }
+        
+        .contact__item {
+            flex: 1;
+            padding: 10px;
+        }
+        
+        .contact__item h3 {
+            border-bottom: 2px solid #6aaf08;
+            padding-bottom: 5px;
+            margin-bottom: 10px;
+        }
+        
+        .contact__item a {
+            color: #6aaf08;
+            text-decoration: none;
+        }
+        /* Google Map */
+        
+        .footer__map {
+            width: 100%;
+        }
+        /* Social Media Styling */
+        /*         
+        .social__media {
+            text-align: center;
+            padding: 20px;
+            background-color: #f1f1f1;
+        }
+         */
+        
+        .social__icons a {
+            margin: 0 10px;
+            color: #ffffff;
+            font-size: 24px;
+        }
+        /* Mobile Responsive Styles */
+        
+        @media screen and (max-width: 768px) {
+            .contact__info {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .contact__item {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .social__icons a {
+                font-size: 20px;
+            }
+        }
+    </style>
 
 
     </div>
@@ -268,20 +379,6 @@
 
 </html>
 
-<!-- 
-
-<div class="services">
-    <h1>End time message</h1>
-    <div class="services__container">
-        <div class="services__card">
-            <h2>Experience Bliss</h2>
-            <p>God bless you</p>
-            <button>Get Started</button>
-        </div>
-        <div class="services__card">
-            <h2>Are you Ready?</h2>
-            <p>Take a leap of faith</p>
-            <button>Get Started</button> -->
 </div>
 </div>
 </div>
@@ -290,83 +387,121 @@
     <div class="footer__links">
         <div class="footer__link--wrapper">
             <div class="footer__link--items">
-                <h2>more Infor:</h2>
+                <h2>More Info:</h2>
                 <a href="tel:+260972110921">+260972110921</a>
                 <a href="tel:+260976128168">+260976128168</a>
                 <a href="mailto:peacetabernacle2016@gmail.com">peacetabernacle2016@gmail.com</a>
-                <p>Lusaka-Zambia</p>
+                <p>Lusaka, Zambia</p>
             </div>
         </div>
-    </div>
 
-    <!-- Embedded Google Map (Full Width) -->
-    <div class="footer__map">
-        <iframe src="https://www.google.com/maps?q=Peace+Tabernacle,Lusaka,Zambia&output=embed" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="footer__link--wrapper">
+            <div class="footer__link--items">
+                <h2>Useful Links</h2>
+                <a href="#">About Us</a>
+                <a href="#">Privacy Policy</a>
+                <a href="#">FAQs</a>
+                <a href="#">Login</a>
+            </div>
+        </div>
+
+        <div class="footer__link--wrapper">
+            <div class="footer__link--items">
+                <h2>Subscribe</h2>
+                <p>Get updates from Peace Tabernacle.</p>
+                <form id="subscription-form">
+                    <input type="email" id="email" name="email" placeholder="Enter Email Address" required>
+                    <button type="submit">SUBSCRIBE</button>
+                </form>
+                <p id="response-message"></p>
+            </div>
+        </div>
     </div>
 
     <!-- Social Media Links -->
     <div class="social__media">
         <div class="social__media--wrap">
-            <p class="website__rights">Peace@2016. All rights reserved</p>
             <div class="social__icons">
-                <a href="https://www.facebook.com/profile.php?id=100064260602077" class="social__icons--links" target="_blank">
+                <a href="https://www.facebook.com/profile.php?id=100064260602077" target="_blank">
                     <i class="fab fa-facebook"></i>
                 </a>
-                <a href="http://youtube.com/channel/UCveQdGwVEnYRFFxz3C73KUg" class="social__icons--links" target="_blank">
+                <a href="https://youtube.com/channel/UCveQdGwVEnYRFFxz3C73KUg" target="_blank">
                     <i class="fab fa-youtube"></i>
                 </a>
+                <a href="#" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
             </div>
+            <p class="website__rights">Peace@2016. All rights reserved</p>
         </div>
     </div>
-
-    <!-- Subscription Form -->
-    <aside class="events-sidebar">
-        <div class="subscribe-box">
-            <h3>📩 SUBSCRIBE TO PEACE TABERNACLE</h3>
-            <p>Get updates from the latest posts straight to your mailbox!</p>
-            <form id="subscription-form">
-                <input type="email" id="email" name="email" placeholder="Enter Email Address" required>
-                <button type="submit">SUBSCRIBE</button>
-            </form>
-            <p id="response-message"></p>
-        </div>
-    </aside>
 </div>
 
+<!-- Styles -->
 <style>
+    /* Footer Styles */
+    
     .footer__container {
-        background-color: #222;
+        background-color: #111;
         color: #fff;
-        padding: 20px;
+        padding: 30px 10%;
         text-align: center;
     }
     
     .footer__links {
         display: flex;
-        justify-content: center;
+        justify-content: space-between;
         flex-wrap: wrap;
+        max-width: 1200px;
+        margin: auto;
     }
     
-    .footer__link--items a {
-        color: #fff;
+    .footer__link--wrapper {
+        flex: 1;
+        min-width: 250px;
+        margin-bottom: 20px;
+    }
+    
+    .footer__link--items h2 {
+        color: #6aaf08;
+        margin-bottom: 10px;
+    }
+    
+    .footer__link--items a,
+    .footer__link--items p {
+        color: #ccc;
         text-decoration: none;
         display: block;
-        margin: 5px 0;
+        margin-bottom: 5px;
     }
     
-    .footer__map {
-        width: 100%;
-        height: 400px;
+    .footer__link--items a:hover {
+        color: #fff;
+    }
+    /* Subscribe Box */
+    
+    #subscription-form input {
+        width: 80%;
+        padding: 8px;
+        margin-bottom: 10px;
+        border: none;
+        border-radius: 4px;
     }
     
-    .footer__map iframe {
-        width: 100%;
-        height: 100%;
-        border-radius: 8px;
+    #subscription-form button {
+        background: #6aaf08;
+        color: #111;
+        padding: 8px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
     }
+    /* Social Media Icons */
     
     .social__media {
         margin-top: 20px;
+        padding-top: 10px;
+        border-top: 1px solid #444;
     }
     
     .social__icons {
@@ -376,49 +511,27 @@
     }
     
     .social__icons a {
-        color: #fff;
+        color: #f8f8f8;
         font-size: 24px;
         text-decoration: none;
     }
     
-    .subscribe-box {
-        margin-top: 20px;
-        padding: 15px;
-        background: #333;
-        border-radius: 8px;
-    }
-    
-    .subscribe-box input {
-        width: 80%;
-        padding: 8px;
-        margin-bottom: 10px;
-        border: none;
-        border-radius: 4px;
-    }
-    
-    .subscribe-box button {
-        background: #ffcc00;
-        color: #222;
-        padding: 10px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
+    .social__icons a:hover {
+        color: #fff;
     }
     
     @media screen and (max-width: 768px) {
         .footer__links {
             flex-direction: column;
-            align-items: center;
+            text-align: center;
         }
-        .subscribe-box input {
+        #subscription-form input {
             width: 100%;
-        }
-        .footer__map {
-            height: 250px;
         }
     }
 </style>
 
+<!-- JavaScript for Subscription Form -->
 <script>
     document.getElementById("subscription-form").addEventListener("submit", function(event) {
         event.preventDefault();

@@ -11,9 +11,6 @@ body {
     /* Adjusts the image size to 50% of the screen */
 }
 
-
-/* Main Navbar */
-
 .navbar {
     background: #00FF00;
     height: 80px;
@@ -54,8 +51,10 @@ body {
 
 .navbar__logo-img {
     width: 100px;
+    /* Small logo size */
     height: auto;
     margin-right: 8px;
+    /* Adds space between the logo and text */
 }
 
 .fa-gem {
@@ -63,12 +62,14 @@ body {
 }
 
 
-/* About Us Section */
+/* ABOUT US */
 
 #about-us {
     background-color: #f8f9fa;
+    /* Light background color */
     padding: 40px;
     text-align: center;
+    /* Center-align the text */
 }
 
 .about-us-container {
@@ -76,50 +77,67 @@ body {
     margin: 0 auto;
     padding: 20px;
     background-color: #ffffff;
+    /* White background for the container */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Light shadow for the container */
     border-radius: 10px;
+    /* Rounded corners for the container */
 }
 
 .about-us-container h2 {
     font-size: 2.5rem;
+    /* Large font size for the main heading */
     font-weight: bold;
+    /* Bold text */
     margin-bottom: 20px;
+    /* Space below the heading */
 }
 
 .about-us-container p {
     font-size: 1.2rem;
+    /* Medium font size for paragraph text */
     line-height: 1.6;
+    /* Increase line height for better readability */
     margin-bottom: 20px;
+    /* Space below the paragraph */
 }
 
 .about-us-container h3 {
     font-size: 1.8rem;
+    /* Slightly smaller heading size */
     margin-top: 20px;
+    /* Space above the heading */
     margin-bottom: 10px;
+    /* Space below the heading */
 }
 
 .about-us-container ul {
     list-style-type: none;
+    /* Remove default list bullets */
     padding: 0;
+    /* Remove padding */
     font-size: 1.2rem;
+    /* Set font size for list items */
 }
 
 .about-us-container ul li {
     margin: 10px 0;
+    /* Add vertical space between list items */
 }
 
 .about-us-container a {
     color: #007bff;
+    /* Set link color to blue */
     text-decoration: none;
+    /* Remove underline from links */
 }
 
 .about-us-container a:hover {
     text-decoration: underline;
+    /* Add underline on hover */
     color: #0056b3;
+    /* Change link color on hover */
 }
-
-
-/* Navbar Menu */
 
 .navbar__menu {
     display: flex;
@@ -176,9 +194,6 @@ body {
     transition: all 0.35s ease;
 }
 
-
-/* Mobile Navbar Styles */
-
 @media screen and (max-width: 960px) {
     .navbar__container {
         display: flex;
@@ -189,51 +204,40 @@ body {
         max-width: 1300px;
         padding: 0;
     }
-    /* Updated mobile navbar menu style */
     .navbar__menu {
         display: grid;
         grid-template-columns: auto;
         margin: 0;
-        width: 60%;
-        /* Takes up only 60% of the screen width */
-        height: 100vh;
-        position: fixed;
-        top: 0;
-        right: -60%;
-        /* Initially off-screen to the right */
+        width: 100%;
+        height: 90vh;
+        /* Covers full mobile screen */
+        position: absolute;
+        top: -90vh;
+        /* Hides menu initially */
         opacity: 0;
         transition: all 0.5s ease;
-        /* Smooth transition */
-        z-index: 99;
+        z-index: -1;
         background: rgba(19, 19, 19, 0.8);
-        box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
-        /* Optional shadow */
+        /* Transparent dark background */
     }
     .navbar__menu.active {
-        right: 0;
-        /* Brings the menu into view from the right */
+        top: 0;
+        /* Brings menu into view */
         opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 99;
+        height: 100vh;
+        font-size: 1.6rem;
     }
     #navbar__logo {
         padding-left: 25px;
     }
-    /* Navbar toggle button animation */
     .navbar__toggle .bar {
         width: 25px;
         height: 3px;
         margin: 5px auto;
         transition: all 0.3s ease-in-out;
         background: #fff;
-    }
-    /* Mobile Menu Toggle Animation */
-    #mobile-menu.is-active .bar:nth-child(2) {
-        opacity: 0;
-    }
-    #mobile-menu.is-active .bar:nth-child(1) {
-        transform: translate(8px) rotate(45deg);
-    }
-    #mobile-menu.is-active .bar:nth-child(3) {
-        transform: translate(-8px) rotate(-45deg);
     }
     .navbar__item {
         width: 100%;
@@ -262,6 +266,23 @@ body {
         height: 80px;
         margin: 0;
     }
+}
+
+.navbar__toggle .bar {
+    display: block;
+    cursor: pointer;
+}
+
+#mobile-menu.is-active.bar:nth-child(2) {
+    opacity: 0;
+}
+
+#mobile-menu.is active.bar:nth-child(1) {
+    transform: translate(8px) rotate(45deg);
+}
+
+#mobile-menu.is active.bar:nth-child(3) {
+    transform: translate(-8px) rotate(-45deg);
 }
 
 

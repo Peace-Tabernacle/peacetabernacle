@@ -12,7 +12,7 @@ body {
 }
 
 .navbar {
-    background: #4adf4a;
+    background: #00FF00;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -613,7 +613,7 @@ body {
 }
 
 .service h1 {
-    font-size: 2rem;
+    font-size: 1.2rem;
     display: block;
     margin-bottom: 10px;
 }
@@ -630,7 +630,7 @@ body {
 }
 
 .service button {
-    background: #f77062;
+    background: #00FF00;
     color: white;
     padding: 10px 20px;
     border: none;

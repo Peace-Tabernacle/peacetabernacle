@@ -493,7 +493,7 @@ body {
     }
     /* Ensure images cover the entire viewport without distortion */
     .mySlides img {
-        width: 60vw;
+        width: 100vw;
         /* Make image width match viewport width */
         height: 100vh;
         /* Make image height match viewport height */

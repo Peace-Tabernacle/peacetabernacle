@@ -408,13 +408,56 @@ body {
     object-fit: cover;
 }
 
+
+/* Fade Effect */
+
 @keyframes fadeEffect {
-    0% {
+    from {
+        opacity: 0;
+    }
+    to {
         opacity: 1;
     }
-    100% {
+}
+
+.fade {
+    animation: fadeEffect 1.5s ease-in-out;
+}
+
+
+/* Zoom Effect */
+
+@keyframes zoomEffect {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
         opacity: 1;
     }
+}
+
+.zoom {
+    animation: zoomEffect 1.5s ease-in-out;
+}
+
+
+/* Slide Effect */
+
+@keyframes slideEffect {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.slide {
+    animation: slideEffect 1.5s ease-in-out;
 }
 
 
@@ -450,7 +493,7 @@ body {
     }
     /* Ensure images cover the entire viewport without distortion */
     .mySlides img {
-        width: 100vw;
+        width: 60vw;
         /* Make image width match viewport width */
         height: 100vh;
         /* Make image height match viewport height */

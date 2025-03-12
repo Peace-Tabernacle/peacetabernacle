@@ -68,13 +68,15 @@
             <div class="overlay-content">
                 <h1>WELCOME TO</h1>
                 <h2>PEACE TABERNACLE THE BRIDE’S MINISTRIES</h2>
-                <p>GOD BLESS YOU ALL</p>
+
                 <button class="main__btn"><a href="about-us.html">About Us</a></button>
             </div>
             <div class="slideshow-container">
                 <div class="mySlides fade">
                     <img src="image/love1.jpg" alt="Lufunsa2">
+
                 </div>
+
                 <div class="mySlides fade">
                     <img src="image/love2.jpg" alt="Lufunsa3">
                 </div>
@@ -361,21 +363,29 @@
 
         function showSlides() {
             let slides = document.getElementsByClassName("mySlides");
+
             for (let i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-                slides[i].classList.remove('fade', 'slide');
+                slides[i].style.display = "none"; // Hide all slides
+                slides[i].classList.remove('fade', 'zoom', 'slide'); // Remove old effects
             }
+
             slideIndex++;
             if (slideIndex > slides.length) {
                 slideIndex = 1;
             }
+
+            // Show the current slide
             slides[slideIndex - 1].style.display = "block";
-            slides[slideIndex - 1].classList.add('zoom');
-            const transitionEffect = 'zoom';
-            slides[slideIndex - 1].classList.add(transitionEffect);
-            setTimeout(showSlides, 3000);
+
+            // Randomly select an effect
+            let effects = ['fade', 'zoom', 'slide'];
+            let randomEffect = effects[Math.floor(Math.random() * effects.length)];
+            slides[slideIndex - 1].classList.add(randomEffect);
+
+            setTimeout(showSlides, 3000); // Change slide every 3 seconds
         }
     </script>
+
 </body>
 
 </html>

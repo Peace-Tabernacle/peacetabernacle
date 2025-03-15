@@ -13,14 +13,10 @@ document.addEventListener("DOMContentLoaded", function() {
     const mobileMenu = document.getElementById("mobile-menu");
     const navMenu = document.querySelector(".navbar__menu");
 
-    mobileMenu.addEventListener("click", () => {
+    mobileMenu.addEventListener("click", function() {
         navMenu.classList.toggle("active");
-    });
 
-    // Close menu when clicking outside
-    document.addEventListener("click", (event) => {
-        if (!navMenu.contains(event.target) && !mobileMenu.contains(event.target)) {
-            navMenu.classList.remove("active");
-        }
+        // Toggle animation for bars
+        mobileMenu.classList.toggle("is-active");
     });
 });

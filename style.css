@@ -12,7 +12,7 @@ body {
 }
 
 .navbar {
-    background: #00FF00;
+    background: #1849cf;
     height: 80px;
     display: flex;
     justify-content: center;
@@ -36,7 +36,7 @@ body {
 
 #navbar__logo {
     background-color: #ff8177;
-    background-image: linear-gradient(to top, #084aff 0%, #015fec 100%);
+    background-image: linear-gradient(to top, #e8ebf3 0%, #f30410 100%);
     background-size: 100%;
     -webkit-background-clip: text;
     -moz-background-clip: text;
@@ -673,7 +673,7 @@ body {
 }
 
 .service button {
-    background: #00FF00;
+    background: #2669e6;
     color: white;
     padding: 10px 20px;
     border: none;

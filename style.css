@@ -491,14 +491,13 @@ body {
         font-size: 1rem;
         padding: 10px 20px;
     }
-    /* Ensure images cover the entire viewport without distortion */
+    /* Ensure images fill the viewport without distortion */
     .mySlides img {
         width: 100vw;
-        /* Make image width match viewport width */
         height: 100vh;
-        /* Make image height match viewport height */
-        object-fit: cover;
-        /* Ensures image covers entire area without distortion */
+        object-fit: contain;
+        /* Keeps entire image visible without cropping */
+        display: block;
     }
 }
 
@@ -673,7 +672,7 @@ body {
 }
 
 .service button {
-    background: #2669e6;
+    background: #26e0e6;
     color: white;
     padding: 10px 20px;
     border: none;

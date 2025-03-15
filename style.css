@@ -491,12 +491,12 @@ body {
         font-size: 1rem;
         padding: 10px 20px;
     }
-    /* Ensure images fill the viewport without distortion */
+    /* Ensure images cover the full screen without white spaces */
     .mySlides img {
         width: 100vw;
         height: 100vh;
-        object-fit: contain;
-        /* Keeps entire image visible without cropping */
+        object-fit: cover;
+        /* Ensures the image fully covers the screen */
         display: block;
     }
 }

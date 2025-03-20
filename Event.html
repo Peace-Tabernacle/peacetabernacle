@@ -6,6 +6,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Upcoming Events - Peace Tabernacle</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        .event-item img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .news-container {
+                width: 95%;
+                /* Use more of the screen width */
+                padding: 15px;
+                /* Reduce padding for smaller screens */
+            }
+            .event-item img {
+                width: 100%;
+                /* Make the image responsive */
+                height: auto;
+                /* Keep aspect ratio */
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -18,39 +41,42 @@
             <p>The most awaited events by our church, indoor or outdoor.</p>
 
             <div class="event-list">
-                <div class="event">
-                    <!-- <img src="images/Wednesday.jpg" alt="Wednesday Service"> -->
+                <div class="event-item">
                     <div class="event-info">
                         <span class="event-date">5 March 2025</span>
                         <h3>Wednesday Service</h3>
+
+                        <img src="images/Wednesday.jpg" alt="Wednesday Service">
                         <p>Time: 17:30 - | Weekly</p>
                         <button><a href="https://www.facebook.com/profile.php?id=100064260602077" class="learn-more">BROWSE MORE</a></button>
                     </div>
                 </div>
-                <div class="event">
-                    <!-- <img src="images/friday.jpg" alt="Sunday School Service"> -->
+                <div class="event-item">
                     <div class="event-info">
                         <span class="event-date">07 Mar 2025</span>
-                        <h3>friday-service</h3>
+                        <h3>Friday Service</h3>
+
+                        <img src="images/friday (2).jpg" alt="Sunday School Service">
                         <p>Time: 17:30 | Weekly</p>
                         <button><a href="https://www.facebook.com/profile.php?id=100064260602077" class="learn-more">BROWSE MORE</a></button>
                     </div>
                 </div>
-                <div class="event">
-                    <!-- <img src="images/singing.jpg" alt="Sunday Worship Service"> -->
+                <div class="event-item">
                     <div class="event-info">
                         <span class="event-date">09 Mar 2025</span>
                         <h3>Saturday Singing Practice/Poems</h3>
+
+                        <img src="images/poems.jpg" alt="Sunday Worship Service">
                         <p>Time: 14:00-| Weekly</p>
                         <a href="#">View Details</a>
                         <button><a href="https://fb.watch/x-i3ernlm7/" class="learn-more">VISIT</a></button>
                     </div>
                 </div>
-                <div class="event">
-                    <!-- <img src="images/sundayworship.jpg" alt="Sunday School Plays"> -->
+                <div class="event-item">
                     <div class="event-info">
                         <span class="event-date">10 Dec 2025</span>
-                        <h3>Sunday worship-service</h3>
+                        <h3>Sunday worship Service</h3>
+                        <img src="images/sunday.jpg" alt="Sunday School Plays">
                         <p>Time: 08:30 - | Weekly</p>
                         <button><a href="https://www.facebook.com/profile.php?id=100064260602077" class="learn-more">BROWSE MORE</a></button>
                     </div>

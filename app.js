@@ -27,3 +27,14 @@ function doPost(e) {
         return ContentService.createTextOutput("Error: No email provided").setMimeType(ContentService.MimeType.TEXT);
     }
 }
+
+function sendEmailUpdate() {
+    var email = "recipient@example.com"; // Set your recipient email
+    var subject = "Your Subject Here";
+    var body = "Email body content goes here...";
+
+    // Send the email
+    MailApp.sendEmail(email, subject, body);
+
+    Logger.log("Email sent to: " + email);
+}

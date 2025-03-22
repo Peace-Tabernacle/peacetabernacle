@@ -99,10 +99,14 @@
                 document.getElementById("subscription-form").addEventListener("submit", function(event) {
                     event.preventDefault();
 
-                    const email = document.getElementById("email").value;
+                    const email = document.getElementById("email").value; // Get email value
                     const scriptURL = "https://script.google.com/macros/s/AKfycbxnelQAmTq0IgAANpsrOeCXriczJ5Y6zdw6IPEnWNPs-tk-2Gq1tkGj_76o5igolt87/exec";
-                    const formData = new FormData(this);
 
+                    // Create form data with the email as a parameter
+                    const formData = new FormData();
+                    formData.append('email', email); // Append the email to the formData
+
+                    // Use fetch to send data to Google Apps Script
                     fetch(scriptURL, {
                             method: "POST",
                             body: formData

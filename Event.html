@@ -96,29 +96,33 @@
             </aside>
 
             <script>
-                document.getElementById("subscription-form").addEventListener("submit", function(event) {
-                    event.preventDefault();
+                function doPost(e) {
+                    var email = e.parameter.email;
 
-                    const email = document.getElementById("email").value; // Get email value
-                    const scriptURL = "https://script.google.com/macros/s/AKfycbxnelQAmTq0IgAANpsrOeCXriczJ5Y6zdw6IPEnWNPs-tk-2Gq1tkGj_76o5igolt87/exec";
+                    if (email) {
+                        // Send a confirmation email
+                        var subject = "Subscription Confirmation";
+                        var body = "Thank you for subscribing to our updates!";
 
-                    // Create form data with the email as a parameter
-                    const formData = new FormData();
-                    formData.append('email', email); // Append the email to the formData
-
-                    // Use fetch to send data to Google Apps Script
-                    fetch(scriptURL, {
-                            method: "POST",
-                            body: formData
-                        })
-                        .then(response => {
-                            document.getElementById("response-message").innerText = "✅ Subscription successful!";
-                            document.getElementById("email").value = ""; // Clear the input field
-                        })
-                        .catch(error => {
-                            document.getElementById("response-message").innerText = "❌ Error! Try again.";
+                        // Use MailApp to send the email
+                        MailApp.sendEmail({
+                            to: email,
+                            subject: subject,
+                            body: body,
+                            from: peacetabernacle2016 @gmail.com // Ensure this is your own domain or a credible sender
+                            name: "Your Website Name", // Set a friendly sender name
+                            htmlBody: "<p>Thank you for subscribing to our updates!</p>", // HTML content for better presentation
                         });
-                });
+
+                        // Log the subscription to the Google Sheet
+                        var sheet = SpreadsheetApp.openById("1lOVkt5sCHmz7C16HKfEhabO4ZEgsTHU_TcsUGjodrs8").getActiveSheet();
+                        sheet.appendRow([new Date(), email]);
+
+                        return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
+                    } else {
+                        return ContentService.createTextOutput("Error: No email provided").setMimeType(ContentService.MimeType.TEXT);
+                    }
+                }
             </script>
 
 </body>

@@ -38,3 +38,32 @@ function sendEmailUpdate() {
 
     Logger.log("Email sent to: " + email);
 }
+
+function doPost(e) {
+    var email = e.parameter.email;
+
+    if (email) {
+        // Send a confirmation email
+        var subject = "Subscription Confirmation";
+        var body = "Thank you for subscribing to our updates!";
+
+        // Use MailApp to send the email
+        MailApp.sendEmail({
+            to: email,
+            subject: subject,
+            body: body,
+            from: "peacetabernacle2016@gmail.com", // Use a valid email address
+            replyTo: "info@yourwebsite.com", // A reply-to address (use your website's email once you upgrade)
+            name: "Your Website Name", // A friendly sender name
+            htmlBody: "<p>Thank you for subscribing to our updates! We will keep you informed about the latest news.</p><br><p>If you would like to unsubscribe, please click <a href='[UNSUBSCRIBE_LINK]'>here</a>.</p>", // HTML content for better presentation
+        });
+
+        // Log the subscription to the Google Sheet
+        var sheet = SpreadsheetApp.openById("1lOVkt5sCHmz7C16HKfEhabO4ZEgsTHU_TcsUGjodrs8").getActiveSheet();
+        sheet.appendRow([new Date(), email]);
+
+        return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
+    } else {
+        return ContentService.createTextOutput("Error: No email provided").setMimeType(ContentService.MimeType.TEXT);
+    }
+}

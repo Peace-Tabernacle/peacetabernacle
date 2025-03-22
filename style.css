@@ -12,9 +12,6 @@ body {
 }
 
 
-/* NAVBAR */
-
-
 /* Navbar Styling */
 
 .navbar {
@@ -100,8 +97,12 @@ body {
 
 /* Navbar Menu */
 
+
+/* Navbar Menu - Desktop (Hidden by Default) */
+
 .navbar__menu {
     display: flex;
+    /* Remove from desktop */
     align-items: center;
     list-style: none;
     text-align: center;
@@ -109,7 +110,7 @@ body {
 }
 
 .navbar__links {
-    color: #e2b045;
+    color: #fffefc;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -121,6 +122,11 @@ body {
 .navbar__links:hover {
     color: #f77062;
     transition: all 0.35s ease;
+}
+
+.navbar__toggle {
+    display: none;
+    /* Hide on desktop */
 }
 
 
@@ -163,46 +169,34 @@ body {
 /* Mobile View */
 
 @media screen and (max-width: 960px) {
-    /* Updated Mobile Menu */
     .navbar__menu {
         display: grid;
+        /* Ensure menu appears on mobile */
         grid-template-columns: auto;
         width: 90%;
-        /* Adjusted width to be more compact like Eastlea */
         max-width: 350px;
-        /* Maximum width of the box */
         height: auto;
-        /* Allows flexible height */
         position: absolute;
         top: 72px;
-        /* Position just below the navbar */
         left: 45%;
-        /* Center horizontally */
         transform: translateX(-50%);
-        /* Center it exactly */
         opacity: 0;
-        transition: all 0.5s ease;
+        pointer-events: none;
+        /* Prevent clicks when hidden */
+        transition: opacity 0.5s ease;
         z-index: 1000;
-        /* Ensure it's above other content */
-        /* background: rgba(19, 19, 19, 0.95); */
-        /* Dark background */
         border-radius: 10px;
-        /* Rounded edges */
-        /* box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2); */
         padding: 10px 0;
-        /* Padding inside the box */
-        gap: 0.5px;
-        /* Adjust spacing between items */
+        gap: 0.001px;
     }
     /* Active state when the menu is shown */
     .navbar__menu.active {
         opacity: 1;
-        z-index: 1000;
+        pointer-events: auto;
+        /* Enable clicks when active */
         max-height: 400px;
-        /* Set a max height to make the box more compact */
         font-size: 1.2rem;
         height: auto;
-        /* Keep auto to allow the box to expand with content */
     }
     /* Menu Item Styling */
     .navbar__menu li {
@@ -210,17 +204,13 @@ body {
         padding: 1px;
         text-align: center;
         background: #fff;
-        /* White background for items */
         border-radius: 2px;
         margin: 1px 0;
-        /* Space between items */
-        /* box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); */
     }
     .navbar__links {
         text-align: center;
         width: 80%;
         color: rgb(72, 81, 204);
-        /* Text color for items */
         padding: 1rem 0;
         display: block;
         font-weight: bold;

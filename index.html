@@ -60,6 +60,11 @@
                 <li class="navbar__item">
                     <a href="/Testimonies.html" class="navbar__links">Testimonies</a>
                 </li>
+                <li class="navbar__item">
+                    <a href="/Sermons.html" class="navbar__links">Sermons</a>
+                </li>
+
+
             </ul>
         </div>
     </nav>
@@ -182,12 +187,93 @@
         </div>
     </div>
 
-
-
-    <!-- <h1>LIVE STREAMING WILL START IN</h1>
+    <h1>LIVE STREAMING WILL START IN</h1>
     <div class="countdown">
-        <span>Days</span> <span>Hours</span> <span>Minutes</span> <span>Seconds</span>
-    </div> -->
+        <div>
+            <p id="days">00</p>
+            <span>Days</span>
+        </div>
+        <div>
+            <p id="hours">00</p>
+            <span>Hours</span>
+        </div>
+        <div>
+            <p id="minutes">00</p>
+            <span>Minutes</span>
+        </div>
+        <div>
+            <p id="seconds">00</p>
+            <span>Seconds</span>
+        </div>
+    </div>
+    <script>
+        function getNextStreamDate() {
+            const now = new Date();
+            const streamTimes = [{
+                    day: 3,
+                    hour: 17,
+                    minute: 30
+                }, // Wednesday 17:30
+                {
+                    day: 5,
+                    hour: 17,
+                    minute: 30
+                }, // Friday 17:30
+                {
+                    day: 0,
+                    hour: 8,
+                    minute: 45
+                } // Sunday 08:45
+            ];
+
+            let nextStream = null;
+
+            for (const stream of streamTimes) {
+                let target = new Date();
+                target.setHours(stream.hour, stream.minute, 0, 0);
+                target.setDate(now.getDate() + ((stream.day - now.getDay() + 7) % 7));
+
+                if (target < now) {
+                    target.setDate(target.getDate() + 7);
+                }
+
+                if (!nextStream || target < nextStream) {
+                    nextStream = target;
+                }
+            }
+
+            return nextStream;
+        }
+
+        function updateCountdown() {
+            const targetDate = getNextStreamDate();
+            const now = new Date();
+            const timeDiff = targetDate - now;
+
+            if (timeDiff <= 0) {
+                document.querySelector(".countdown").innerHTML = "🔴 Live Streaming Now!";
+                return;
+            }
+
+            const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+            document.getElementById("days").textContent = String(days).padStart(2, "0");
+            document.getElementById("hours").textContent = String(hours).padStart(2, "0");
+            document.getElementById("minutes").textContent = String(minutes).padStart(2, "0");
+            document.getElementById("seconds").textContent = String(seconds).padStart(2, "0");
+
+            setTimeout(updateCountdown, 1000);
+        }
+
+        updateCountdown();
+    </script>
+
+
+
+
 
     <!--Peace Tabernacle -->
     <div class="peace">
@@ -324,6 +410,86 @@
                 <p><a href="https://youtube.com/channel/UCveQdGwVEnYRFFxz3C73KUg" target="_blank">YouTube Channel</a></p>
             </div>
         </div>
+        <!-- Sermons -->
+        <section class="sermons">
+            <h2>RECENT SERMONS</h2>
+            <div class="sermon-container">
+                <!-- Featured Sermon (Left Side) -->
+                <div class="sermon-featured">
+                    <img src="testimonies/a.jpeg" alt="And Then Jesus Stopped">
+                    <h3>THE SURE FOUNDATION FOR THE MASTERPIECE/h3>
+                        <p><i class="fas fa-calendar-alt"></i> 2025-03-23 — <strong>Pastor Mwanza</strong></p>
+                        <div class="sermon-icons">
+                            <a href="#"><i class="fas fa-play"></i></a>
+                            <a href="#"><i class="fas fa-download"></i></a>
+                        </div>
+                </div>
+
+                <!-- Grid of Other Sermons (Right Side) -->
+                <div class="sermon-grid">
+                    <div class="sermon-item">
+                        <img src="testimonies/c.jpeg" alt="Commissioned To Pray One For Another">
+                        <h4>And They overcome Him By The Blood Of The Lamb</h4>
+                        <p><i class="fas fa-calendar-alt"></i> 2025-03-21</p>
+                    </div>
+                    <div class="sermon-item">
+                        <img src="testimonies/d.jpeg" alt="Prayer Has GPS">
+                        <h4>I Know My Redeemer Liveth</h4>
+                        <p><i class="fas fa-calendar-alt"></i> 2025-03-16</p>
+                    </div>
+                    <div class="sermon-item">
+                        <img src="testimonies/e.jpeg" alt="Pray Always">
+                        <h4>We Are Not Consumed</h4>
+                        <p><i class="fas fa-calendar-alt"></i> 2025-03-14</p>
+                    </div>
+                    <div class="sermon-item">
+                        <img src="testimonies/b.jpeg" alt="Where Is That God? Pt3">
+                        <h4>The Position Of A believer</h4>
+                        <p><i class="fas fa-calendar-alt"></i> 2025-02-23</p>
+                    </div>
+                    <div class="sermon-item">
+                        <img src="testimonies/f.jpeg" alt="God Governs The Affairs Of Men">
+                        <h4>God Governs The Affairs Of Men</h4>
+                        <p><i class="fas fa-calendar-alt"></i> 2025-03-07</p>
+                    </div>
+                    <div class="sermon-item">
+                        <img src="testimonies/g.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                        <h4>Is Your Lifeworth Of The Gospel</h4>
+                        <p><i class="fas fa-calendar-alt"></i> 2025-03-02</p>
+                    </div>
+                </div>
+            </div>
+            <a href="sermon.html" class="more-sermons">MORE SERMONS</a>
+        </section>
+
+        <script>
+            document.addEventListener("DOMContentLoaded", function() {
+                const section = document.querySelector(".sermons");
+                const featured = document.querySelector(".sermon-featured");
+                const grid = document.querySelector(".sermon-grid");
+
+                function revealOnScroll() {
+                    let sectionPosition = section.getBoundingClientRect().top;
+                    let screenHeight = window.innerHeight;
+
+                    if (sectionPosition < screenHeight - 100) {
+                        section.classList.add("visible");
+                        featured.classList.add("visible");
+                        grid.classList.add("visible");
+                    } else {
+                        // Remove the class when scrolling back up so it can trigger again
+                        section.classList.remove("visible");
+                        featured.classList.remove("visible");
+                        grid.classList.remove("visible");
+                    }
+                }
+
+                window.addEventListener("scroll", revealOnScroll);
+            });
+        </script>
+
+
+
 
         <!-- Embedded Google Map -->
         <div class="footer__map">
@@ -332,17 +498,7 @@
         </div>
     </div>
 
-    <!-- Social Media Links -->
-    <!-- <div class="social__media">
-        <div class="social__media--wrap">
-            <p class="website__rights">Peace@2016. All rights reserved</p>
-            <div class="social__icons">
-                <a href="https://www.facebook.com/profile.php?id=100064260602077" class="social__icons--links" target="_blank">
-                    <i class="fab fa-facebook"></i>
-                </a>
-                <a href="https://youtube.com/channel/UCveQdGwVEnYRFFxz3C73KUg" class="social__icons--links" target="_blank">
-                    <i class="fab fa-youtube"></i>
-                </a> -->
+
     </div>
     </div>
     </div>

@@ -1281,6 +1281,10 @@
         transition: opacity 1s ease-out, transform 1s ease-out;
     }
     
+    .sermon-icons {
+        padding: 8px 15px;
+    }
+    
     .sermons.visible {
         opacity: 1;
         transform: translateX(0);
@@ -1400,5 +1404,8 @@
             font-weight: 600;
             margin-bottom: 20px;
             text-transform: uppercase;
+        }
+        .sermon-icons {
+            padding: 8px 15px;
         }
     }

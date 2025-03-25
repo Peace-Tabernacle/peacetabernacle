@@ -151,12 +151,21 @@
     /* Mobile View */
     
     @media screen and (max-width: 960px) {
+        html,
+        body {
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+        }
         .navbar__menu {
             display: grid;
             /* Ensure menu appears on mobile */
             grid-template-columns: auto;
-            width: 90%;
-            max-width: 350px;
+            width: 100vw;
+            max-width: 100%;
+            margin: 0;
+            padding: 0;
+            /* outline: 2px solid red; */
             height: auto;
             position: absolute;
             top: 72px;
@@ -167,7 +176,7 @@
             /* Prevent clicks when hidden */
             transition: opacity 0.5s ease;
             z-index: 1000;
-            border-radius: 10px;
+            border-radius: 100px;
             padding: 10px 0;
             gap: 0.001px;
         }

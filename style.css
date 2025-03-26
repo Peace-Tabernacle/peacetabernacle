@@ -1349,7 +1349,7 @@
     }
     
     .sermon-item {
-        background: #f9f9f9;
+        background: #2779e6;
         padding: 10px;
         border-radius: 8px;
         text-align: left;
@@ -1365,7 +1365,7 @@
         margin-top: 20px;
         padding: 10px 20px;
         background: #333;
-        color: #fff;
+        color: #ffffff;
         text-decoration: none;
         font-size: 14px;
         border-radius: 5px;
@@ -1375,12 +1375,24 @@
     .more-sermons:hover {
         background: #555;
     }
+    
+    .sermon-container {
+        position: relative;
+        background: url('image/eagles.jpeg') no-repeat center center/cover;
+        padding: 50px;
+        border-radius: 10px;
+        min-height: 400px;
+        /* Ensures enough space to show the background */
+    }
     /* Mobile Responsive */
     
     @media (max-width: 768px) {
         .sermon-container {
             flex-direction: column;
             align-items: center;
+            background-size: cover;
+            /* Ensures full coverage */
+            background-position: center center;
         }
         .sermon-featured {
             width: 100%;
@@ -1417,4 +1429,32 @@
         .sermon-icons {
             padding: 8px 15px;
         }
+    }
+    
+    .sermon-container {
+        background-position: top center;
+        /* Adjust to focus on the important part */
+        min-height: 300px;
+        /* Adjust for smaller screens */
+        padding: 20px;
+        /* Less padding on smaller screens */
+    }
+    
+    .sermon-container::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        /* Dark overlay for better readability */
+        border-radius: 10px;
+    }
+    
+    .sermon-container * {
+        position: relative;
+        z-index: 1;
+        color: white;
+        /* Ensures text is visible */
     }

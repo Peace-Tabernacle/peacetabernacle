@@ -152,32 +152,67 @@
     <a href="Podcast.html">Back to Podcasts</a>
 
     <script>
-        // Like button functionality
-        const likeButtons = document.querySelectorAll('.like-btn');
-        likeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const likeCount = button.querySelector('.like-count');
-                likeCount.textContent = parseInt(likeCount.textContent) + 1;
-            });
-        });
+        document.addEventListener('DOMContentLoaded', () => {
+            const podcastItems = document.querySelectorAll('.podcast-item');
 
-        // Share button functionality
-        const shareButtons = document.querySelectorAll('.share-btn');
-        shareButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                alert('Share functionality coming soon!');
-            });
-        });
+            podcastItems.forEach(item => {
+                const podcastId = item.getAttribute('data-id'); // Unique identifier for each podcast
+                const likeButton = item.querySelector('.like-btn');
+                const likeCountElement = item.querySelector('.like-count');
+                const shareButton = item.querySelector('.share-btn');
+                const viewCountElement = item.querySelector('.view-count-number');
+                const audioElement = item.querySelector('audio');
 
-        // View count functionality
-        const podcastItems = document.querySelectorAll('.podcast-item');
-        podcastItems.forEach(item => {
-            const viewCountElement = item.querySelector('.view-count-number');
-            let viewCount = parseInt(viewCountElement.textContent);
+                // Retrieve stored values from localStorage
+                let storedLikes = localStorage.getItem(`likes-${podcastId}`) || 0;
+                let storedViews = localStorage.getItem(`views-${podcastId}`) || 0;
+                let hasLiked = localStorage.getItem(`hasLiked-${podcastId}`) === 'true';
+                let hasViewed = localStorage.getItem(`hasViewed-${podcastId}`) === 'true';
 
-            item.querySelector('audio').addEventListener('play', () => {
-                viewCount += 1;
-                viewCountElement.textContent = viewCount;
+                // Set initial values
+                likeCountElement.textContent = storedLikes;
+                viewCountElement.textContent = storedViews;
+
+                // Like button functionality
+                likeButton.addEventListener('click', () => {
+                    if (!hasLiked) {
+                        let newLikeCount = parseInt(likeCountElement.textContent) + 1;
+                        likeCountElement.textContent = newLikeCount;
+                        localStorage.setItem(`likes-${podcastId}`, newLikeCount);
+                        localStorage.setItem(`hasLiked-${podcastId}`, 'true');
+                        hasLiked = true; // Prevent multiple likes
+                    } else {
+                        alert('You have already liked this episode.');
+                    }
+                });
+
+                // View count functionality
+                if (!hasViewed) {
+                    audioElement.addEventListener('play', () => {
+                        let newViewCount = parseInt(viewCountElement.textContent) + 1;
+                        viewCountElement.textContent = newViewCount;
+                        localStorage.setItem(`views-${podcastId}`, newViewCount);
+                        localStorage.setItem(`hasViewed-${podcastId}`, 'true');
+                        hasViewed = true; // Prevent multiple views
+                    }, {
+                        once: true
+                    }); // Ensures the event runs only once
+                }
+
+                // Share button functionality using Web Share API
+                shareButton.addEventListener('click', () => {
+                    if (navigator.share) {
+                        navigator.share({
+                                title: 'Check out this podcast!',
+                                text: 'Listen to this amazing podcast episode!',
+                                url: window.location.href
+                            })
+                            .then(() => console.log('Shared successfully!'))
+                            .catch((error) => console.log('Sharing failed:', error));
+                    } else {
+                        alert('Your browser does not support the Web Share API.');
+                    }
+                });
             });
         });
     </script>

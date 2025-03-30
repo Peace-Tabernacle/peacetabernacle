@@ -857,6 +857,13 @@
         const email = document.getElementById("email").value;
         const responseMessage = document.getElementById("response-message");
 
+        // Basic email validation
+        const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if (!emailPattern.test(email)) {
+            responseMessage.innerText = "❌ Invalid email address!";
+            return;
+        }
+
         // Replace the scriptURL with the one you provided
         const scriptURL = "https://script.google.com/macros/s/AKfycbyo0sTEVe9ovTpwPNXueA8atGXbxLeGpcNL3OZYI_1mMIAzCtWQduAh57hwqoVQE-xc/exec";
 

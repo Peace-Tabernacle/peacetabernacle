@@ -234,51 +234,55 @@
                 <h1>YOUTH PREACHERS/POEMS</h1>
                 <a href="youth.html">
                     <img src="testimonies/podcast youth.jpeg" alt="Podcast 3" class="podcast-image"> </a>
+            </div>
+        </div>
+        <br>
+        <a href="index.html">|Back to Home</a>
 
-                <script>
-                    // Auto sliding for welcome images
-                    let index = 0;
-                    const slides = document.querySelectorAll('.slider img');
-                    const totalSlides = slides.length;
+        <script>
+            // Auto sliding for welcome images
+            let index = 0;
+            const slides = document.querySelectorAll('.slider img');
+            const totalSlides = slides.length;
 
-                    function showNextSlide() {
-                        slides[index].style.opacity = 0;
-                        index = (index + 1) % totalSlides;
-                        slides[index].style.opacity = 1;
-                    }
+            function showNextSlide() {
+                slides[index].style.opacity = 0;
+                index = (index + 1) % totalSlides;
+                slides[index].style.opacity = 1;
+            }
 
-                    setInterval(showNextSlide, 3000);
+            setInterval(showNextSlide, 3000);
 
-                    // Function to toggle audio player when the image is clicked
+            // Function to toggle audio player when the image is clicked
 
-                    function toggleAudio(podcastId) {
-                        const audioContainer = document.getElementById(podcastId);
+            function toggleAudio(podcastId) {
+                const audioContainer = document.getElementById(podcastId);
 
-                        // Toggle visibility: If the audio container is hidden, show it; otherwise, hide it
-                        if (audioContainer.style.display === 'none' || audioContainer.style.display === '') {
-                            audioContainer.style.display = 'block';
-                        } else {
-                            audioContainer.style.display = 'none';
-                        }
-                    }
+                // Toggle visibility: If the audio container is hidden, show it; otherwise, hide it
+                if (audioContainer.style.display === 'none' || audioContainer.style.display === '') {
+                    audioContainer.style.display = 'block';
+                } else {
+                    audioContainer.style.display = 'none';
+                }
+            }
 
-                    // Like button functionality
-                    const likeButtons = document.querySelectorAll('.like-btn');
-                    likeButtons.forEach(button => {
-                        button.addEventListener('click', () => {
-                            const likeCount = button.querySelector('.like-count');
-                            likeCount.textContent = parseInt(likeCount.textContent) + 1;
-                        });
-                    });
+            // Like button functionality
+            const likeButtons = document.querySelectorAll('.like-btn');
+            likeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const likeCount = button.querySelector('.like-count');
+                    likeCount.textContent = parseInt(likeCount.textContent) + 1;
+                });
+            });
 
-                    // Share button functionality
-                    const shareButtons = document.querySelectorAll('.share-btn');
-                    shareButtons.forEach(button => {
-                        button.addEventListener('click', () => {
-                            alert('Share functionality coming soon!');
-                        });
-                    });
-                </script>
+            // Share button functionality
+            const shareButtons = document.querySelectorAll('.share-btn');
+            shareButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    alert('Share functionality coming soon!');
+                });
+            });
+        </script>
 
 </body>
 

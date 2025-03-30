@@ -280,6 +280,10 @@
                     <a href="/Sermons.html" class="navbar__links">Sermons</a>
                 </li>
 
+                <li class="navbar__item">
+                    <a href="/Podcast.html" class="navbar__links">Podcast</a>
+                </li>
+
 
             </ul>
         </div>
@@ -438,16 +442,19 @@
             <a href="http://youtube.com/channel/UCveQdGwVEnYRFFxz3C73KUg" target="_blank">YouTube</a>
         </div>
 
-        <div class="subscribe-box">
-            <h3>📩 SUBSCRIBE TO PEACE TABERNACLE</h3>
-            <p>Get updates from the latest posts straight to your mailbox!</p>
-            <form id="subscription-form">
-                <input type="email" id="email" name="email" placeholder="Enter Email Address" required>
-                <button type="submit">SUBSCRIBE</button>
-            </form>
-            <p id="response-message"></p>
+        <div class="footer__subscribe">
+            <div class="footer__link--items">
+                <h2>Subscribe</h2>
+                <p>Get updates from Peace Tabernacle.</p>
+                <form id="subscription-form">
+                    <input type="text" id="name" name="name" placeholder="Enter Name" required>
+                    <input type="text" id="surname" name="surname" placeholder="Enter Surname" required>
+                    <input type="email" id="email" name="email" placeholder="Enter Email Address" required>
+                    <button type="submit">SUBSCRIBE</button>
+                </form>
+                <p id="response-message"></p>
+            </div>
         </div>
-
         <script>
             document.getElementById("subscription-form").addEventListener("submit", function(event) {
                 event.preventDefault();

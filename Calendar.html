@@ -441,7 +441,6 @@
 
             <a href="http://youtube.com/channel/UCveQdGwVEnYRFFxz3C73KUg" target="_blank">YouTube</a>
         </div>
-
         <div class="footer__subscribe">
             <div class="footer__link--items">
                 <h2>Subscribe</h2>
@@ -455,11 +454,22 @@
                 <p id="response-message"></p>
             </div>
         </div>
+
         <script>
             document.getElementById("subscription-form").addEventListener("submit", function(event) {
                 event.preventDefault();
 
+                const name = document.getElementById("name").value;
+                const surname = document.getElementById("surname").value;
                 const email = document.getElementById("email").value;
+                const responseMessage = document.getElementById("response-message");
+
+                // Check if the email has already been subscribed
+                if (localStorage.getItem(email)) {
+                    responseMessage.innerText = "✅ You have already subscribed! Thank you.";
+                    return;
+                }
+
                 const scriptURL = "https://script.google.com/macros/s/AKfycbxnelQAmTq0IgAANpsrOeCXriczJ5Y6zdw6IPEnWNPs-tk-2Gq1tkGj_76o5igolt87/exec";
                 const formData = new FormData(this);
 
@@ -468,11 +478,18 @@
                         body: formData
                     })
                     .then(response => {
-                        document.getElementById("response-message").innerText = "✅ Subscription successful!";
+                        responseMessage.innerText = "✅ Subscription successful!";
+
+                        // Store email in localStorage to prevent duplicate subscriptions
+                        localStorage.setItem(email, true);
+
+                        // Clear input fields
+                        document.getElementById("name").value = "";
+                        document.getElementById("surname").value = "";
                         document.getElementById("email").value = "";
                     })
                     .catch(error => {
-                        document.getElementById("response-message").innerText = "❌ Error! Try again.";
+                        responseMessage.innerText = "❌ Error! Try again.";
                     });
             });
         </script>

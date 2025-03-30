@@ -698,7 +698,6 @@
             </div>
         </div>
     </div>
-
     <div class="footer__subscribe">
         <div class="footer__link--items">
             <h2>Subscribe</h2>
@@ -712,6 +711,7 @@
             <p id="response-message"></p>
         </div>
     </div>
+
 
     <!-- Social Media Links -->
     <div class="social__media">
@@ -852,20 +852,35 @@
     document.getElementById("subscription-form").addEventListener("submit", function(event) {
         event.preventDefault();
 
+        const name = document.getElementById("name").value;
+        const surname = document.getElementById("surname").value;
         const email = document.getElementById("email").value;
-        const scriptURL = "https://script.google.com/macros/s/AKfycbxnelQAmTq0IgAANpsrOeCXriczJ5Y6zdw6IPEnWNPs-tk-2Gq1tkGj_76o5igolt87/exec";
+        const responseMessage = document.getElementById("response-message");
+
+        // Replace the scriptURL with the one you provided
+        const scriptURL = "https://script.google.com/macros/s/AKfycbyo0sTEVe9ovTpwPNXueA8atGXbxLeGpcNL3OZYI_1mMIAzCtWQduAh57hwqoVQE-xc/exec";
+
         const formData = new FormData(this);
 
         fetch(scriptURL, {
                 method: "POST",
                 body: formData
             })
-            .then(response => {
-                document.getElementById("response-message").innerText = "✅ Subscription successful!";
-                document.getElementById("email").value = "";
+            .then(response => response.text())
+            .then(data => {
+                if (data === "already_subscribed") {
+                    responseMessage.innerText = "✅ You have already subscribed! Thank you.";
+                } else if (data === "success") {
+                    responseMessage.innerText = "✅ Subscription successful!";
+                    document.getElementById("name").value = "";
+                    document.getElementById("surname").value = "";
+                    document.getElementById("email").value = "";
+                } else {
+                    responseMessage.innerText = "❌ Error! Try again.";
+                }
             })
             .catch(error => {
-                document.getElementById("response-message").innerText = "❌ Error! Try again.";
+                responseMessage.innerText = "❌ Error! Try again.";
             });
     });
 </script>

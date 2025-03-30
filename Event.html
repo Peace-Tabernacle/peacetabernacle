@@ -330,34 +330,40 @@
                         });
                     }
                 });
+                document.getElementById("subscription-form").addEventListener("submit", function(event) {
+                    event.preventDefault();
 
-                function doPost(e) {
-                    var email = e.parameter.email;
+                    const name = document.getElementById("name").value;
+                    const surname = document.getElementById("surname").value;
+                    const email = document.getElementById("email").value;
+                    const responseMessage = document.getElementById("response-message");
 
-                    if (email) {
-                        // Send a confirmation email
-                        var subject = "Subscription Confirmation";
-                        var body = "Thank you for subscribing to our updates!";
+                    // Replace the scriptURL with the one you provided
+                    const scriptURL = "https://script.google.com/macros/s/AKfycbyo0sTEVe9ovTpwPNXueA8atGXbxLeGpcNL3OZYI_1mMIAzCtWQduAh57hwqoVQE-xc/exec";
 
-                        // Use MailApp to send the email
-                        MailApp.sendEmail({
-                            to: email,
-                            subject: subject,
-                            body: body,
-                            from: peacetabernacle2016 @gmail.com // Ensure this is your own domain or a credible sender
-                            name: "Your Website Name", // Set a friendly sender name
-                            htmlBody: "<p>Thank you for subscribing to our updates!</p>", // HTML content for better presentation
+                    const formData = new FormData(this);
+
+                    fetch(scriptURL, {
+                            method: "POST",
+                            body: formData
+                        })
+                        .then(response => response.text())
+                        .then(data => {
+                            if (data === "already_subscribed") {
+                                responseMessage.innerText = "✅ You have already subscribed! Thank you.";
+                            } else if (data === "success") {
+                                responseMessage.innerText = "✅ Subscription successful!";
+                                document.getElementById("name").value = "";
+                                document.getElementById("surname").value = "";
+                                document.getElementById("email").value = "";
+                            } else {
+                                responseMessage.innerText = "❌ Error! Try again.";
+                            }
+                        })
+                        .catch(error => {
+                            responseMessage.innerText = "❌ Error! Try again.";
                         });
-
-                        // Log the subscription to the Google Sheet
-                        var sheet = SpreadsheetApp.openById("1lOVkt5sCHmz7C16HKfEhabO4ZEgsTHU_TcsUGjodrs8").getActiveSheet();
-                        sheet.appendRow([new Date(), email]);
-
-                        return ContentService.createTextOutput("Success").setMimeType(ContentService.MimeType.TEXT);
-                    } else {
-                        return ContentService.createTextOutput("Error: No email provided").setMimeType(ContentService.MimeType.TEXT);
-                    }
-                }
+                });
             </script>
 
 </body>

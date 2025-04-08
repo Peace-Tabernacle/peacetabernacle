@@ -173,6 +173,76 @@
     </div>
     </div>
     </div>
+    <!-- Recent activities -->
+    <div class="slideshow-containe">
+        <div class="background-image"></div>
+
+        <div class="slide active">
+            <img src="image/Screenshot_20250407-125800.jpg" alt="Prophet Visit" />
+            <div class="slide-conten">
+                <h2>IN LOVING MEMORY OF BROTHER FESTON SIMFUKWE</h2>
+                <p>FUNERAL PROGAM:church Service Will be At Justo Mwale University:CLICK ON THE MAP FOR DIRECTION</p>
+                <div class="slide-links">
+                    <a href="#" target="_blank">Facebook</a>
+                    <a href="#" target="_blank">YouTube</a>
+                    <a href="https://maps.app.goo.gl/d9kZFQSmRfssLTbf7" target="_blank">Map</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide active">
+            <img src="testimonies/1.JPG" alt="Prophet Visit" />
+            <div class="slide-conten">
+                <h2>IN REMEMBERANCE OF OUR BROTHER</h2>
+                <p>PEACE TABERNACLE GIVES TRIBUTE TO OUR BROTHER FESTON SIMFUKWE:CLICK ON FACEBOOK LINK</p>
+                <div class="slide-links">
+                    <a href="https://www.facebook.com/share/v/164vBLP5sU/" target="_blank">Facebook</a>
+                    <a href="#" target="_blank">YouTube</a>
+                    <a href="https://maps.app.goo.gl/d9kZFQSmRfssLTbf7" target="_blank">Map</a>
+                </div>
+            </div>
+        </div>
+        <div class="slide active">
+            <img src="testimonies/6.JPG" alt="Prophet Visit" />
+            <div class="slide-conten">
+                <h2>A True Soldier of the Cross – Called Home</h2>
+                <p>“He fought a good fight, he finished his course, he kept the faith.” — 2 Timothy 4:7-CLICK ON FACEBOOK LINK TO SEE HIS SERMON IN MALAWI</p>
+                <div class="slide-links">
+                    <a href="https://www.facebook.com/share/v/1D9r18pWBM/" target="_blank">Facebook</a>
+                    <a href="#" target="_blank">YouTube</a>
+                    <a href="https://maps.app.goo.gl/d9kZFQSmRfssLTbf7" target="_blank">Map</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Additional slides -->
+        <!-- Copy the .slide div and change the content/image as needed -->
+
+        <div class="dots">
+            <span class="dot active" onclick="showSlide(0)"></span>
+            <span class="dot" onclick="showSlide(1)"></span>
+            <span class="dot" onclick="showSlide(2)"></span>
+        </div>
+    </div>
+
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.dot');
+
+        function showSlide(index) {
+            slides.forEach((slide, i) => {
+                slide.classList.toggle('active', i === index);
+                dots[i].classList.toggle('active', i === index);
+            });
+            currentSlide = index;
+        }
+
+        setInterval(() => {
+            let next = (currentSlide + 1) % slides.length;
+            showSlide(next);
+        }, 5000); // Change slide every 5s
+    </script>
+
 
     <!-- Services Section -->
     <div class="services">
@@ -878,7 +948,7 @@
         }
 
         // Replace the scriptURL with the one you provided
-        const scriptURL = "https://script.google.com/macros/s/AKfycbyo0sTEVe9ovTpwPNXueA8atGXbxLeGpcNL3OZYI_1mMIAzCtWQduAh57hwqoVQE-xc/exec";
+        const scriptURL = "https://script.google.com/macros/s/AKfycbxYoctqbpjskXfqjsxXiTtNYCi8bgW1NBC50AKgbj4qYzx7cfaLi3lNc1V3_8Fdwbf1/exec";
 
         const formData = new FormData(this);
 

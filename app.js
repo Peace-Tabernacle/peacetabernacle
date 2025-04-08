@@ -67,3 +67,22 @@ function doPost(e) {
         return ContentService.createTextOutput("Error: No email provided").setMimeType(ContentService.MimeType.TEXT);
     }
 }
+
+
+
+// let currentSlide = 0;
+// const slides = document.querySelectorAll('.slide');
+// const dots = document.querySelectorAll('.dot');
+
+// function showSlide(index) {
+//     slides.forEach((slide, i) => {
+//         slide.classList.toggle('active', i === index);
+//         dots[i].classList.toggle('active', i === index);
+//     });
+//     currentSlide = index;
+// }
+
+// setInterval(() => {
+//     let next = (currentSlide + 1) % slides.length;
+//     showSlide(next);
+// }, 5000); // Change slide every 5s

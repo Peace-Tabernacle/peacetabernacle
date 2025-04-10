@@ -1602,8 +1602,14 @@
         background: #fff;
         color: #222;
         padding: 20px;
-        border-left: 5px solid #00aa55;
+        border-left: 5px solid #1962d1;
+        border-right: 5px solid #1962d1;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .sermons h1 {
+        top: auto;
+        color: #1962d1;
     }
     
     .slide-conten h2 {
@@ -1660,10 +1666,16 @@
             margin-right: 0;
             margin-bottom: 20px;
         }
+        .slide-conten h1 {
+            margin-top: auto;
+            color: #1962d1;
+        }
         .slide-conten {
             max-width: 100%;
             border-left: none;
-            border-top: 5px solid #00aa55;
+            border-top: 5px solid #1962d1;
+            border-right: none;
+            border-bottom: 5px solid #1962d1;
         }
         .slide-conten h2 {
             font-size: 1.4rem;

@@ -70,19 +70,58 @@ function doPost(e) {
 
 
 
-// let currentSlide = 0;
-// const slides = document.querySelectorAll('.slide');
-// const dots = document.querySelectorAll('.dot');
 
-// function showSlide(index) {
-//     slides.forEach((slide, i) => {
-//         slide.classList.toggle('active', i === index);
-//         dots[i].classList.toggle('active', i === index);
-//     });
-//     currentSlide = index;
-// }
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slide');
+const dots = document.querySelectorAll('.dot');
 
-// setInterval(() => {
-//     let next = (currentSlide + 1) % slides.length;
-//     showSlide(next);
-// }, 5000); // Change slide every 5s
+function showSlide(index) {
+    if (index < 0) index = slides.length - 1;
+    if (index >= slides.length) index = 0;
+
+    slides.forEach((slide, i) => {
+        slide.classList.remove('active');
+        dots[i].classList.remove('active');
+    });
+
+    slides[index].classList.add('active');
+    dots[index].classList.add('active');
+    currentSlide = index;
+}
+
+// Touch/drag logic
+let startX = 0;
+let endX = 0;
+
+const container = document.querySelector('.slideshow-containe');
+
+container.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+}, { passive: true });
+
+container.addEventListener('touchend', (e) => {
+    endX = e.changedTouches[0].clientX;
+    handleSwipe();
+});
+
+container.addEventListener('mousedown', (e) => {
+    startX = e.clientX;
+    container.addEventListener('mouseup', handleMouseUp);
+});
+
+function handleMouseUp(e) {
+    endX = e.clientX;
+    handleSwipe();
+    container.removeEventListener('mouseup', handleMouseUp);
+}
+
+function handleSwipe() {
+    const diff = startX - endX;
+    if (Math.abs(diff) > 50) {
+        if (diff > 0) {
+            showSlide(currentSlide + 1); // Swipe left
+        } else {
+            showSlide(currentSlide - 1); // Swipe right
+        }
+    }
+}

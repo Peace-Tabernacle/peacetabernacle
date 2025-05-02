@@ -98,6 +98,7 @@
                 <option value="Rev Gideon">Rev Gideon</option> 
                 <option value="Pastor Mhlanga">Pastor Mhlanga</option> 
                 <option value="Pastor Litwayi">Pastor Litwayi</option> 
+                <option value="Pastor REV JOSH">Pastor REV JOSH</option> 
             </select>
 
             <select id="topic" onchange="filterSermons()">
@@ -1459,10 +1460,10 @@
                         <div class="sermon-item">
                             <img src="testimonies/easter.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
                             <h4>PASTOR Litwayi</h4>
-                            <p><i class="fas fa-calendar-alt"></i> SUNDAY EASTER MEETINGS(AFTERNOON-SERVICE)</p>
+                            <p><i class="fas fa-calendar-alt"></i> SUNDAY EASTER MEETINGS(Morning-SERVICE)</p>
                             <div class="sermon-icons">
-                                <a href="https://web.facebook.com/share/v/1Ydnc95viS/"><i class="fas fa-play"></i></a>
-                                <button><a href="https://web.facebook.com/share/v/1Ydnc95viS/" class="learn-more">visit</a></button>
+                                <a href="https://web.facebook.com/share/v/16BTU6nKY2/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://web.facebook.com/share/v/16BTU6nKY2/" class="learn-more">visit</a></button>
                             </div>
                         </div>
                         <div class="sermon-item">
@@ -1470,8 +1471,17 @@
                             <h4>PASTOR Litwayi</h4>
                             <p><i class="fas fa-calendar-alt"></i> SUNDAY EASTER MEETINGS(AFTERNOON-SERVICE)</p>
                             <div class="sermon-icons">
-                                <a href="https://web.facebook.com/share/v/1Ydnc95viS/"><i class="fas fa-play"></i></a>
-                                <button><a href="https://web.facebook.com/share/v/1Ydnc95viS/" class="learn-more">visit</a></button>
+                                <a href="https://web.facebook.com/share/v/16B9f759yo/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://web.facebook.com/share/v/16B9f759yo/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="image/10 copy.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>PASTOR REV JOSH</h4>
+                            <p><i class="fas fa-calendar-alt"></i> FRIDAY (SPECIAL SERVICE-LUSAKA WEST)</p>
+                            <div class="sermon-icons">
+                                <a href="https://youtu.be/fY2NS9nSoZYi class=" fas fa-play "></i></a>
+                                <button><a href="https://youtu.be/fY2NS9nSoZY " class="learn-more ">visit</a></button>
                             </div>
 
 
@@ -1484,7 +1494,7 @@
                     </div>
             </section>
             <script>
-                document.addEventListener("DOMContentLoaded", function() {
+                document.addEventListener("DOMContentLoaded ", function() {
                     const menu = document.querySelector('#mobile-menu'); // Corrected selector
                     const menuLinks = document.querySelector('.navbar__menu');
 
@@ -1495,51 +1505,51 @@
                         });
                     }
                 });
-                document.addEventListener("DOMContentLoaded", function() {
-                    const section = document.querySelector(".sermons");
-                    const featured = document.querySelector(".sermon-featured");
-                    const grid = document.querySelector(".sermon-grid");
+                document.addEventListener("DOMContentLoaded ", function() {
+                    const section = document.querySelector(".sermons ");
+                    const featured = document.querySelector(".sermon-featured ");
+                    const grid = document.querySelector(".sermon-grid ");
 
                     function revealOnScroll() {
                         let sectionPosition = section.getBoundingClientRect().top;
                         let screenHeight = window.innerHeight;
 
                         if (sectionPosition < screenHeight - 100) {
-                            section.classList.add("visible");
-                            featured.classList.add("visible");
-                            grid.classList.add("visible");
+                            section.classList.add("visible ");
+                            featured.classList.add("visible ");
+                            grid.classList.add("visible ");
                         } else {
                             // Remove the class when scrolling back up so it can trigger again
-                            section.classList.remove("visible");
-                            featured.classList.remove("visible");
-                            grid.classList.remove("visible");
+                            section.classList.remove("visible ");
+                            featured.classList.remove("visible ");
+                            grid.classList.remove("visible ");
                         }
                     }
 
-                    window.addEventListener("scroll", revealOnScroll);
+                    window.addEventListener("scroll ", revealOnScroll);
                 });
 
                 function filterSermons() {
-                    let speaker = document.getElementById("speaker").value.toLowerCase();
-                    let topic = document.getElementById("topic").value.toLowerCase();
-                    let book = document.getElementById("book").value.toLowerCase();
-                    let series = document.getElementById("series").value.toLowerCase();
+                    let speaker = document.getElementById("speaker ").value.toLowerCase();
+                    let topic = document.getElementById("topic ").value.toLowerCase();
+                    let book = document.getElementById("book ").value.toLowerCase();
+                    let series = document.getElementById("series ").value.toLowerCase();
 
-                    let sermons = document.querySelectorAll(".sermon-item");
+                    let sermons = document.querySelectorAll(".sermon-item ");
 
                     sermons.forEach(sermon => {
-                        let title = sermon.querySelector("h4").innerText.toLowerCase();
-                        let description = sermon.querySelector("p").innerText.toLowerCase();
+                        let title = sermon.querySelector("h4 ").innerText.toLowerCase();
+                        let description = sermon.querySelector("p ").innerText.toLowerCase();
 
-                        let matchesSpeaker = speaker === "" || title.includes(speaker) || description.includes(speaker);
-                        let matchesTopic = topic === "" || title.includes(topic) || description.includes(topic);
-                        let matchesBook = book === "" || title.includes(book) || description.includes(book);
-                        let matchesSeries = series === "" || title.includes(series) || description.includes(series);
+                        let matchesSpeaker = speaker === " " || title.includes(speaker) || description.includes(speaker);
+                        let matchesTopic = topic === " " || title.includes(topic) || description.includes(topic);
+                        let matchesBook = book === " " || title.includes(book) || description.includes(book);
+                        let matchesSeries = series === " " || title.includes(series) || description.includes(series);
 
                         if (matchesSpeaker && matchesTopic && matchesBook && matchesSeries) {
-                            sermon.style.display = "block";
+                            sermon.style.display = "block ";
                         } else {
-                            sermon.style.display = "none";
+                            sermon.style.display = "none ";
                         }
                     });
                 }
@@ -1547,15 +1557,15 @@
 
 
             <!-- Featured Sermon Image (Right Side) -->
-            <!-- <div class="sermon-featured">
-                <img src="testimonies/a.jpeg" alt="Featured Sermon">
+            <!-- <div class="sermon-featured ">
+                <img src="testimonies/a.jpeg " alt="Featured Sermon ">
             </div>
             </div> -->
         </section>
 
 
 
-        <div class="sermon-grid">
+        <div class="sermon-grid ">
 
     </body>
     <style>
@@ -1630,7 +1640,7 @@
         
         .sermon-international p::after,
         .sermon-item2 p::after {
-            content: " 👁 7";
+            content: " 👁 7 ";
             /* Example view count */
             margin-left: 8px;
             font-weight: bold;

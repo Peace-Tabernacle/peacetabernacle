@@ -98,7 +98,7 @@
                 <option value="Rev Gideon">Rev Gideon</option> 
                 <option value="Pastor Mhlanga">Pastor Mhlanga</option> 
                 <option value="Pastor Litwayi">Pastor Litwayi</option> 
-                <option value="Pastor REV JOSH">Pastor REV JOSH</option> 
+                <option value="Rev Pastor Josh">Rev Pastor Josh</option> 
             </select>
 
             <select id="topic" onchange="filterSermons()">
@@ -1477,88 +1477,83 @@
                         </div>
                         <div class="sermon-item">
                             <img src="image/10 copy.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
-                            <h4>PASTOR REV JOSH</h4>
-                            <p><i class="fas fa-calendar-alt"></i> FRIDAY (SPECIAL SERVICE-LUSAKA WEST)</p>
+                            <h4>Rev Pastor Josh</h4>
+                            <p><i class="fas fa-calendar-alt"></i> Friday-Lusaka West</p>
                             <div class="sermon-icons">
-                                <a href="https://youtu.be/fY2NS9nSoZYi class=" fas fa-play "></i></a>
-                                <button><a href="https://youtu.be/fY2NS9nSoZY " class="learn-more ">visit</a></button>
+                                <a href="https://youtu.be/fY2NS9nSoZY?si=Ad2nJJvOZHdk0BEV"><i class="fas fa-play"></i></a>
+                                <button><a href="https://youtu.be/fY2NS9nSoZY?si=Ad2nJJvOZHdk0BEV" class="learn-more">visit</a></button>
                             </div>
                         </div>
-                        <div class="sermon-item ">
-                            <img src="image/10 copy.jpg " alt="Serving His Eternal Purpose In Life’s Journey ">
-                            <h4>PASTOR REV JOSH</h4>
-                            <p><i class="fas fa-calendar-alt "></i> SATURDAY (SPECIAL SERVICE)</p>
-                            <div class="sermon-icons ">
-                                <a href="https://www.facebook.com/share/v/15KFnUoRMo/ "class=" fas fa-play "></i>
-                                </a>
-                                <button><a href="https://www.facebook.com/share/v/15KFnUoRMo/ " class="learn-more ">visit</a></button>
+                        <div class="sermon-item">
+                            <img src="image/10 copy.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev Pastor Josh</h4>
+                            <p><i class="fas fa-calendar-alt"></i> Saturday Service</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1EdZCfE17G/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1EdZCfE17G/" class="learn-more">visit</a></button>
                             </div>
                         </div>
-                        <div class="sermon-item ">
-                            <img src="image/10 copy.jpg " alt="Serving His Eternal Purpose In Life’s Journey ">
-                            <h4>PASTOR REV JOSH</h4>
-                            <p><i class="fas fa-calendar-alt "></i> SUNDAY Service-04-05-25</p>
-                            <div class="sermon-icons ">
-                                <a href="https://fb.watch/znqMbS_Xby/ " class=" fas fa-play "></i></a>
-                                <button><a href="https://fb.watch/znqMbS_Xby/ " class="learn-more ">visit</a></button>
+                        <div class="sermon-item">
+                            <img src="image/10 copy.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev Pastor Josh</h4>
+                            <p><i class="fas fa-calendar-alt"></i> SUNDAY Special Meetings</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/14jvfZwdWW/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/14jvfZwdWW/" class="learn-more">visit</a></button>
                             </div>
-
-
-
-
-
-
-
                         </div>
                     </div>
             </section>
             <script>
-                document.addEventListener("DOMContentLoaded ", function() {
-                    const menu = document.querySelector('#mobile-menu'); // Corrected selector
+                document.addEventListener("DOMContentLoaded", function() {
+                    const menu = document.querySelector('#mobile-menu');
                     const menuLinks = document.querySelector('.navbar__menu');
 
-                    if (menu && menuLinks) { // Ensuring elements exist
+                    if (menu && menuLinks) {
                         menu.addEventListener('click', function() {
                             menu.classList.toggle('is-active');
                             menuLinks.classList.toggle('active');
                         });
                     }
                 });
-                document.addEventListener("DOMContentLoaded ", function() {
-                    const section = document.querySelector(".sermons ");
-                    const featured = document.querySelector(".sermon-featured ");
-                    const grid = document.querySelector(".sermon-grid ");
+
+                document.addEventListener("DOMContentLoaded", function() {
+                    const section = document.querySelector(".sermons");
+                    const featured = document.querySelector(".sermon-featured");
+                    const grid = document.querySelector(".sermon-grid");
 
                     function revealOnScroll() {
+                        if (!section || !featured || !grid) return; // prevent errors if elements not found
+
                         let sectionPosition = section.getBoundingClientRect().top;
                         let screenHeight = window.innerHeight;
 
                         if (sectionPosition < screenHeight - 100) {
-                            section.classList.add("visible ");
-                            featured.classList.add("visible ");
-                            grid.classList.add("visible ");
+                            section.classList.add("visible");
+                            featured.classList.add("visible");
+                            grid.classList.add("visible");
                         } else {
-                            // Remove the class when scrolling back up so it can trigger again
-                            section.classList.remove("visible ");
-                            featured.classList.remove("visible ");
-                            grid.classList.remove("visible ");
+                            section.classList.remove("visible");
+                            featured.classList.remove("visible");
+                            grid.classList.remove("visible");
                         }
                     }
 
-                    window.addEventListener("scroll ", revealOnScroll);
+                    window.addEventListener("scroll", revealOnScroll);
                 });
 
-                function filterSermons() {
-                    let speaker = document.getElementById("speaker ").value.toLowerCase();
-                    let topic = document.getElementById("topic ").value.toLowerCase();
-                    let book = document.getElementById("book ").value.toLowerCase();
-                    let series = document.getElementById("series ").value.toLowerCase();
 
-                    let sermons = document.querySelectorAll(".sermon-item ");
+                function filterSermons() {
+                    let speaker = document.getElementById("speaker").value.toLowerCase();
+                    let topic = document.getElementById("topic").value.toLowerCase();
+                    let book = document.getElementById("book").value.toLowerCase();
+                    let series = document.getElementById("series").value.toLowerCase();
+
+                    let sermons = document.querySelectorAll(".sermon-item");
 
                     sermons.forEach(sermon => {
-                        let title = sermon.querySelector("h4 ").innerText.toLowerCase();
-                        let description = sermon.querySelector("p ").innerText.toLowerCase();
+                        let title = sermon.querySelector("h4").innerText.toLowerCase();
+                        let description = sermon.querySelector("p").innerText.toLowerCase();
 
                         let matchesSpeaker = speaker === " " || title.includes(speaker) || description.includes(speaker);
                         let matchesTopic = topic === " " || title.includes(topic) || description.includes(topic);

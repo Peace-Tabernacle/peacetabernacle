@@ -1,0 +1,17 @@
+[build]
+  publish = "."  # Static files in the root folder
+
+[dev]
+  functions = "functions"  # Location of your functions
+  publish = "."  # Root folder for static files
+  port = 3000  # Port for local development
+
+[[headers]]
+  for = "/sitemap.xml"
+  [headers.values]
+    Content-Type = "application/xml"  # This header is fine for your static sitemap.xml
+
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/.netlify/functions/sitemap"  # This points to the Netlify function for dynamic sitemap
+  status = 200  # Ensure the redirect works correctly

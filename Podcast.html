@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Podcasts</title>
+    <link rel="stylesheet" href="podcast.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .slider {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            animation: slide 10s infinite;
+        }
+        
+        @keyframes slide {
+            0% {
+                left: 0;
+            }
+            33% {
+                left: -100%;
+            }
+            66% {
+                left: -200%;
+            }
+            100% {
+                left: 0;
+            }
+        }
+        
+        .podcast-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            padding: 20px;
+            justify-content: center;
+        }
+        /* Attractive title styling */
+        
+        .podcast-item h3 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 24px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #007bff;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0, 123, 255, 0.5);
+            /* Blue shadow effect */
+            letter-spacing: 2px;
+            /* Increased letter spacing for style */
+            transition: all 0.3s ease;
+        }
+        
+        .podcast-item h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #007bff;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0, 123, 255, 0.5);
+            /* Blue shadow effect */
+            letter-spacing: 1px;
+            /* Increased letter spacing for style */
+            /* transition: all 0.3s ease; */
+        }
+        
+        .podcast-item h2 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 18px;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #007bff;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 8px rgba(0, 123, 255, 0.5);
+            /* Blue shadow effect */
+            letter-spacing: 2px;
+            /* Increased letter spacing for style */
+            /* transition: all 0.3s ease; */
+        }
+        
+        .podcast-item h3:hover {
+            color: #0056b3;
+            text-shadow: 2px 2px 12px rgba(0, 123, 255, 0.8);
+            transform: scale(1.1);
+        }
+        
+        .podcast-item {
+            position: relative;
+            width: 200px;
+            height: 300px;
+            text-align: center;
+            background-color: #423636;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .podcast-item:hover {
+            transform: scale(1.05);
+        }
+        
+        .podcast-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.3s ease;
+        }
+        
+        .podcast-item:hover .podcast-image {
+            opacity: 0.7;
+        }
+        
+        .audio-container {
+            display: none;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px;
+            border-radius: 10px;
+            width: 90%;
+            box-sizing: border-box;
+            text-align: center;
+        }
+        
+        .podcast-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            color: #fff;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        
+        .podcast-controls {
+            display: flex;
+            justify-content: space-between;
+            padding: 10px;
+        }
+        
+        .like-btn,
+        .share-btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .like-btn:hover,
+        .share-btn:hover {
+            background-color: #0056b3;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            .podcast-list {
+                justify-content: space-around;
+            }
+            .podcast-item {
+                width: 45%;
+                height: 250px;
+            }
+            .podcast-controls {
+                flex-direction: column;
+                align-items: center;
+            }
+            .like-btn,
+            .share-btn {
+                width: 100%;
+                margin: 5px 0;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .slider {
+                height: 200px;
+            }
+            .podcast-item {
+                width: 220px;
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Welcome Image Slider -->
+    <div class="slider">
+        <img src="testimonies/pod.jpeg" alt="Welcome Image 1">
+        <img src="testimonies/poddd.jpeg" alt="Welcome Image 2">
+        <img src="testimonies/HHH.jpg" alt="Welcome Image 3">
+    </div>
+
+    <!-- Podcast List -->
+    <div class="podcast-list">
+        <!-- Example Podcast Item -->
+        <div class="podcast-item">
+            <h3>Daily Devotion</h3>
+            <a href="love.html">
+                <img src="testimonies/daily.jpeg" alt="Podcast 1" class="podcast-image"> </a>
+        </div>
+        <div class="podcast-list">
+            <!-- Example Podcast Item -->
+            <div class="podcast-item">
+                <h2>PEACE TABERNACLE-Missionary Report</h2>
+                <a href="ministers.html">
+                    <img src="testimonies/CRUZ copy.jpg" alt="Podcast 6" class="podcast-image"> </a>
+            </div>
+            <div class="podcast-item">
+                <h1>YOUTH PREACHERS/POEMS</h1>
+                <a href="youth.html">
+                    <img src="testimonies/podcast youth.jpeg" alt="Podcast 3" class="podcast-image"> </a>
+            </div>
+        </div>
+        <br>
+        <a href="index.html">|Back to Home</a>
+
+        <script>
+            // Auto sliding for welcome images
+            let index = 0;
+            const slides = document.querySelectorAll('.slider img');
+            const totalSlides = slides.length;
+
+            function showNextSlide() {
+                slides[index].style.opacity = 0;
+                index = (index + 1) % totalSlides;
+                slides[index].style.opacity = 1;
+            }
+
+            setInterval(showNextSlide, 3000);
+
+            // Function to toggle audio player when the image is clicked
+
+            function toggleAudio(podcastId) {
+                const audioContainer = document.getElementById(podcastId);
+
+                // Toggle visibility: If the audio container is hidden, show it; otherwise, hide it
+                if (audioContainer.style.display === 'none' || audioContainer.style.display === '') {
+                    audioContainer.style.display = 'block';
+                } else {
+                    audioContainer.style.display = 'none';
+                }
+            }
+
+            // Like button functionality
+            const likeButtons = document.querySelectorAll('.like-btn');
+            likeButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const likeCount = button.querySelector('.like-count');
+                    likeCount.textContent = parseInt(likeCount.textContent) + 1;
+                });
+            });
+
+            // Share button functionality
+            const shareButtons = document.querySelectorAll('.share-btn');
+            shareButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    alert('Share functionality coming soon!');
+                });
+            });
+        </script>
+
+</body>
+
+</html>

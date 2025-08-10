@@ -1,0 +1,2032 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sermon Archive</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Sermon Archive</title>
+        <link rel="stylesheet" href="styles.css">
+        <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <!-- Navbar Section -->
+        <nav class="navbar">
+            <div class="navbar__container">
+                <!-- Mobile menu toggle button -->
+                <div class="navbar__toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+                <!-- Navbar Menu -->
+                <ul class="navbar__menu">
+                    <li class="navbar__item">
+                        <a href="/" class="navbar__links">Home</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="/News.html" class="navbar__links">News</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="/Outreach.html" class="navbar__links">Outreach</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="/calendar.html" class="navbar__links">Music</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="/Announcement.html" class="navbar__links">Announcement</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="/about-us.html" class="navbar__links">About Us</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="/Testimonies.html" class="navbar__links">Testimonies</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="/Sermons.html" class="navbar__links">Sermons</a>
+                    </li>
+                    <li class="navbar__item">
+                        <a href="/Podcast.html" class="navbar__links">Podcast</a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </nav>
+
+        <section class="filters">
+            <select id="speaker" onchange="filterSermons()">
+                <option value="">Speaker</option>
+                <option value="">ALL</option>
+                <option value="Pastor Mwanza">Pastor Mwanza</option>
+                <option value="Overseas Missionary">Overseas Missionary</option>
+                <option value="Deacon Sakala">Deacon Sakala</option>
+                <option value="Bro Elijah">Bro Elijah</option>
+                <option value="Rev Mbewe">Rev Mbewe</option>
+                <option value="Rev Maurice">Rev Maurice</option>
+                <option value="Rev Dele">Rev Dele</option>
+                <option value="Rev Maduka">Rev Maduka</option>
+                <option value="Pastor Wino">Pastor Wino </option>
+                <option value="Rev Chali">Rev Chali</option>
+                <option value="Pastor Mwewa">Pastor Mwewa</option>
+                <option value="Rev Jonathan Muma">Rev Jonathan Muma</option>
+                <option value="Pastor Juma">Pastor Juma</option>
+                <option value="Brother Chanda">Brother Chanda</option>
+                <option value="Pastor Kalua">Pastor Kalua</option>
+                <option value="Rev.Dr Matimba">Rev.Dr Matimba</option>
+                <option value="Pastor Kaira">Pastor Kaira</option>
+                <option value="Pastor Jabez">Pastor Jabez</option>
+                <option value="Pastor Juma">Pastor Juma</option>
+                <option value="Rev Maurice">Rev Maurice</option>
+                <option value="Rev Maduka">Rev Maduka</option>
+                <option value="Bro Joel">Bro Joel</option>
+                <option value="Minister Matthews (us)">Minister Matthews (us)</option>
+                <option value="Pastor Chimunda">Pastor Chimunda</option> 
+                <option value="Rev.Dr Matimba">Rev.Dr Matimba</option> 
+                <option value="Pastor Dakwa">Pastor Dakwa</option> 
+                <option value="Rev Gideon">Rev Gideon</option> 
+                <option value="Pastor Mhlanga">Pastor Mhlanga</option> 
+                <option value="Pastor Litwayi">Pastor Litwayi</option> 
+                <option value="Rev Pastor Josh">Rev Pastor Josh</option> 
+            </select>
+
+            <select id="topic" onchange="filterSermons()">
+                <option value="">Topics</option>
+                <option value="">ALL</option>
+                <option value="Overseas Missionary">Overseas Missionary</option>
+                <option value="Spirit of Balaam">Spirit of Balaam</option>
+                <option value="Living in the Faith ">Living in the Faith</option>
+                <option value="INT Convention">INT Convention</option>
+                <option value="Gospel">Gospel</option>
+                <option value="Easter Meetings">Easter Meetings 2025</option>
+            </select>
+
+            <select id="book" onchange="filterSermons()">
+                <option value="">Books</option>
+                <option value="">ALL</option>
+                <option value="Samuel">Samuel</option>
+            </select>
+
+            <select id="series" onchange="filterSermons()">
+                <option value="">Series</option>
+                <option value="">ALL</option>
+                <option value="Overseas Missionary">Overseas Missionary</option>
+                <option value="third pull">Third Pull</option>
+                <option value="Love">Love</option>
+                <option value="Living in the faith">Living in the faith</option>
+                <option value="INT Convention">INT Convention</option>
+                <option value="Special Meetings">Special Meetings</option>
+                <option value="Spirit of Balaam">Spirit of Balaam</option>
+                <option value="Gospel">Gospel</option>
+                <option value="Praise and Worship">Praise and Worship</option>
+                <option value="Youth">Youth</option>
+                <option value="Seventieth Weeks of Daniel">Seventieth Weeks of Daniel</option>
+            </select>
+        </section>
+        <!-- sermon icon -->
+        <section class="sermon">
+            <h2>Sermon Archive</h2>
+            <p>Recent sermons preached at Peace Tabernacle The Bride's Ministries.</p>
+            <section class="sermons">
+                <h2>RECENT SERMONS</h2>
+                <div class="sermon-container">
+                    <!-- Featured Sermon (Left Side) -->
+                    <div class="sermon-featured">
+                        <img src="testimonies/a.jpeg" alt="And Then Jesus Stopped">
+                        <h3>THE SURE FOUNDATION FOR THE MASTERPIECE</h3>
+                        <p><i class="fas fa-calendar-alt"></i> 2025-03-23 — <strong>Pastor Mwanza</strong></p>
+                        <div class="sermon-icons">
+                            <a href="https://youtu.be/XmlV--1rZUY?si=KIewVIOxIIy06AJn"><i class="fas fa-play"></i></a>
+                            <button><a href="https://youtu.be/XmlV--1rZUY?si=KIewVIOxIIy06AJn" class="learn-more">visit</a></button>
+                        </div>
+                    </div>
+
+                    <!-- Grid of Other Sermons (Right Side) -->
+                    <div class="sermon-grid">
+                        <div class="sermon-item">
+                            <img src="testimonies/dele.jpg" alt="Commissioned To Pray One For Another">
+                            <h4>Third Pull-Rev Dele</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 2025-03-21</p>
+                            <div class="sermon-icons">
+                                <a href="https://web.facebook.com/share/v/1EBrsvNzMB/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://web.facebook.com/share/v/1EBrsvNzMB/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/pastorkaluba.jpg" alt="Prayer Has GPS">
+                            <h4>Pastor Kalua</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 2024</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1Qr91SAwBk/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1Qr91SAwBk/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/heart.jpg" alt="Pray Always">
+                            <h4>Heart Of Flesh-Deacon Sakala</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 2024</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1B86rZR1dB/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1B86rZR1dB/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/b.jpeg" alt="Where Is That God? Pt3">
+                            <h4>Third Pull-Rev Khumomotse</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/12Kx2jzN1yG/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/12Kx2jzN1yG/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/faith.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Tested Faith Produces Goods-Rev Maurice</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1GoZUkfmps/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/when son of man.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>WHEN THE SON OF MAN COMETH , SHALL HE FIND FAITH ON THE EARTH"</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/maduka.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Special Meetings-Rev Maduka</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 2023</p>
+                            <div class="sermon-icons">
+                                <button><a href="https://www.youtube.com/live/QuOch1MVY0E?si=_DbeqrIUNZ3v2fik" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/jesus come and called.jpeg" alt="Prayer Has GPS">
+                            <h4>Pastor Wino</h4>
+                            <p><i class="fas fa-calendar-alt"></i>Luke 7:1-9 18 oct 2020</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1Qr91SAwBk/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1HGNtsrPTB/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/faith.jpg" alt="Pray Always">
+                            <h4>Pastor Wino</h4>
+                            <p><i class="fas fa-calendar-alt"></i>Part 218 oct 2020</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1B86rZR1dB/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1B4sHz8ifU/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/faith.jpg" alt="Where Is That God? Pt3">
+                            <h4>Rev Chali</h4>
+                            <p><i class="fas fa-calendar-alt"></i>1 John 3:18-21 19 october 2020</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/12Kx2jzN1yG/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/16CQqoEcbD/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/he is alive.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>He is Alive-Rev Chali</h4>
+                            <p><i class="fas fa-calendar-alt"></i></p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1BRHawx9Wt/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/chali.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev Chali(What is thy request Queen Esther Esther 7:1-4)-INT Convention</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 15 October 2020</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1B3jfTXwSo/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/he is alive.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>He is Alive-Rev Chali</h4>
+                            <p><i class="fas fa-calendar-alt"></i>20 feb 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1Fr7xzVLYV/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/he is alive.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev Chali</h4>
+                            <p><i class="fas fa-calendar-alt"></i> jan 3 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1BwjKuxVXv/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/mwewa.jpg" alt="Where Is That God? Pt3">
+                            <h4>Pastor Mwewa</h4>
+                            <p><i class="fas fa-calendar-alt"></i>31 october 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/12Kx2jzN1yG/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/16KTBAEdNt/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/mwewa.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwewa</h4>
+                            <p><i class="fas fa-calendar-alt"></i>31 oct 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/15uDBJFtbZ/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/chali.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev Chali(What is thy request Queen Esther Esther 7:1-4)-INT Convention</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 17 October 2020</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/18qBoRSQjN/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/chali.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Rev Chali</h4>
+                            <p><i class="fas fa-calendar-alt"></i>17 feb 2020</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/18t8FBZCdf/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev Jonathan Muma</h4>
+                            <p><i class="fas fa-calendar-alt"></i> jan 3 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/18abaATbsE/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/possessing of gates.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Juma-Special Meetings</h4>
+                            <p><i class="fas fa-calendar-alt"></i>18 April 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1EtmTEG2Rc/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/find faith.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Juma-Special Meetings</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 18 April 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/16A6pGBU8d/ class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i>May 6 2020</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/16KdZbYqZZ/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/find faith.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Juma-Special Meetings</h4>
+                            <p><i class="fas fa-calendar-alt"></i> April 18 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1DJistKHYJ/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church.jpg" alt="Where Is That God? Pt3">
+                            <h4>Pastor Mwewa</h4>
+                            <p><i class="fas fa-calendar-alt"></i>31 october 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/12Kx2jzN1yG/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/16KTBAEdNt/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i>May 9 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/15wW2J2AZg//" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/find faith.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Juma-Special Meetings</h4>
+                            <p><i class="fas fa-calendar-alt"></i> May 2 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/165k2Yiq8p/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/faith.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Juma-Special Meetings</h4>
+                            <p><i class="fas fa-calendar-alt"></i>June 13 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1FjQQWBiMw/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i> August 8 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/165BkGFDbn/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i>8 August 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/18qMsRpCrX/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/a true witnes.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>A true witness -Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i> November 7 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1F8nXJoLqn/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/zimbabwe.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza-Zimbabwe </h4>
+                            <p><i class="fas fa-calendar-alt"></i> August 14, 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/12Heu71E7S" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/zimbabwe.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Zimbabwe-Pastor Mwanza-Third service in Nyabhira Tabernacle</h4>
+                            <p><i class="fas fa-calendar-alt"></i> August 14, 2022 · </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/18ebfTa9sj/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i>September 25, 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1A1CKHFrMz/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza-1 samuel 4:31 </h4>
+                            <p><i class="fas fa-calendar-alt"></i> October 2, 2022 </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1DpCiWX3m9/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/jesus come and called.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza-THEN JESUS CAME AND CALLED</h4>
+                            <p><i class="fas fa-calendar-alt"></i>November 21 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1Be1fBUSBi/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i> November 21 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1Be1fBUSBi/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church.jpg" alt="Where Is That God? Pt3">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i>November 28 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/12Kx2jzN1yG/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1FXdoc5TPi/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i>December 12 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/14H8A6nt2CV/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i> May 1 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/15vzMNjg2Z/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i>May 15 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1UuGhaA8Aj/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/jesus come and called.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza-mark 8:35</h4>
+                            <p><i class="fas fa-calendar-alt"></i>June 5 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1Xyxzbtp1S/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/living in the faith.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Living in the Faith of the Lord-Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i>June 12 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1UGxpxFc5Y/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/living in the faith.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4> Living in the Faith of the Lord-Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 19June 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1AQZ8V32tA/ class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/living in the faith.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza-Living in the Faith</h4>
+                            <p><i class="fas fa-calendar-alt"></i>June 19 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/15qVo5rdoy/ class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i> June 26 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/14yADkEncq/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="Where Is That God? Pt3">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i>July 31, 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/12Kx2jzN1yG/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/18oq5qWsKz/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i>April 30, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/169Cdu9sab/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i> May 14, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1AETUBFUw5/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i>June 13 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1FjQQWBiMw/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza-REV 3:1</h4>
+                            <p><i class="fas fa-calendar-alt"></i> May 21, 2023 </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1B5CZw8T3k/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/youth.png" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza-The glory of the Youth </h4>
+                            <p><i class="fas fa-calendar-alt"></i>May 28, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1KiitFsMsn/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/zimbabwe.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Malawi trip -Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i> November 7 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/16VTtn55m7/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/zimbabwe.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza-Malawi</h4>
+                            <p><i class="fas fa-calendar-alt"></i>November 21 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1BSsFyCAMV/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza-Isaiah 53:3 </h4>
+                            <p><i class="fas fa-calendar-alt"></i> August 11, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1BkqNbRFF9/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/position.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza-Positions in the church</h4>
+                            <p><i class="fas fa-calendar-alt"></i>February 25, 2024</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1EngjrKbWH/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/Love.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza-Love</h4>
+                            <p><i class="fas fa-calendar-alt"></i></p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/18sHxYRuuQ/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/Love.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza-Love</h4>
+                            <p><i class="fas fa-calendar-alt"></i></p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1HSQNK6kFv/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/Love.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza-Love</h4>
+                            <p><i class="fas fa-calendar-alt"></i></p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1AYDsZd5wP/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/Love.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza-Love</h4>
+                            <p><i class="fas fa-calendar-alt"></i></p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1EYn2jq43N/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/Love.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza-Love</h4>
+                            <p><i class="fas fa-calendar-alt"></i></p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/198bQZPMf1/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/submmitt].jpeg" alt="Where Is That God? Pt3">
+                            <h4>Pastor Mwanza-Submitting yourself</h4>
+                            <p><i class="fas fa-calendar-alt"></i>November 28 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/12Kx2jzN1yG/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1XWivWnvwZ/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/the lord`s body.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza-Discerning the Lord's body </h4>
+                            <p><i class="fas fa-calendar-alt"></i>March 22, 2024 </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1AUbQ5UuWp/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/christ in me.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Bro Elijah-Christ in me</h4>
+                            <p><i class="fas fa-calendar-alt"></i> July 21, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/16BiT2qCUN/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/possessing of gates.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Possessing the gates of the enemy-Bro Elijah</h4>
+                            <p><i class="fas fa-calendar-alt"></i>May 15 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/15xNzfAGKm/ " class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Brother Japheth</h4>
+                            <p><i class="fas fa-calendar-alt"></i>July 16, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1EF461oru1/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/kalua.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Kalua-Special Meetings</h4>
+                            <p><i class="fas fa-calendar-alt"></i> June 4, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1A2LJSbsjg/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/pastorkaluba.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Kalua</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 4 June 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/15JDCcqdfC/ class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/kalua.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Kalua-Special Meetings</h4>
+                            <p><i class="fas fa-calendar-alt"></i>February 4, 2024 </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/15Lpv6qBpX/ class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/kalua.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Kalua</h4>
+                            <p><i class="fas fa-calendar-alt"></i> May 12, 2024 </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1DGanX89yo/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/chimunda.jpg" alt="Where Is That God? Pt3">
+                            <h4>Pastor Chimunda-Special Meetings</h4>
+                            <p><i class="fas fa-calendar-alt"></i>2024</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/12Kx2jzN1yG/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1K2czkzeGH/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/chimunda.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Chimunda-Special Meetings</h4>
+                            <p><i class="fas fa-calendar-alt"></i>2024</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1AV2HwtCEm/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/matimba.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev.Dr Matimba-Special Meetings</h4>
+                            <p><i class="fas fa-calendar-alt"></i>Feb 12 2025</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/18orrHaQG9/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/patrick.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza-Funeral Patrick Zulu</h4>
+                            <p><i class="fas fa-calendar-alt"></i>June 13 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/18wGLEk66T/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Kaira</h4>
+                            <p><i class="fas fa-calendar-alt"></i> July 24, 2022 </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/15CvusWJ5r/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/zimbabwe.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza-Zimbabwe </h4>
+                            <p><i class="fas fa-calendar-alt"></i> August 14, 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/12Heu71E7S" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/zimbabwe.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Zimbabwe-Pastor Mwanza-Third service in Nyabhira Tabernacle</h4>
+                            <p><i class="fas fa-calendar-alt"></i> August 14, 2022 · </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/18ebfTa9sj/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i>September 25, 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1A1CKHFrMz/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza-1 samuel 4:31 </h4>
+                            <p><i class="fas fa-calendar-alt"></i> October 2, 2022 </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1DpCiWX3m9/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/against all odds.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza-Against all odds</h4>
+                            <p><i class="fas fa-calendar-alt"></i> July 30, 2023 </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1ECaigQRoc/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i> September 8, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1FYWLr3ye1/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/balaam.jpg" alt="Where Is That God? Pt3">
+                            <h4>Pastor Mwanza-Spirit of Balaam(Numbers 22:17)</h4>
+                            <p><i class="fas fa-calendar-alt"></i>September 20, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/12Kx2jzN1yG/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1BeW8ZRYpf/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/balaam.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza-Spirit of Balaam(Numbers 22:17)</h4>
+                            <p><i class="fas fa-calendar-alt"></i>September 22, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://fb.watch/yxrAfVtG-X/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/balaam.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza-Spirit of Balaam(Numbers 22:17)</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 22 Sept 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1G4B3G1P9F/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/balaam.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mwanza-Spirit of Balaam(Numbers 22:17)</h4>
+                            <p><i class="fas fa-calendar-alt"></i>September 24, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1GTDV4nb7A//" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mwanza-2 Samuel 16</h4>
+                            <p><i class="fas fa-calendar-alt"></i> September 29, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/18wgfCjAiQ/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>1samuel 15-Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i>September 29, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1A7wRZHXt6/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/worth gospel.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4> Is your life worthy of the Gospel-Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i> November 19, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1KufBk1V52/="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/worth gospel.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Is your life worthy of the Gospel-Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i>November 26, 2023 </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/17aP6nQwrP/ class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/worth gospel.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Is your life worthy of the Gospel-Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i> December 17, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/15zsBQqAEK/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/foolish galations.jpeg" alt="Where Is That God? Pt3">
+                            <h4>Pastor Mwanza-galations 3:1 (Foolish Galations)</h4>
+                            <p><i class="fas fa-calendar-alt"></i> January 14, 2024</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/12Kx2jzN1yG/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1DgFBcdbqP/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/mumbwa.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Rev Dele-(Token Tabernacle)</h4>
+                            <p><i class="fas fa-calendar-alt"></i>15 october 2023 </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1XC2oTgA5a/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/mumbwa.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev Dele-(Token Tabernacle)</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 15 october 2023 </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/161NWirJRH/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/mumbwa.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Rev Dele-(Token Tabernacle)</h4>
+                            <p><i class="fas fa-calendar-alt"></i>16 Oct 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1EFHeGarzv/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/hebron.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev Dele-Hebron(Unwritten law among us )</h4>
+                            <p><i class="fas fa-calendar-alt"></i> October 18, 2023 ·</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1TmHgFM71c/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/thirdpull.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Third Pull INT Convention-Rev Dele</h4>
+                            <p><i class="fas fa-calendar-alt"></i>October 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/159Txd1rjK/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/thirdpull.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Third Pull INT Convention-Rev Khumomotse</h4>
+                            <p><i class="fas fa-calendar-alt"></i> Oct 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1ENr1xAjJ4/"><i class="fas fa-play"></i></a>
+                                <button><a href="October 2023" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/thirdpull.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Third Pull INT Convention-Rev Khumomotse</h4>
+                            <p><i class="fas fa-calendar-alt"></i>Oct 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/16BkgAVyvY/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/thirdpull.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Third Pull INT Convention-Pastor Bangira</h4>
+                            <p><i class="fas fa-calendar-alt"></i> Oct 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/15HyCZkjdC/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/when son of man.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>When Son Of Man Cometh Shall He Find Faith-INT Convention</h4>
+                            <p><i class="fas fa-calendar-alt"></i>Oct 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/tyB_AwphApo?si=b9qDga-yLlvYN2m4" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/when son of man.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>When Son Of Man Cometh Shall He Find Faith-INT Convention</h4>
+                            <p><i class="fas fa-calendar-alt"></i>Oct 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/mkmzSEmlnAc?si=Pig-URcEzjXmQ5u2" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/when son of man.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>When Son Of Man Cometh Shall He Find Faith-INT Convention</h4>
+                            <p><i class="fas fa-calendar-alt"></i>Oct 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/ZQNKIEXpa8Q?si=7ITaIpdyW72nMo0X" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/when son of man.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>When Son Of Man Cometh Shall He Find Faith-INT Convention</h4>
+                            <p><i class="fas fa-calendar-alt"></i>Oct 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/FvznqupMJik?si=ijV9Cs-BYNIGSlif" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/when son of man.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>When Son Of Man Cometh Shall He Find Faith-INT Convention</h4>
+                            <p><i class="fas fa-calendar-alt"></i>Oct 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/zSTJgrlye0E?si=usN96nHT2AIY0Rx-" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/maduka.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Special Meetings-Rev Maduka</h4>
+                            <p><i class="fas fa-calendar-alt"></i></p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1BTwrit8jk/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/maduka.jpg" alt="Where Is That God? Pt3">
+                            <h4>Special Meetings-Rev Maduka</h4>
+                            <p><i class="fas fa-calendar-alt"></i></p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/12Kx2jzN1yG/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/16CGedUktE/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/maduka.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Special Meetings-Rev Maduka</h4>
+                            <p><i class="fas fa-calendar-alt"></i></p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1B9GiRiRp4/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/Love.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Minister Matthews (US)</h4>
+                            <p><i class="fas fa-calendar-alt"></i>March 26, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1Bz3e3LziB/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/faith.jpg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Dakwa </h4>
+                            <p><i class="fas fa-calendar-alt"></i>October 30, 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/18qGQNjo6Q/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev Mbewe</h4>
+                            <p><i class="fas fa-calendar-alt"></i>November 13, 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/19UG6bvnk3/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/church service.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Brother Francis</h4>
+                            <p><i class="fas fa-calendar-alt"></i> November 17, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/152iurAHuev/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/nabal.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Deacon Sakala</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 1 Samuel 25</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1BuvuU3xmM/ class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/possible.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Deacon Sakala-With Man It Is Impossible But With God It Is Possible</h4>
+                            <p><i class="fas fa-calendar-alt"></i></p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1F6cqvZJ8X/ class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/special meetings.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev-Special Meetings</h4>
+                            <p><i class="fas fa-calendar-alt"></i></p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/16Q626oPyk/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/special meetings.jpeg" alt="Where Is That God? Pt3">
+                            <h4>Pastor Jabez Kameta-Special Meetings</h4>
+                            <p><i class="fas fa-calendar-alt"></i>June 16 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/12Kx2jzN1yG/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/16Udu3TrZB" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/special meetings.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Jabez Kameta-Special Meetings</h4>
+                            <p><i class="fas fa-calendar-alt"></i>July 17 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1BkNeb8Zxi/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/night of praise and worship.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>All Night of Praise and Worship</h4>
+                            <p><i class="fas fa-calendar-alt"></i>July 1 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1AVdcg79sb/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/night of praise and worship.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>All Night of Praise and Worship</h4>
+                            <p><i class="fas fa-calendar-alt"></i>August 19, 2023</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1A6gWUtUbK/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/special meetings.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Kaira-Special Meetings</h4>
+                            <p><i class="fas fa-calendar-alt"></i> July 24, 2022 </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/15CvusWJ5r/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/special meetings.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Bro Joel-Special Meetings </h4>
+                            <p><i class="fas fa-calendar-alt"></i> 15 may 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/15Ht6djGq3/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/youth.png" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor R Mwanza Questions and Answers-Youth</h4>
+                            <p><i class="fas fa-calendar-alt"></i> December 25, 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1BpXtLaLVQ/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/special meetings.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Pastor Mapulanga-Special Meetings </h4>
+                            <p><i class="fas fa-calendar-alt"></i>Feb 12 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/162M63eJqJ/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/special meetings.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Mapulanga-Special Meetings </h4>
+                            <p><i class="fas fa-calendar-alt"></i> Feb 12 2022 </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1ACBfff2xb/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/youth.png" alt="Where Is That God? Pt3">
+                            <h4>Bro William and Samuel Siame-Youth</h4>
+                            <p><i class="fas fa-calendar-alt"></i>5 December 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/12Kx2jzN1yG/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/18SkC6cfq6/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/youth.png" alt="God Governs The Affairs Of Men">
+                            <h4>Bro Edward ,Sachil ,Albert and Japheth-Youth</h4>
+                            <p><i class="fas fa-calendar-alt"></i>5 December 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/15u5touzcv/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/jesus come and called.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev Maurice-Matthew 36:1 </h4>
+                            <p><i class="fas fa-calendar-alt"></i>7 August 2022</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/16AbE1UPpp/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/overcoming.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Rev Maurice </h4>
+                            <p><i class="fas fa-calendar-alt"></i>sept 26 2021</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/18wsLUCV9B/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/BENONI.JPG" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Overseas Missionary-Rev .W. Mwanza-An End Of All Strife </h4>
+                            <p><i class="fas fa-calendar-alt"></i> Benoni City Tabernacle </p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/x5_sdI1YWhQ?si=lNnu6gRw2PEKCC8E" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/eagles.jpeg" alt="God Governs The Affairs Of Men">
+                            <h4>Overseas Missionary-Rev.W. Mwanza-SPEAKING FROM YOUR TESTIMONY </h4>
+                            <p><i class="fas fa-calendar-alt"></i>HEADSTONE CHARITY</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/n-YVmBVINWI?si=O37QMktSEA7UKyQv" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/ENTIRE PICTURE.JPG" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Overseas Missionary-Rev .W. Mwanza-THE ENTIRE PICTURE MUST CHANGE</h4>
+                            <p><i class="fas fa-calendar-alt"></i>HEADSTONE CHARITY TABERNACLE</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/QqhWk4GiM4s?si=82dEbEf4UNSM2WI5" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/FLORIDA.JPG" alt="God Governs The Affairs Of Men">
+                            <h4>Overseas Missionary-Rev .W. Mwanza-Sunday 16th April 2023 </h4>
+                            <p><i class="fas fa-calendar-alt"></i>Florida Christian Fellowship</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1GoZUkfmps/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/kcTyOsMpljE?si=loAjpusfCciYzC_3" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/the lord`s body.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Overseas Missionary-Rev .W. Mwanza-THE POWER OF COMMUNION </h4>
+                            <p><i class="fas fa-calendar-alt"></i>HEADSTONE CHARITY TABERNACLE</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/5-PbutbdejM?si=8O9dqd8LCVlo-IEY" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/eagles.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Overseas Missionary-Rev .W. Mwanza-IT IS A MEASURED LIFE </h4>
+                            <p><i class="fas fa-calendar-alt"></i>HEADSTONE CHARITY TABERNACLE</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/OXh9rLqd3uk?si=7fujhToJJTJZ1FV7" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/eagles.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Overseas Missionary-Rev .W. Mwanza-GOD'S DIVINE COMMENTARY THAT OVERRIDES OUR MISTAKE </h4>
+                            <p><i class="fas fa-calendar-alt"></i>HEADSTONE CHARITY TABERNACLE</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/bYWz-AtQSUw?si=k6dwMyC88B_ndh4y" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/eagles.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Overseas Missionary-Rev .W. Mwanza-SERVING THE LORD </h4>
+                            <p><i class="fas fa-calendar-alt"></i>HEADSTONE CHARITY TABERNACLE</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/cBshAJMj7kY?si=H-UVvBJSnYOAO7E_" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/eagles.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Overseas Missionary-Rev .W. Mwanza-ACQUAINTANCE WITH GOD</h4>
+                            <p><i class="fas fa-calendar-alt"></i>HEADSTONE CHARITY TABERNACLE</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/QFtelWbkHzo?si=A4mei8UCQP0PLBz4_" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/eagles.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Overseas Missionary-Rev .W. Mwanza-HARVEST</h4>
+                            <p><i class="fas fa-calendar-alt"></i>WORD ORIENTED BRIDE TABERNACLE UGHELLI</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/7jj_Dtz-qGg?si=Mwzh8mXDO3Iz0WfL" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/eagles.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Overseas Missionary-Rev .W. Mwanza-YOU SHALL BREAK A RECORD</h4>
+                            <p><i class="fas fa-calendar-alt"></i>HEADSTONE CHARITY TABERNACLE</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/hFqHw52YzUM?si=4xKoNCk_sjEZ2qO4" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/GOD FLORDA.JPG" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Overseas Missionary-Rev .W. Mwanza-God's Divine Commentary That Overrides Our Mistakes</h4>
+                            <p><i class="fas fa-calendar-alt"></i> Florida Christian Fellowship</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/kel5wqtPeDY?si=x5lD65R0VNpYaUXv" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/eagles.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Overseas Missionary-Rev .W. Mwanza-FAITH IS A LONG-RANGE VISION</h4>
+                            <p><i class="fas fa-calendar-alt"></i> HEADSTONE CHARITY TABERNACLE</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/BqluTcVq8LQ?si=UbhCmmUzkafIGKtJ" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/EASTLEA.JPG" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Overseas Missionary-Rev .W. Mwanza-God Governs The Affairs Of Men</h4>
+                            <p><i class="fas fa-calendar-alt"></i> EastleaTabernacle</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/tyB_AwphApo?si=jg9AUI6mkNk2CpK7"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/RZdk8X08YrY?si=IvH83ptsxYlES4Uk" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/appointed.jpeg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Kairos-Pastor Mhlanga</h4>
+                            <p><i class="fas fa-calendar-alt"></i>EASTER MEETINGS 18-04-2025</p>
+                            <div class="sermon-icons">
+                                <a href="https://fb.watch/z2rSaSIIlz/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://fb.watch/z2rSaSIIlz/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/CRRRR copy.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Pastor Chimunda-Special Service</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 16-04-2025</p>
+                            <div class="sermon-icons">
+                                <a href="https://web.facebook.com/share/v/1SG578DHpD/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://web.facebook.com/share/v/1SG578DHpD/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/faith.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Brother Chanda</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 16-04-2025</p>
+                            <div class="sermon-icons">
+                                <a href="https://web.facebook.com/share/v/15HHX1znvb/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://web.facebook.com/share/v/15HHX1znvb/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/easter.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>REV GIDEON</h4>
+                            <p><i class="fas fa-calendar-alt"></i> EASTER MEETINGS MORNING SERVICE</p>
+                            <div class="sermon-icons">
+                                <a href="https://web.facebook.com/share/v/1BKWzxsoTN/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://web.facebook.com/share/v/1BKWzxsoTN/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/easter.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>PASTOR Litwayi</h4>
+                            <p><i class="fas fa-calendar-alt"></i> SATURDAY EASTER MEETINGS(AFTERNOON-SERVICE)</p>
+                            <div class="sermon-icons">
+                                <a href="https://web.facebook.com/share/v/1Ydnc95viS/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://web.facebook.com/share/v/1Ydnc95viS/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/easter.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>PASTOR Litwayi</h4>
+                            <p><i class="fas fa-calendar-alt"></i> SUNDAY EASTER MEETINGS(Morning-SERVICE)</p>
+                            <div class="sermon-icons">
+                                <a href="https://web.facebook.com/share/v/16BTU6nKY2/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://web.facebook.com/share/v/16BTU6nKY2/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/easter.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>PASTOR Litwayi</h4>
+                            <p><i class="fas fa-calendar-alt"></i> SUNDAY EASTER MEETINGS(AFTERNOON-SERVICE)</p>
+                            <div class="sermon-icons">
+                                <a href="https://web.facebook.com/share/v/16B9f759yo/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://web.facebook.com/share/v/16B9f759yo/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="image/10 copy.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev Pastor Josh</h4>
+                            <p><i class="fas fa-calendar-alt"></i> Friday-Lusaka West</p>
+                            <div class="sermon-icons">
+                                <a href="https://youtu.be/fY2NS9nSoZY?si=Ad2nJJvOZHdk0BEV"><i class="fas fa-play"></i></a>
+                                <button><a href="https://youtu.be/fY2NS9nSoZY?si=Ad2nJJvOZHdk0BEV" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="image/10 copy.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev Pastor Josh</h4>
+                            <p><i class="fas fa-calendar-alt"></i> Saturday Service</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/1EdZCfE17G/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/1EdZCfE17G/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="image/10 copy.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Rev Pastor Josh</h4>
+                            <p><i class="fas fa-calendar-alt"></i> SUNDAY Special Meetings</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.facebook.com/share/v/14jvfZwdWW/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.facebook.com/share/v/14jvfZwdWW/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/BENONI.JPG" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Overseas Missionary-Pastor Mwanza</h4>
+                            <p><i class="fas fa-calendar-alt"></i> Benoni</p>
+                            <div class="sermon-icons">
+                                <a href="https://www.youtube.com/live/VsRH8sp2ckI?si=kZyp2uvE3rrjA04w"><i class="fas fa-play"></i></a>
+                                <button><a href="https://www.youtube.com/live/VsRH8sp2ckI?si=kZyp2uvE3rrjA04w" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/hehe.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Seventieth Weeks Of Daniel</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 11 May 2025</p>
+                            <div class="sermon-icons">
+                                <a href="https://web.facebook.com/share/v/18m1TiSdh7/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://web.facebook.com/share/v/18m1TiSdh7/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/hehe.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Seventieth Weeks Of Daniel</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 11 May 2025 (cont)</p>
+                            <div class="sermon-icons">
+                                <a href="https://web.facebook.com/share/v/19JbRFhRBC/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://web.facebook.com/share/v/19JbRFhRBC/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                        <div class="sermon-item">
+                            <img src="testimonies/hehe.jpg" alt="Serving His Eternal Purpose In Life’s Journey">
+                            <h4>Seventieth Weeks Of Daniel</h4>
+                            <p><i class="fas fa-calendar-alt"></i> 18 May 2025</p>
+                            <div class="sermon-icons">
+                                <a href="https://web.facebook.com/share/v/19Cams6yt3/"><i class="fas fa-play"></i></a>
+                                <button><a href="https://web.facebook.com/share/v/19Cams6yt3/" class="learn-more">visit</a></button>
+                            </div>
+                        </div>
+                    </div>
+            </section>
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const menu = document.querySelector('#mobile-menu');
+                    const menuLinks = document.querySelector('.navbar__menu');
+
+                    if (menu && menuLinks) {
+                        menu.addEventListener('click', function() {
+                            menu.classList.toggle('is-active');
+                            menuLinks.classList.toggle('active');
+                        });
+                    }
+                });
+
+                document.addEventListener("DOMContentLoaded", function() {
+                    const section = document.querySelector(".sermons");
+                    const featured = document.querySelector(".sermon-featured");
+                    const grid = document.querySelector(".sermon-grid");
+
+                    function revealOnScroll() {
+                        if (!section || !featured || !grid) return; // prevent errors if elements not found
+
+                        let sectionPosition = section.getBoundingClientRect().top;
+                        let screenHeight = window.innerHeight;
+
+                        if (sectionPosition < screenHeight - 100) {
+                            section.classList.add("visible");
+                            featured.classList.add("visible");
+                            grid.classList.add("visible");
+                        } else {
+                            section.classList.remove("visible");
+                            featured.classList.remove("visible");
+                            grid.classList.remove("visible");
+                        }
+                    }
+
+                    window.addEventListener("scroll", revealOnScroll);
+                });
+
+
+                function filterSermons() {
+                    let speaker = document.getElementById("speaker").value.toLowerCase();
+                    let topic = document.getElementById("topic").value.toLowerCase();
+                    let book = document.getElementById("book").value.toLowerCase();
+                    let series = document.getElementById("series").value.toLowerCase();
+
+                    let sermons = document.querySelectorAll(".sermon-item");
+
+                    sermons.forEach(sermon => {
+                        let title = sermon.querySelector("h4").innerText.toLowerCase();
+                        let description = sermon.querySelector("p").innerText.toLowerCase();
+
+                        let matchesSpeaker = speaker === " " || title.includes(speaker) || description.includes(speaker);
+                        let matchesTopic = topic === " " || title.includes(topic) || description.includes(topic);
+                        let matchesBook = book === " " || title.includes(book) || description.includes(book);
+                        let matchesSeries = series === " " || title.includes(series) || description.includes(series);
+
+                        if (matchesSpeaker && matchesTopic && matchesBook && matchesSeries) {
+                            sermon.style.display = "block ";
+                        } else {
+                            sermon.style.display = "none ";
+                        }
+                    });
+                }
+            </script>
+
+
+            <!-- Featured Sermon Image (Right Side) -->
+            <!-- <div class="sermon-featured ">
+                <img src="testimonies/a.jpeg " alt="Featured Sermon ">
+            </div>
+            </div> -->
+        </section>
+
+
+
+        <div class="sermon-grid ">
+
+    </body>
+    <style>
+        /* Styling for Pastor International (Align with Sermon Grid) */
+        
+        .sermon-international {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+        }
+        
+        .sermon-international img {
+            width: 120px;
+            /* Adjust image size */
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .sermon-international h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin: 0;
+        }
+        
+        .sermon-international p {
+            font-size: 12px;
+            color: #777;
+        }
+        /* Styling for Sermon Grid (Align with Popular Sermons) */
+        
+        .sermon-grid2 {
+            border-top: 2px solid #28a745;
+            /* Green underline */
+            padding-top: 10px;
+        }
+        
+        .sermon-item2 {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 12px;
+        }
+        
+        .sermon-item2 img {
+            width: 100px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .sermon-item2 h4 {
+            font-size: 14px;
+            margin: 0;
+        }
+        
+        .sermon-item2 p {
+            font-size: 12px;
+            color: #777;
+        }
+        /* Styling for View Count */
+        
+        .sermon-international p,
+        .sermon-item2 p {
+            display: flex;
+            align-items: center;
+        }
+        
+        .sermon-international p::after,
+        .sermon-item2 p::after {
+            content: " 👁 7 ";
+            /* Example view count */
+            margin-left: 8px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        
+        .navbar {
+            background: #070707;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        
+        .navbar__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            z-index: 1;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+        /* Logo Styling (Image) */
+        
+        #navbar__logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 20px;
+            /* Space between logo and toggle */
+        }
+        /* If you want the logo image */
+        
+        #navbar__logo img {
+            height: 70px;
+            /* Make it fit the navbar height */
+            width: auto;
+            /* Maintain aspect ratio */
+        }
+        /* Updated Logo Text Styling (More Appealing) */
+        /* Navbar Menu */
+        /* Navbar Menu - Desktop (Hidden by Default) */
+        
+        .navbar__menu {
+            display: flex;
+            /* Remove from desktop */
+            align-items: center;
+            list-style: none;
+            text-align: center;
+            gap: 0.1px;
+        }
+        
+        .navbar__links {
+            color: #fffefc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1.5rem;
+            height: 100%;
+        }
+        
+        .navbar__links:hover {
+            color: #f77062;
+            transition: all 0.35s ease;
+        }
+        
+        .navbar__toggle {
+            display: none;
+            /* Hide on desktop */
+        }
+        /* Navbar Toggle */
+        
+        .navbar__toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 35px;
+            height: 20px;
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        .navbar__toggle .bar {
+            width: 100%;
+            height: 5px;
+            background: #fff;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+        /* Mobile View */
+        
+        @media screen and (max-width: 960px) {
+            html,
+            body {
+                overflow-x: hidden;
+                margin: 0;
+                padding: 0;
+            }
+            .navbar__menu {
+                display: grid;
+                /* Ensure menu appears on mobile */
+                grid-template-columns: auto;
+                width: 90%;
+                max-width: 9600px;
+                height: auto;
+                position: absolute;
+                top: 72px;
+                left: 45%;
+                transform: translateX(-50%);
+                opacity: 0;
+                pointer-events: none;
+                /* Prevent clicks when hidden */
+                transition: opacity 0.5s ease;
+                z-index: 1000;
+                border-radius: 100px;
+                padding: 10px 0;
+                gap: 0.001px;
+            }
+            /* Active state when the menu is shown */
+            .navbar__menu.active {
+                opacity: 1;
+                pointer-events: auto;
+                /* Enable clicks when active */
+                max-height: 400px;
+                font-size: 1.2rem;
+                height: auto;
+            }
+            /* Menu Item Styling */
+            .navbar__menu li {
+                width: 90%;
+                padding: 1px;
+                text-align: center;
+                background: #bcf3c8fd;
+                border-radius: 2px;
+                margin: 1px 0;
+            }
+            .navbar__links {
+                text-align: center;
+                width: 80%;
+                color: rgb(72, 81, 204);
+                padding: 1rem 0;
+                display: block;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            .navbar__links:hover {
+                background: #f1f1f1;
+            }
+        }
+        /* Sermons */
+        
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+        .sermons {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            margin: 40px auto;
+            max-width: 1100px;
+            opacity: 0;
+            /* Start hidden */
+            transform: translateX(-50px);
+            /* Start position for animation */
+            transition: opacity 1s ease-out, transform 1s ease-out;
+        }
+        
+        .sermons.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        button {
+            padding: 8px 15px;
+        }
+        
+        .sermons h2 {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            border-bottom: 4px solid #286ea7;
+        }
+        
+        .sermon-container {
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+            justify-content: center;
+        }
+        /* Feature Sermon (Left Side) */
+        
+        .sermon-featured {
+            width: 40%;
+            text-align: left;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 1s ease-out 0.5s, transform 1s ease-out 0.5s;
+        }
+        
+        .sermon-featured.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .sermon-featured img {
+            width: 100%;
+            border-radius: 8px;
+        }
+        
+        .sermon-item button {
+            background: #94c0ec;
+            color: rgb(0, 0, 0);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .sermon-item button:hover {
+            background: #a7582a;
+        }
+        /* Sermon Grid (Right Side) */
+        
+        .sermon-grid {
+            width: 55%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: opacity 1s ease-out 0.8s, transform 1s ease-out 0.8s;
+        }
+        
+        .sermon-grid.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .sermon-item {
+            background: #f9f9f9;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: left;
+        }
+        
+        .sermon-item img {
+            width: 100%;
+            border-radius: 6px;
+        }
+        
+        .more-sermons {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #333;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            border-radius: 5px;
+            transition: 0.3s ease;
+        }
+        
+        .more-sermons:hover {
+            background: #555;
+        }
+        
+        .sermon-icons {
+            padding: 8px 15px;
+        }
+        /* Mobile Responsive */
+        
+        @media (max-width: 768px) {
+            .sermon-container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .sermon-featured {
+                width: 100%;
+            }
+            .sermon-grid {
+                width: 40%;
+                max-width: 400px;
+            }
+            .sermon-item img {
+                width: 100%;
+                /* border-radius: 6px; */
+                max-width: 120px;
+                max-height: 100px;
+            }
+            .sermon-grid {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 20px;
+                opacity: 0;
+                transform: translateX(-50px);
+                transition: opacity 1s ease-out 0.8s, transform 1s ease-out 0.8s;
+            }
+            .sermon-grid.visible {
+                opacity: 1;
+                transform: translateX(0);
+            }
+            .sermons h2 {
+                font-size: 24px;
+                font-weight: 600;
+                margin-bottom: 20px;
+                text-transform: uppercase;
+            }
+            .sermon-icons {
+                padding: 8px 15px;
+            }
+        }
+    </style>
+
+    </html>

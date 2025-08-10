@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+Sitemap: https://peace-tabernacle.netlify.app/sitemap.xml
+

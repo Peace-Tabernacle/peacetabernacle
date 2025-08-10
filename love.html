@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Podcasts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        
+        .podcast-list {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .podcast-item {
+            background-color: #f1f1f1;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 400px;
+            text-align: center;
+            color: #121212;
+        }
+        
+        audio {
+            width: 100%;
+        }
+        
+        .audio-list {
+            width: 80%;
+            margin: auto;
+            background: #181818;
+            padding: 20px;
+            border-radius: 10px;
+        }
+        
+        .audio-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #333;
+        }
+        
+        .song-item img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .button-container {
+            margin-top: 15px;
+        }
+        
+        .like-btn,
+        .share-btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        
+        .like-btn:hover,
+        .share-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .like-count {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        
+        .view-count {
+            margin-top: 10px;
+            font-size: 14px;
+            color: #888;
+        }
+        
+        .button-container button {
+            display: inline-block;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Daily Devotion</h1>
+    <div class="podcast-list">
+        <div class="podcast-item" id="podcast1">
+            <h3>It is Well with My Soul</h3>
+            <audio controls>
+                <source src="love/y2mate.com - It is Well with My Soul  piano instrumental hymn with lyrics.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="button-container">
+                <button class="like-btn">
+                    Like <span class="like-count">0</span>
+                </button>
+                <button class="share-btn">Share</button>
+            </div>
+            <p class="view-count">Views: <span class="view-count-number">0</span></p>
+        </div>
+
+        <div class="podcast-item" id="podcast2">
+            <h3>Love Audio 2</h3>
+            <audio controls>
+                <source src="love2/audio2.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="button-container">
+                <button class="like-btn">
+                    Like <span class="like-count">0</span>
+                </button>
+                <button class="share-btn">Share</button>
+            </div>
+            <p class="view-count">Views: <span class="view-count-number">0</span></p>
+        </div>
+
+        <div class="podcast-item" id="podcast3">
+            <h3>Love Audio 3</h3>
+            <audio controls>
+                <source src="love/audio3.mp3" type="audio/mp3">
+                Your browser does not support the audio element.
+            </audio>
+            <div class="button-container">
+                <button class="like-btn">
+                    Like <span class="like-count">0</span>
+                </button>
+                <button class="share-btn">Share</button>
+            </div>
+            <p class="view-count">Views: <span class="view-count-number">0</span></p>
+        </div>
+    </div>
+    <br>
+    <a href="Podcast.html">Back to Podcasts</a>
+
+    <script>
+        // Like button functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const podcastItems = document.querySelectorAll('.podcast-item');
+
+            podcastItems.forEach(item => {
+                const podcastId = item.getAttribute('data-id'); // Unique identifier for each podcast
+                const likeButton = item.querySelector('.like-btn');
+                const likeCountElement = item.querySelector('.like-count');
+                const shareButton = item.querySelector('.share-btn');
+                const viewCountElement = item.querySelector('.view-count-number');
+                const audioElement = item.querySelector('audio');
+
+                // Retrieve stored values from localStorage
+                let storedLikes = localStorage.getItem(`likes-${podcastId}`) || 0;
+                let storedViews = localStorage.getItem(`views-${podcastId}`) || 0;
+                let hasLiked = localStorage.getItem(`hasLiked-${podcastId}`) === 'true';
+                let hasViewed = localStorage.getItem(`hasViewed-${podcastId}`) === 'true';
+
+                // Set initial values
+                likeCountElement.textContent = storedLikes;
+                viewCountElement.textContent = storedViews;
+
+                // Like button functionality
+                likeButton.addEventListener('click', () => {
+                    if (!hasLiked) {
+                        let newLikeCount = parseInt(likeCountElement.textContent) + 1;
+                        likeCountElement.textContent = newLikeCount;
+                        localStorage.setItem(`likes-${podcastId}`, newLikeCount);
+                        localStorage.setItem(`hasLiked-${podcastId}`, 'true');
+                        hasLiked = true; // Prevent multiple likes
+                    } else {
+                        alert('You have already liked this episode.');
+                    }
+                });
+
+                // View count functionality
+                if (!hasViewed) {
+                    audioElement.addEventListener('play', () => {
+                        let newViewCount = parseInt(viewCountElement.textContent) + 1;
+                        viewCountElement.textContent = newViewCount;
+                        localStorage.setItem(`views-${podcastId}`, newViewCount);
+                        localStorage.setItem(`hasViewed-${podcastId}`, 'true');
+                        hasViewed = true; // Prevent multiple views
+                    }, {
+                        once: true
+                    }); // Ensures the event runs only once
+                }
+
+                // Share button functionality using Web Share API
+                shareButton.addEventListener('click', () => {
+                    if (navigator.share) {
+                        navigator.share({
+                                title: 'Check out this podcast!',
+                                text: 'Listen to this amazing podcast episode!',
+                                url: window.location.href
+                            })
+                            .then(() => console.log('Shared successfully!'))
+                            .catch((error) => console.log('Sharing failed:', error));
+                    } else {
+                        alert('Your browser does not support the Web Share API.');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

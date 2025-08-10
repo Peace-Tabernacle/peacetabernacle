@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <link rel="canonical" href="https://peace-tabernacle.netlify.app/">
+    <style>
+        .navbar {
+            background: #000000;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        
+        .navbar__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            z-index: 1;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+        /* Logo Styling (Image) */
+        
+        #navbar__logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 20px;
+            /* Space between logo and toggle */
+        }
+        /* If you want the logo image */
+        
+        #navbar__logo img {
+            height: 70px;
+            /* Make it fit the navbar height */
+            width: auto;
+            /* Maintain aspect ratio */
+        }
+        /* Updated Logo Text Styling (More Appealing) */
+        /* Navbar Menu */
+        /* Navbar Menu - Desktop (Hidden by Default) */
+        
+        .navbar__menu {
+            display: flex;
+            /* Remove from desktop */
+            align-items: center;
+            list-style: none;
+            text-align: center;
+            gap: 0.1px;
+        }
+        
+        .navbar__links {
+            color: #fffefc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1.5rem;
+            height: 100%;
+        }
+        
+        .navbar__links:hover {
+            color: #f77062;
+            transition: all 0.35s ease;
+        }
+        
+        .navbar__toggle {
+            display: none;
+            /* Hide on desktop */
+        }
+        /* Navbar Toggle */
+        
+        .navbar__toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 35px;
+            height: 20px;
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        .navbar__toggle .bar {
+            width: 100%;
+            height: 5px;
+            background: #fff;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+        /* Mobile View */
+        
+        @media screen and (max-width: 960px) {
+            html,
+            body {
+                overflow-x: hidden;
+                margin: 0;
+                padding: 0;
+            }
+            .navbar__menu {
+                display: grid;
+                /* Ensure menu appears on mobile */
+                grid-template-columns: auto;
+                width: 90%;
+                max-width: 9600px;
+                height: auto;
+                position: absolute;
+                top: 72px;
+                left: 45%;
+                transform: translateX(-50%);
+                opacity: 0;
+                pointer-events: none;
+                /* Prevent clicks when hidden */
+                transition: opacity 0.5s ease;
+                z-index: 1000;
+                border-radius: 100px;
+                padding: 10px 0;
+                gap: 0.001px;
+            }
+            /* Active state when the menu is shown */
+            .navbar__menu.active {
+                opacity: 1;
+                pointer-events: auto;
+                /* Enable clicks when active */
+                max-height: 400px;
+                font-size: 1.2rem;
+                height: auto;
+            }
+            /* Menu Item Styling */
+            .navbar__menu li {
+                width: 90%;
+                padding: 1px;
+                text-align: center;
+                background: #bcf3c8fd;
+                border-radius: 2px;
+                margin: 1px 0;
+            }
+            .navbar__links {
+                text-align: center;
+                width: 80%;
+                color: rgb(72, 81, 204);
+                padding: 1rem 0;
+                display: block;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            .navbar__links:hover {
+                background: #f1f1f1;
+            }
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .news-container {
+            width: 80%;
+            margin: 20px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .news-item {
+            display: flex;
+            gap: 15px;
+            border-bottom: 1px solid #ddd;
+            padding: 15px 0;
+        }
+        
+        .news-item img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .news-content {
+            flex: 1;
+        }
+        
+        .news-title {
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            text-decoration: none;
+        }
+        
+        .news-title:hover {
+            color: #007BFF;
+        }
+        
+        .news-meta {
+            font-size: 12px;
+            color: #777;
+            margin: 5px 0;
+        }
+        
+        .news-description {
+            font-size: 14px;
+            color: #555;
+        }
+        
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+        
+        .read-more:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .news-container {
+                width: 95%;
+                /* Use more of the screen width */
+                padding: 15px;
+                /* Reduce padding for smaller screens */
+            }
+            .news-item {
+                flex-direction: column;
+                /* Stack items vertically */
+                text-align: center;
+                /* Center text for better alignment */
+            }
+            .news-item img {
+                width: 100%;
+                /* Make the image responsive */
+                height: auto;
+                /* Keep aspect ratio */
+            }
+            .news-content {
+                padding: 10px;
+                /* Reduce padding to fit mobile layout */
+            }
+            .news-title {
+                font-size: 16px;
+                /* Reduce font size slightly */
+            }
+            .news-meta {
+                font-size: 11px;
+                /* Adjust for readability */
+            }
+            .news-description {
+                font-size: 13px;
+                /* Slightly smaller text */
+            }
+            .read-more {
+                font-size: 14px;
+                /* Keep readability */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <!-- Mobile menu toggle button -->
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Navbar Menu -->
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/News.html" class="navbar__links">News</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Outreach.html" class="navbar__links">Outreach</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/calendar.html" class="navbar__links">Music</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Announcement.html" class="navbar__links">Announcement</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/about-us.html" class="navbar__links">About Us</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Testimonies.html" class="navbar__links">Testimonies</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Sermons.html" class="navbar__links">Sermons</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Podcast.html" class="navbar__links">Podcast</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="news-container">
+        <div class="news-item">
+            <img src="/image/wedding1.jpg" alt="Wedding 1">
+            <div class="news-content">
+                <a href="#" class="news-title">Wedding: Br Maurice Mwanza and Sr Annie</a>
+                <div class="news-meta">📅 2023-12-30 — BY Sachil 🕒 17</div>
+                <p class="news-description">Congratulations to Br Maurice and Sr Annie on their wedding on December 30, 2023. May the Lord bless their union with love, joy, and prosperity. May His grace guide them in every step of their journey together, and may their marriage be
+                    filled with peace, understanding, and abundant blessings.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="news-item">
+            <img src="news-images/wedding2.JPG" alt="Wedding 3">
+            <div class="news-content">
+                <a href="#" class="news-title">Wedding: Br Tinashe and Sr Samu</a>
+                <div class="news-meta">📅 2025-03-07 — BY SACHIL 🕒 15</div>
+                <p class="news-description">Congratulations to Brother Tinashe and Sister Samu on their blessed union on December 28, 2024! May the Lord pour out His love, joy, and abundant blessings upon your marriage. May His grace guide you in every step of your journey together,
+                    filling your home with peace, understanding, and prosperity. Wishing you a lifetime of love and happiness!. — Peace Tabernacle News✨.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+
+
+        </div>
+        <div class="news-item">
+            <img src="news-images/wedding3.JPG" alt="Wedding 3">
+            <div class="news-content">
+                <a href="#" class="news-title">Wedding: Br Samuel  and Sr Esther </a>
+                <div class="news-meta">📅 2025-03-07 — BY SACHIL 🕒 15</div>
+                <p class="news-description">Congratulations to Brother Samuel and Sister Esther on their sacred union on December 14, 2024! May the Lord bless your marriage with love, joy, and unshakable grace. Wishing you a lifetime of peace, prosperity, and divine favor. **— Peace
+                    Tabernacle News✨.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+
+        <div class="news-item">
+            <img src="/news-images/youth10.jpg" alt="Wedding 2">
+            <div class="news-content">
+                <a href="#" class="news-title">YOUTH SUNDAY</a>
+                <div class="news-meta">📅 2023-10-07 — BY SACHIL 🕒 15</div>
+                <p class="news-description">Today marks the remembrance of the youth event held on October 7, 2023. We were blessed with powerful messages from our youth preachers: Bro Chanda, Bro Steve, Zewe, Bro David, Bro Samuel, and Bro William. It was truly a vibrant and uplifting
+                    gathering, filled with inspiration and spiritual growth.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="news-item">
+            <img src="news-images/conv.jpg" alt="Wedding 3">
+            <div class="news-content">
+                <a href="#" class="news-title">International Convention</a>
+                <div class="news-meta">📅 2025-02-23 — BY SACHIL 🕒 15</div>
+                <p class="news-description">The convention held from October 17th to 20th in Zambia was a mighty gathering that stirred the nation like a storm. Hosted by Rev. Wilson Mwanza at Peace Tabernacle, the event was graced by esteemed guests: Rev. J. Chikosi (Zimbabwe/UK),
+                    Rev. T. Mahere (South Africa/Benoni Tabernacle), Rev. E. Chali (Kalulushi, Zambia), and Pastor Masaiti (Mutare, Zimbabwe). With the theme **"Applying the Token"** from **Exodus 12:23**, the convention was a time of great spiritual
+                    awakening, powerful sermons, and divine encounters, leaving a lasting impact on all who attended.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="news-item">
+            <img src="news-images/media.jpg" alt="Wedding 3">
+            <div class="news-content">
+                <a href="#" class="news-title">2022 Int Conv "When the Son of man cometh shall he find faith?"</a>
+                <div class="news-meta">📅 2025-02-27 — BY SACHIL 🕒 15</div>
+                <p class="news-description">The **2022 Convention** saw a transformative shift in media excellence, thanks to a dedicated team whose efforts ensured seamless coverage, clear sound, and high-quality broadcasts. **From right to left in the front row**, **Sister Snevia,
+                    Brother Paradox, Sister Jane, and Reverend Maurice** led the media operations with precision and coordination. **In the second row**, **Brother Sachil, Brother Patrick, and Brother Joe** worked tirelessly behind the scenes, refining
+                    sound, visuals, and live streaming. **At the back**, two skilled **keyboard players from Mutare** contributed both musically and technically. Their commitment elevated the event’s impact, setting a new benchmark for future conventions.
+                    **Well done, Media Team!** 🎥✨.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="news-item">
+            <img src="news-images/the eagle has landed.jpg" alt="Wedding 3">
+            <div class="news-content">
+                <a href="#" class="news-title">"The Eagle has Landed"</a>
+                <div class="news-meta">📅 2025-02-27 — BY SACHIL 🕒 15</div>
+                <p class="news-description">**Pastor Arrives in Zimbabwe for 3-Day Convention** We are excited to announce that our beloved Pastor has arrived safely in Zimbabwe for a powerful three-day convention. As we gather in worship and expectation, we trust that the Lord
+                    will reveal Himself in greater ways. We look forward to witnessing more paradoxes of faith unfold during these special services. Let us continue to pray for an outpouring of His Spirit and divine revelation throughout the meetings!
+                    Stay blessed. *— Peace Tabernacle News*✨.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+        </div>
+        <div class="news-item">
+            <img src="image/10 copy.jpg" alt="Wedding 3">
+            <div class="news-content">
+                <a href="#" class="news-title">"Special Service-Pastor Rev Josh"</a>
+                <div class="news-meta">📅 2025-05-01 — BY SACHIL 🕒 15</div>
+                <p class="news-description">We are excited to announce special meetings with Pastor Rev Josh that will happen at Lusaka West.The Rev`s Pastor, was a close acquintance of our Prophet Branham, so we expect him to share some of the most profound experiences of our Proohet.
+                    Please continue to pray for a powerful encounter with the Lord.God Bless You Richly— Peace Tabernacle News*✨.</p>
+                <a href="#" class="read-more">Read More</a>
+            </div>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const menu = document.querySelector('#mobile-menu'); // Corrected selector
+                    const menuLinks = document.querySelector('.navbar__menu');
+
+                    if (menu && menuLinks) { // Ensuring elements exist
+                        menu.addEventListener('click', function() {
+                            menu.classList.toggle('is-active');
+                            menuLinks.classList.toggle('active');
+                        });
+                    }
+                });
+            </script>
+
+
+
+
+
+</html>

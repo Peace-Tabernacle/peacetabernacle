@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Announcements</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="canonical" href="https://peace-tabernacle.netlify.app/">
+    <style>
+        .navbar {
+            background: #0676b8;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        
+        .navbar__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            z-index: 1;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+        /* Logo Styling (Image) */
+        
+        #navbar__logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 20px;
+            /* Space between logo and toggle */
+        }
+        /* If you want the logo image */
+        
+        #navbar__logo img {
+            height: 70px;
+            /* Make it fit the navbar height */
+            width: auto;
+            /* Maintain aspect ratio */
+        }
+        /* Updated Logo Text Styling (More Appealing) */
+        /* Navbar Menu */
+        /* Navbar Menu - Desktop (Hidden by Default) */
+        
+        .navbar__menu {
+            display: flex;
+            /* Remove from desktop */
+            align-items: center;
+            list-style: none;
+            text-align: center;
+            gap: 0.1px;
+        }
+        
+        .navbar__links {
+            color: #fffefc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1.5rem;
+            height: 100%;
+        }
+        
+        .navbar__links:hover {
+            color: #f77062;
+            transition: all 0.35s ease;
+        }
+        
+        .navbar__toggle {
+            display: none;
+            /* Hide on desktop */
+        }
+        /* Navbar Toggle */
+        
+        .navbar__toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 35px;
+            height: 20px;
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        .navbar__toggle .bar {
+            width: 100%;
+            height: 5px;
+            background: #fff;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+        /* Mobile View */
+        
+        @media screen and (max-width: 960px) {
+            html,
+            body {
+                overflow-x: hidden;
+                margin: 0;
+                padding: 0;
+            }
+            .navbar__menu {
+                display: grid;
+                /* Ensure menu appears on mobile */
+                grid-template-columns: auto;
+                width: 90%;
+                max-width: 9600px;
+                height: auto;
+                position: absolute;
+                top: 72px;
+                left: 45%;
+                transform: translateX(-50%);
+                opacity: 0;
+                pointer-events: none;
+                /* Prevent clicks when hidden */
+                transition: opacity 0.5s ease;
+                z-index: 1000;
+                border-radius: 100px;
+                padding: 10px 0;
+                gap: 0.001px;
+            }
+            /* Active state when the menu is shown */
+            .navbar__menu.active {
+                opacity: 1;
+                pointer-events: auto;
+                /* Enable clicks when active */
+                max-height: 400px;
+                font-size: 1.2rem;
+                height: auto;
+            }
+            /* Menu Item Styling */
+            .navbar__menu li {
+                width: 90%;
+                padding: 1px;
+                text-align: center;
+                background: #bcf3c8fd;
+                border-radius: 2px;
+                margin: 1px 0;
+            }
+            .navbar__links {
+                text-align: center;
+                width: 80%;
+                color: rgb(72, 81, 204);
+                padding: 1rem 0;
+                display: block;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            .navbar__links:hover {
+                background: #f1f1f1;
+            }
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background: white;
+            padding: 20px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        
+        .announcement {
+            background: #ffffff;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-left: 5px solid #007bff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .announcement.unread {
+            background: #e3f2fd;
+            font-weight: bold;
+        }
+        
+        .announcement p {
+            margin: 5px 0;
+        }
+        
+        .mark-read {
+            display: block;
+            margin: 10px auto;
+            background: #007bff;
+            color: white;
+            padding: 8px 15px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        
+        .mark-read:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <!-- Mobile menu toggle button -->
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Navbar Menu -->
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/News.html" class="navbar__links">News</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Outreach.html" class="navbar__links">Outreach</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/calendar.html" class="navbar__links">Music</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Announcement.html" class="navbar__links">Announcement</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/about-us.html" class="navbar__links">About Us</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Testimonies.html" class="navbar__links">Testimonies</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Sermons.html" class="navbar__links">Sermons</a>
+                </li>
+
+                <li class="navbar__item">
+                    <a href="/Podcast.html" class="navbar__links">Podcast</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menu = document.querySelector('#mobile-menu'); // Corrected selector
+            const menuLinks = document.querySelector('.navbar__menu');
+
+            if (menu && menuLinks) { // Ensuring elements exist
+                menu.addEventListener('click', function() {
+                    menu.classList.toggle('is-active');
+                    menuLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+
+
+    <div class="container">
+        <h2>Latest Announcements</h2>
+
+        <div class="announcement unread" id="announcement1">
+            <p><strong>Church website</strong></p>
+            <p>Welcome to our church website feel free to contact us on +260976128168/ +260972110921</p>
+        </div>
+
+        <div class="announcement unread" id="announcement2">
+            <p><strong>Key Objectives:</strong></p>
+            <p>✅ Announcements & Notifications – Quickly inform members about upcoming church meetings, special events, and important notices. ✅ Event Updates – Provide real-time details on outreach programs, youth gatherings, and worship services. ✅ Community
+                Engagement – Strengthen fellowship by keeping members connected, whether they attend in person or online. ✅ Photo & Video Gallery – Showcase church activities through images and videos, allowing members to relive special moments. ✅ Spiritual
+                Growth – Share messages, sermons, and devotional content to encourage faith and spiritual development. By using this platform, church members can stay updated, participate actively, and remain connected to the mission and vision of the
+                church. 📌 Stay informed. Stay connected. Stay blessed!</p>
+        </div>
+
+        <button class="mark-read" onclick="markAnnouncementsRead()">Mark All as Read</button>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            let unreadAnnouncements = localStorage.getItem("unreadAnnouncements");
+
+            if (!unreadAnnouncements) {
+                localStorage.setItem("unreadAnnouncements", "1");
+            }
+
+            if (unreadAnnouncements === "0") {
+                let elements = document.querySelectorAll(".announcement");
+                elements.forEach(el => el.classList.remove("unread"));
+            }
+        });
+
+        function markAnnouncementsRead() {
+            let elements = document.querySelectorAll(".announcement");
+            elements.forEach(el => el.classList.remove("unread"));
+            localStorage.setItem("unreadAnnouncements", "0");
+        }
+    </script>
+
+</body>
+
+</html>

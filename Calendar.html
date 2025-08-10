@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music - Peace Tabernacle</title>
+    <style>
+        .navbar {
+            background: #000000;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        
+        .navbar__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            z-index: 1;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+        /* Logo Styling (Image) */
+        
+        #navbar__logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 20px;
+            /* Space between logo and toggle */
+        }
+        /* If you want the logo image */
+        
+        #navbar__logo img {
+            height: 70px;
+            /* Make it fit the navbar height */
+            width: auto;
+            /* Maintain aspect ratio */
+        }
+        /* Updated Logo Text Styling (More Appealing) */
+        /* Navbar Menu */
+        /* Navbar Menu - Desktop (Hidden by Default) */
+        
+        .navbar__menu {
+            display: flex;
+            /* Remove from desktop */
+            align-items: center;
+            list-style: none;
+            text-align: center;
+            gap: 0.1px;
+        }
+        
+        .navbar__links {
+            color: #fffefc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1.5rem;
+            height: 100%;
+        }
+        
+        .navbar__links:hover {
+            color: #f77062;
+            transition: all 0.35s ease;
+        }
+        
+        .navbar__toggle {
+            display: none;
+            /* Hide on desktop */
+        }
+        /* Navbar Toggle */
+        
+        .navbar__toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 35px;
+            height: 20px;
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        .navbar__toggle .bar {
+            width: 100%;
+            height: 5px;
+            background: #fff;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+        /* Mobile View */
+        
+        @media screen and (max-width: 960px) {
+            html,
+            body {
+                overflow-x: hidden;
+                margin: 0;
+                padding: 0;
+            }
+            .navbar__menu {
+                display: grid;
+                /* Ensure menu appears on mobile */
+                grid-template-columns: auto;
+                width: 90%;
+                max-width: 9600px;
+                height: auto;
+                position: absolute;
+                top: 72px;
+                left: 45%;
+                transform: translateX(-50%);
+                opacity: 0;
+                pointer-events: none;
+                /* Prevent clicks when hidden */
+                transition: opacity 0.5s ease;
+                z-index: 1000;
+                border-radius: 100px;
+                padding: 10px 0;
+                gap: 0.001px;
+            }
+            /* Active state when the menu is shown */
+            .navbar__menu.active {
+                opacity: 1;
+                pointer-events: auto;
+                /* Enable clicks when active */
+                max-height: 400px;
+                font-size: 1.2rem;
+                height: auto;
+            }
+            /* Menu Item Styling */
+            .navbar__menu li {
+                width: 90%;
+                padding: 1px;
+                text-align: center;
+                background: #bcf3c8fd;
+                border-radius: 2px;
+                margin: 1px 0;
+            }
+            .navbar__links {
+                text-align: center;
+                width: 80%;
+                color: rgb(72, 81, 204);
+                padding: 1rem 0;
+                display: block;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            .navbar__links:hover {
+                background: #f1f1f1;
+            }
+        }
+        
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 0;
+        }
+        
+        .music-container {
+            max-width: 800px;
+            margin: auto;
+            padding: 10px;
+        }
+        
+        .quote {
+            background-color: #f4f4f4;
+            padding: 10px;
+            text-align: center;
+            font-style: italic;
+        }
+        
+        .song {
+            border: 1px solid #ddd;
+            padding: 10px;
+            margin: 10px 0;
+            text-align: center;
+        }
+        
+        .song-item img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        .subscribe-box {
+            background-color: #eee;
+            padding: 15px;
+            text-align: center;
+            margin-top: 20px;
+        }
+        
+        input[type="email"] {
+            width: 80%;
+            padding: 8px;
+            margin: 5px 0;
+        }
+        
+        button {
+            padding: 8px 15px;
+        }
+        
+        @media screen and (max-width: 600px) {
+            .music-container {
+                width: 100%;
+                padding: 5px;
+            }
+            input[type="email"] {
+                width: 100%;
+            }
+            .song-item img {
+                width: 100%;
+                /* Make the image responsive */
+                height: auto;
+                /* Keep aspect ratio */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <!-- Mobile menu toggle button -->
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Navbar Menu -->
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/News.html" class="navbar__links">News</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Outreach.html" class="navbar__links">Outreach</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/calendar.html" class="navbar__links">Music</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Announcement.html" class="navbar__links">Announcement</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/about-us.html" class="navbar__links">About Us</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Testimonies.html" class="navbar__links">Testimonies</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Sermons.html" class="navbar__links">Sermons</a>
+                </li>
+
+                <li class="navbar__item">
+                    <a href="/Podcast.html" class="navbar__links">Podcast</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menu = document.querySelector('#mobile-menu'); // Corrected selector
+            const menuLinks = document.querySelector('.navbar__menu');
+
+            if (menu && menuLinks) { // Ensuring elements exist
+                menu.addEventListener('click', function() {
+                    menu.classList.toggle('is-active');
+                    menuLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+    <div class="music-container">
+        <div class="quote">🎵 "6 You know, singing gives courage. You know that, don’t you? The soldiers, when they’re going to battle, you know what they do? They play music and sing, and things to give them courage. And when we’re going to battle, we sing, and—and it
+            gives us courage to go on. "-    65-1031A — Leadership     Rev. William Marrion Branham </div>
+
+        <h2>Songs</h2>
+        <div class="song">
+            <div class="song-item">
+                <img src="image/music1.jpg" alt="Wedding 1">
+                <h3>Be Still and Know(congregational)</h3>
+                <audio controls>
+                <source src="audios/Be Still and Know.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+                <a href="Be Still and Know.mp3" download>Download</a>
+            </div>
+        </div>
+
+        <div class="song">
+            <div class="song-item">
+                <img src="image/music2.jpg" alt="Wedding 1">
+                <h3>You are Faithful</h3>
+                <audio controls>
+                <source src="audios/You are Faithful.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+                <a href="You are Faithful.mp3" download>Download</a>
+            </div>
+        </div>
+        <div class="song">
+            <div class="song-item">
+                <img src="image/music3.jpg" alt="Wedding 1">
+                <h3>Draw me nearer(congregational)</h3>
+                <audio controls>
+                <source src="audios/Draw me nearer.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+                <a href="Draw me nearer.mp3" download>Download</a>
+            </div>
+        </div>
+        <div class="song">
+            <div class="song-item">
+                <img src="image/music4.jpg" alt="Wedding 1">
+                <h3>At the Cross(congregational)</h3>
+                <audio controls>
+                <source src="audios/At the Cross.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+                <a href="At the Cross.mp3" download>Download</a>
+            </div>
+        </div>
+        <div class="song">
+            <div class="song-item">
+                <img src="image/music5.jpg" alt="Wedding 1">
+                <h3>In the Cross(congregational)</h3>
+                <audio controls>
+                <source src="audios/In the Cross.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+                <a href="In the Cross.mp3" download>Download</a>
+            </div>
+        </div>
+        <div class="song">
+            <div class="song-item">
+                <img src="image/music6.jpg" alt="Wedding 1">
+                <h3>when the Redeemed are gathering(congregational) </h3>
+                <audio controls>
+                <source src="audios/when the Redeemed are gathering .mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+                <a href="when the Redeemed are gathering .mp3" download>Download</a>
+            </div>
+        </div>
+        <div class="song">
+            <div class="song-item">
+                <img src="image/music7.jpg" alt="Wedding 1">
+                <h3>Take your burden to the Lord(congregational) </h3>
+                <audio controls>
+                <source src="audios/Take your burden to the Lord.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+                <a href="Take your burden to the Lord.mp3" download>Download</a>
+            </div>
+        </div>
+        <div class="song">
+            <div class="song-item">
+                <img src="image/music12.jpg" alt="Wedding 1">
+                <h3>You are the Most High God(congregational) </h3>
+                <audio controls>
+                <source src="audios/You are the Most High God.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+                <a href="You are the Most High God.mp3" download>Download</a>
+            </div>
+        </div>
+        <div class="song">
+            <div class="song-item">
+                <img src="image/music9.jpg" alt="Wedding 1">
+                <h3>Alina chikondi Ambuye(congregational) </h3>
+                <audio controls>
+                <source src="audios/Alina chikondi Ambuye.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+                <a href="Alina chikondi Ambuye.mp3" download>Download</a>
+            </div>
+        </div>
+        <div class="song">
+            <div class="song-item">
+                <img src="image/music10.jpg" alt="Wedding 1">
+                <h3>Lema Lema(congregational) </h3>
+                <audio controls>
+                <source src="audios/Lema Lema.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+                <a href="Lema Lema.mp3" download>Download</a>
+            </div>
+        </div>
+        <div class="song">
+            <div class="song-item">
+                <img src="image/music11.jpg" alt="Wedding 1">
+                <h3>I am child of the King(congregational)</h3>
+                <audio controls>
+                <source src="audios/I am child of the King.mp3" type="audio/mpeg">
+                </div>          
+        </div>
+        <div class="song">
+            <div class="song-item">
+                <img src="image/submmitt].jpeg" alt="Wedding 1">
+                <h3>How Great Thou Art(congregational)</h3>
+                <audio controls>
+                <source src="audios/Congregation-Malawi.mp3" type="audio/mpeg">
+                Your browser does not support the audio element.
+            </audio>
+                <a href="Congregation-Malawi.mp3" download>Download</a>
+            </div>
+
+
+            <h3>More Songs:</h3>
+
+            <a href="http://youtube.com/channel/UCveQdGwVEnYRFFxz3C73KUg" target="_blank">YouTube</a>
+        </div>
+        <div class="footer__subscribe">
+            <div class="footer__link--items">
+                <h2>Subscribe</h2>
+                <p>Get updates from Peace Tabernacle.</p>
+                <form id="subscription-form">
+                    <input type="text" id="name" name="name" placeholder="Enter Name" required>
+                    <input type="text" id="surname" name="surname" placeholder="Enter Surname" required>
+                    <input type="email" id="email" name="email" placeholder="Enter Email Address" required>
+                    <button type="submit">SUBSCRIBE</button>
+                </form>
+                <p id="response-message"></p>
+            </div>
+        </div>
+
+        <script>
+            document.getElementById("subscription-form").addEventListener("submit", function(event) {
+                event.preventDefault();
+
+                const name = document.getElementById("name").value;
+                const surname = document.getElementById("surname").value;
+                const email = document.getElementById("email").value;
+                const responseMessage = document.getElementById("response-message");
+
+                // Check if the email has already been subscribed
+                if (localStorage.getItem(email)) {
+                    responseMessage.innerText = "✅ You have already subscribed! Thank you.";
+                    return;
+                }
+
+                const scriptURL = "https://script.google.com/macros/s/AKfycbxnelQAmTq0IgAANpsrOeCXriczJ5Y6zdw6IPEnWNPs-tk-2Gq1tkGj_76o5igolt87/exec";
+                const formData = new FormData(this);
+
+                fetch(scriptURL, {
+                        method: "POST",
+                        body: formData
+                    })
+                    .then(response => {
+                        responseMessage.innerText = "✅ Subscription successful!";
+
+                        // Store email in localStorage to prevent duplicate subscriptions
+                        localStorage.setItem(email, true);
+
+                        // Clear input fields
+                        document.getElementById("name").value = "";
+                        document.getElementById("surname").value = "";
+                        document.getElementById("email").value = "";
+                    })
+                    .catch(error => {
+                        responseMessage.innerText = "❌ Error! Try again.";
+                    });
+            });
+        </script>
+</body>
+
+</html>

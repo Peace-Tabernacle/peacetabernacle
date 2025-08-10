@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events - Peace Tabernacle</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .navbar {
+            background: #000000;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1rem;
+            position: sticky;
+            top: 0;
+            z-index: 999;
+        }
+        
+        .navbar__container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 80px;
+            z-index: 1;
+            width: 100%;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 50px;
+        }
+        /* Logo Styling (Image) */
+        
+        #navbar__logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            text-decoration: none;
+            margin-left: 20px;
+            /* Space between logo and toggle */
+        }
+        /* If you want the logo image */
+        
+        #navbar__logo img {
+            height: 70px;
+            /* Make it fit the navbar height */
+            width: auto;
+            /* Maintain aspect ratio */
+        }
+        /* Updated Logo Text Styling (More Appealing) */
+        /* Navbar Menu */
+        /* Navbar Menu - Desktop (Hidden by Default) */
+        
+        .navbar__menu {
+            display: flex;
+            /* Remove from desktop */
+            align-items: center;
+            list-style: none;
+            text-align: center;
+            gap: 0.1px;
+        }
+        
+        .navbar__links {
+            color: #fffefc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            padding: 0 1.5rem;
+            height: 100%;
+        }
+        
+        .navbar__links:hover {
+            color: #f77062;
+            transition: all 0.35s ease;
+        }
+        
+        .navbar__toggle {
+            display: none;
+            /* Hide on desktop */
+        }
+        /* Navbar Toggle */
+        
+        .navbar__toggle {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 35px;
+            height: 20px;
+            position: absolute;
+            top: 25px;
+            left: 20px;
+            cursor: pointer;
+            z-index: 1000;
+        }
+        
+        .navbar__toggle .bar {
+            width: 100%;
+            height: 5px;
+            background: #fff;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(1) {
+            transform: translateY(10px) rotate(45deg);
+        }
+        
+        .navbar__toggle.is-active .bar:nth-child(3) {
+            transform: translateY(-10px) rotate(-45deg);
+        }
+        /* Mobile View */
+        
+        @media screen and (max-width: 960px) {
+            html,
+            body {
+                overflow-x: hidden;
+                margin: 0;
+                padding: 0;
+            }
+            .navbar__menu {
+                display: grid;
+                /* Ensure menu appears on mobile */
+                grid-template-columns: auto;
+                width: 90%;
+                max-width: 9600px;
+                height: auto;
+                position: absolute;
+                top: 72px;
+                left: 45%;
+                transform: translateX(-50%);
+                opacity: 0;
+                pointer-events: none;
+                /* Prevent clicks when hidden */
+                transition: opacity 0.5s ease;
+                z-index: 1000;
+                border-radius: 100px;
+                padding: 10px 0;
+                gap: 0.001px;
+            }
+            /* Active state when the menu is shown */
+            .navbar__menu.active {
+                opacity: 1;
+                pointer-events: auto;
+                /* Enable clicks when active */
+                max-height: 400px;
+                font-size: 1.2rem;
+                height: auto;
+            }
+            /* Menu Item Styling */
+            .navbar__menu li {
+                width: 90%;
+                padding: 1px;
+                text-align: center;
+                background: #bcf3c8fd;
+                border-radius: 2px;
+                margin: 1px 0;
+            }
+            .navbar__links {
+                text-align: center;
+                width: 80%;
+                color: rgb(72, 81, 204);
+                padding: 1rem 0;
+                display: block;
+                font-weight: bold;
+                text-decoration: none;
+            }
+            .navbar__links:hover {
+                background: #f1f1f1;
+            }
+        }
+        
+        .event-item img {
+            width: 180px;
+            height: 120px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+        
+        @media (max-width: 768px) {
+            .news-container {
+                width: 95%;
+                /* Use more of the screen width */
+                padding: 15px;
+                /* Reduce padding for smaller screens */
+            }
+            .event-item img {
+                width: 100%;
+                /* Make the image responsive */
+                height: auto;
+                /* Keep aspect ratio */
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const menu = document.querySelector('#mobile-menu'); // Corrected selector
+            const menuLinks = document.querySelector('.navbar__menu');
+
+            if (menu && menuLinks) { // Ensuring elements exist
+                menu.addEventListener('click', function() {
+                    menu.classList.toggle('is-active');
+                    menuLinks.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+    <!-- Navbar Section -->
+    <nav class="navbar">
+        <div class="navbar__container">
+            <!-- Mobile menu toggle button -->
+            <div class="navbar__toggle" id="mobile-menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+            <!-- Navbar Menu -->
+            <ul class="navbar__menu">
+                <li class="navbar__item">
+                    <a href="/" class="navbar__links">Home</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/News.html" class="navbar__links">News</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Outreach.html" class="navbar__links">Outreach</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/calendar.html" class="navbar__links">Music</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Announcement.html" class="navbar__links">Announcement</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/about-us.html" class="navbar__links">About Us</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Testimonies.html" class="navbar__links">Testimonies</a>
+                </li>
+                <li class="navbar__item">
+                    <a href="/Sermons.html" class="navbar__links">Sermons</a>
+                </li>
+
+
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- <div class="breadcrumb">
+        <a href="index.html">Home</a> > <span>Events</span> 
+    </div> -->
+    <section class="events-container">
+        <div class="events-list">
+            <h2>Upcoming Events</h2>
+            <p>The most awaited events by our church, indoor or outdoor.</p>
+
+            <div class="event-list">
+                <div class="event-item">
+                    <div class="event-info">
+                        <span class="event-date">5 March 2025</span>
+                        <h3>Wednesday Service</h3>
+
+                        <img src="images/Wednesday.jpg" alt="Wednesday Service">
+                        <p>Time: 17:30 - | Weekly</p>
+                        <button><a href="https://www.facebook.com/profile.php?id=100064260602077" class="learn-more">BROWSE MORE</a></button>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-info">
+                        <span class="event-date">07 Mar 2025</span>
+                        <h3>Friday Service</h3>
+
+                        <img src="images/friday (2).jpg" alt="Sunday School Service">
+                        <p>Time: 17:30 | Weekly</p>
+                        <button><a href="https://www.facebook.com/profile.php?id=100064260602077" class="learn-more">BROWSE MORE</a></button>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-info">
+                        <span class="event-date">09 Mar 2025</span>
+                        <h3>Saturday Singing Practice/Poems</h3>
+
+                        <img src="images/poems.jpg" alt="Sunday Worship Service">
+                        <p>Time: 14:00-| Weekly</p>
+                        <a href="#">View Details</a>
+                        <button><a href="https://fb.watch/x-i3ernlm7/" class="learn-more">VISIT</a></button>
+                    </div>
+                </div>
+                <div class="event-item">
+                    <div class="event-info">
+                        <span class="event-date">10 Dec 2025</span>
+                        <h3>Sunday worship Service</h3>
+                        <img src="images/sunday.jpg" alt="Sunday School Plays">
+                        <p>Time: 08:30 - | Weekly</p>
+                        <button><a href="https://www.facebook.com/profile.php?id=100064260602077" class="learn-more">BROWSE MORE</a></button>
+                    </div>
+                </div>
+            </div>
+            <aside class="events-sidebar">
+                <div class="subscribe-box">
+                    <h3>📩 SUBSCRIBE TO PEACE TABERNACLE</h3>
+                    <p>Get updates from the latest posts straight to your mailbox!</p>
+                    <form id="subscription-form">
+                        <input type="email" id="email" name="email" placeholder="Enter Email Address" required>
+                        <button type="submit">SUBSCRIBE</button>
+                    </form>
+                    <p id="response-message"></p>
+                </div>
+            </aside>
+
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                    const menu = document.querySelector('#mobile-menu'); // Corrected selector
+                    const menuLinks = document.querySelector('.navbar__menu');
+
+                    if (menu && menuLinks) { // Ensuring elements exist
+                        menu.addEventListener('click', function() {
+                            menu.classList.toggle('is-active');
+                            menuLinks.classList.toggle('active');
+                        });
+                    }
+                });
+                document.getElementById("subscription-form").addEventListener("submit", function(event) {
+                    event.preventDefault();
+
+                    const name = document.getElementById("name").value;
+                    const surname = document.getElementById("surname").value;
+                    const email = document.getElementById("email").value;
+                    const responseMessage = document.getElementById("response-message");
+
+                    // Replace the scriptURL with the one you provided
+                    const scriptURL = "https://script.google.com/macros/s/AKfycbyo0sTEVe9ovTpwPNXueA8atGXbxLeGpcNL3OZYI_1mMIAzCtWQduAh57hwqoVQE-xc/exec";
+
+                    const formData = new FormData(this);
+
+                    fetch(scriptURL, {
+                            method: "POST",
+                            body: formData
+                        })
+                        .then(response => response.text())
+                        .then(data => {
+                            if (data === "already_subscribed") {
+                                responseMessage.innerText = "✅ You have already subscribed! Thank you.";
+                            } else if (data === "success") {
+                                responseMessage.innerText = "✅ Subscription successful!";
+                                document.getElementById("name").value = "";
+                                document.getElementById("surname").value = "";
+                                document.getElementById("email").value = "";
+                            } else {
+                                responseMessage.innerText = "❌ Error! Try again.";
+                            }
+                        })
+                        .catch(error => {
+                            responseMessage.innerText = "❌ Error! Try again.";
+                        });
+                });
+            </script>
+
+</body>
+
+</html>

@@ -1,0 +1,7 @@
+# Force HTTPS
+http://peace-tabernacle.netlify.app/* https://peace-tabernacle.netlify.app/:splat 301!
+
+# Redirect index.html to clean URL
+/index.html / 301!
+
+
